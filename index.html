@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>croyoux&#39;s blog | Home </title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta property="og:image" content="http://localhost:1313/"/>
+	<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml" title="croyoux's blog" />
+	<meta property="og:url" content="http://localhost:1313/">
+  <meta property="og:site_name" content="croyoux&#39;s blog">
+  <meta property="og:title" content="croyoux&#39;s blog">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="croyoux&#39;s blog">
+
+        <link href="http://localhost:1313/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"   /><link rel="stylesheet" href="http://localhost:1313/katex/katex.min.css ">
+		<script defer src="http://localhost:1313/katex/katex.min.js"></script>
+		<script defer src="http://localhost:1313/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+		</script>
+		
+		
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
+		
+</head>
+
+	<body>
+		<div class="content">
+			<header>
+	<div class="main">
+		<a href="http://localhost:1313/">croyoux&#39;s blog</a>
+	</div>
+	<nav>
+		
+		<a href="/posts">Archive</a>
+		
+		<a href="/tags">Tags</a>
+		
+		<a href="/friends">Friends</a>
+		
+		<a href="/about">About</a>
+		
+		
+	</nav>
+</header>
+
+			
+			<main class="list">
+				<div class="site-description"></div>
+				
+				
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/card_cmb/">招行新万事达普卡办理</a></h1>
+					<time>Sep 13, 2025</time>
+					<br><div class="description">
+	
+	<p>招商银行在今年08月21日推出了零门槛的新<strong>万事达人民币借记卡普卡</strong>，在等待了约三个星期后最近的网点终于
+有卡了，花了几十分钟成功开成二类卡</p>
+<h2 id="一类银联">一类银联</h2>
+<p>在开学的第二个星期，我去了一趟最近的网点，但被告知卡版还没到，可以先办一张银联然后换卡；因为是第一次
+办，在激活上花了点时间。对比四大行虽然体量大但态度还是招行强，全程指引且没问我要一堆乱七八糟的证明，
+满16周岁只需要带身份证、学生卡(或工作证明)和个人实名的手机号即可办理，不过缺点就是网点太少了，
+我这边最近的网点都要3、4公里，一些偏远地区可能只能去市分行。</p>
+<p>我这张是招财普卡，VTM的第一个卡面，网点告知未成年日限只有1000，而且没开网银；
+因为想着后续换卡就没选其他卡面，回到家就后悔，打算保留这张卡后把万事达办成二类卡，毕竟国内还是银联适用范围更广。</p>
+<h2 id="万事达开卡">万事达开卡</h2>
+<p>第二个星期在电话确认网点有卡后前往开卡，虽然换了柜员，但依旧顺利;用途只说了海外购物就给我开了，没要其他证明（开卡时还遇到个小孩带着他妈也来开这张卡）。<br>
+最后给开成了二类，限额还是1000，不过用来买游戏也足够了。</p>
+<p>万事达卡的要比普卡厚，做工对比也更好，不知道是不是卡厂的区别🤔</p>
+<p><img src="https://cfr2.fsunix.net/img/card_cmb_1.webp" alt="合影"></p>&hellip;
+	
+</div>
+					<a class="readmore" href="/posts/card_cmb/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/bili_login_gtk/">WebKitGtk 实现 BiliBili 登录</a></h1>
+					<time>Aug 5, 2025</time>
+					<br><div class="description">
+	
+	<p>最近在研究 BiliBili 的 api， 想做一个以视频为音源的播放器；其中的一个功能允许导入收藏夹的视频</p>
+<p>主要有两个 api</p>
+<pre tabindex="0"><code class="language-api" data-lang="api">通过 mid 获取所有收藏夹信息
+https://api.bilibili.com/x/v3/fav/folder/created/list-all?up_mid=&lt;mid&gt;
+
+通过 media_id 获取指定收藏夹信息
+https://api.bilibili.com/x/v3/fav/resource/list?media_id=&lt;media_id&gt;&amp;pn=&lt;页数&gt;&amp;ps=&lt;每页显示的视频个数&gt;
+</code></pre><p>但是光有 mid 还不够；这两个 api 都需要设置特定的 Cookie 进行认证，所以只能在请求前先实现登录</p>
+<h1 id="登录">登录</h1>
+<p>BiliBili 主要支持<code>短信登录</code>，<code>密码登录</code>和<code>二维码登录</code>；除了<code>二维码登录</code>外，其余两种都需要在登录前进行<code>人机验证(由 geetest 提供)</code></p>
+<h2 id="cookie">Cookie</h2>
+<p>在完成登录后，BiliBili 将设置几个 Cookie</p>
+<pre tabindex="0"><code class="language-respon" data-lang="respon">HTTP/1.1 200 OK
+Date: Mon, 13 Jul 2020 09:57:33 GMT
+Content-Type: application/json;charset=UTF-8
+Content-Length: 78
+Connection: keep-alive
+Server: Apache-Coyote/1.1
+Set-Cookie: DedeUserID=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/
+Set-Cookie: DedeUserID__ckMd5=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/
+Set-Cookie: SESSDATA=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/; HttpOnly
+Set-Cookie: bili_jct=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/
+Set-Cookie: sid=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/
+Expires: Mon, 13 Jul 2020 09:57:32 GMT
+Cache-Control: no-cache
+X-Cache-Webcdn: BYPASS from jd-sxhz-dx-w-01
+</code></pre><p>示例来自 <a href="https://socialsisteryi.github.io/bilibili-API-collect/docs/login/login_action/SMS.html#%E4%BD%BF%E7%94%A8%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95-web%E7%AB%AF">BAC Document</a></p>&hellip;
+	
+</div>
+					<a class="readmore" href="/posts/bili_login_gtk/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/todo_gtk/">用 gtk4 写 todo</a></h1>
+					<time>Jul 5, 2025</time>
+					<br><div class="description">
+	
+	<p>终于考完了，期末考9科实在是太折磨了；发现自己很久没写文章了，上次更新还在去年，最近都在探索gtk，
+就顺便写一篇记录下成果。</p>
+<h2 id="工具">工具</h2>
+<p>gtk主要参考的就是官方的<a href="https://docs.gtk.org/gtk4/">API reference</a>，目前支持gtk3-4(我想也没人会去用gtk3以前的版本)的内容；其中包含
+一个<a href="https://docs.gtk.org/gtk4/visual_index.html">Widget Gallery</a>，里面有所有当前版本的控件介绍和API。</p>
+<p>官方的文档我认为还是很详细的，但有时候不清楚怎么使用时也还是需要去搜索用例，官方的文档一般不包含示例</p>
+<h3 id="ide">IDE</h3>
+<p>和gtk有关的ide我目前找到的是<a href="https://apps.gnome.org/Builder/">Gnome Builder</a>，介绍说是Gnome环境下的开发工具；我曾经用它编写过一些小
+项目，但我认为它的补全和插件都不够完善，所以转而使用Vscode。</p>
+<p>真要说起来，gtk的编写应该只需要一个文本编辑器，gtk4的大部分函数名都比较好记，这方面IDE也只是方便补全一些变量和函数名，提供高亮支持</p>
+<h3 id="构建工具">构建工具</h3>
+<p>和上文说的一样，你可以选择不使用任何构建工具，使用<code>pkg-config</code>查找依赖和<code>cflags</code>后手动编译；但这样太过原始了，也不方便调试</p>
+<h4 id="meson">Meson</h4>
+<p>Meson是gnome项目主要的编译工具，Gnome Builder也会默认安装此工具，它基于一个简单的构建配置生成<code>build.ninja</code>，有点像Cmake和Makefile。</p>
+<p>此外，在build目录下会生成<code>compile_commands.json</code>，clangd可以根据此文件提供高亮和补全支持；Meson还支持增量编译，比直接重新编译更快。</p>
+<p>Meson的文档中就包含构建gtk的示例，用<code>dependency</code>提供名称，Meson就能自动查找并引入依赖</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-meson" data-lang="meson"><span style="display:flex;"><span>deps <span style="color:#f92672">=</span> [dependency(<span style="color:#e6db74">&#39;gtk4&#39;</span>), dependency(<span style="color:#e6db74">&#39;libadwaita-1&#39;</span>), dependency(<span style="color:#e6db74">&#39;libcjson&#39;</span>)]
+</span></span></code></pre></div><h2 id="libadwaita-1">libadwaita-1</h2>
+<p>在依赖中引入<code>Adw</code>能让gtk应用更加现代化，符合Gnome的风格；使用方式和默认的gtk初始化相似</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">g_autoptr</span> (AdwApplication) app <span style="color:#f92672">=</span> NULL;
+</span></span><span style="display:flex;"><span>app <span style="color:#f92672">=</span> <span style="color:#a6e22e">adw_application_new</span> (<span style="color:#e6db74">&#34;org.example.Hello&#34;</span>, G_APPLICATION_DEFAULT_FLAGS);
+</span></span></code></pre></div><p>创建<code>app</code>并用<code>adw_application_new()</code>初始化；官方示例中的<code>G_APPLICATION_FLAGS_NONE</code>已被弃用，用<code>G_APPLICATION_DEFAULT_FLAGS</code>代替</p>
+<h2 id="ui绘制">UI绘制</h2>
+<p>我选择在<code>ui.c</code>中绘制ui，将<code>app</code>与<code>home_ui</code>绑定</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">g_signal_connect</span> (app, <span style="color:#e6db74">&#34;activate&#34;</span>, <span style="color:#a6e22e">G_CALLBACK</span> (home_ui), NULL);
+</span></span></code></pre></div><h3 id="搜索">搜索</h3>
+<p>gtk提供了名为<code>SearchEntry</code>的控件用于搜索，还有一个信号<code>GtkSearchEntry::search-changed</code>，据文档说，</p>
+<blockquote>
+<p>To make filtering appear more reactive, it is a good idea to not react to every change in the entry text immediately, but only after a short delay</p>&hellip;
+	
+</div>
+					<a class="readmore" href="/posts/todo_gtk/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/wifibox/">Wifibox的配置与使用</a></h1>
+					<time>Jul 10, 2024</time>
+					<br><div class="description">
+	
+	<p>最近几天，我在<code>Redmi Book Pro 14s</code>上安装了<code>FreeBSD 14.1-RELEASE</code>，也算是体验了一把UNIX哲学，但因FreeBSD的驱动太过匮乏了，导致我的安装并不顺利，也就有了这篇文章</p>
+<h2 id="bhyve">bhyve</h2>
+<blockquote>
+<p>bhyve，发音为“beehive”，是 FreeBSD 的虚拟机管理程序 / 虚拟机管理器，支持带有“POPCNT”（POPulation Count）功能的 Intel 和 AMD 处理器上的多种客户操作系统，以及在实验中支持 gic0：ARM Generic Interrupt Controller v3.0 功能的 ARM64/aarch64 处理器</p>
+<p>bhyve 支持多种存储和网络后端、UEFI、FreeBSD 加载器和 GRUB 启动、PCI 直通 (PPT)、集成 VNC 和 9pfs 服务器以及更多功能</p>
+</blockquote>
+<h2 id="wifibox">Wifibox</h2>
+<blockquote>
+<p>bhyve supports passing of host PCI devices to a virtual machine for its exclusive use of them.</p>
+</blockquote>
+<p>Wifibox则是借助其PCI直通技术，部署了一个 Linux 客户机，借助 PCI 直通技术驱动 FreeBSD 主机系统上的无线网卡</p>
+<p>Wifibox的日志位于<code>/var/run/wifibox/appliance/log</code>，可以很方便地观察它的运行状态</p>
+<h2 id="配置">配置</h2>
+<p>我的网卡是<code>RTL8852be</code>，用<code>ifconfig</code>查看只有一个设备，其ip为<code>127.0.0.1</code>，若网卡在FreeBSD下有驱动支持，则需要额外禁用自带驱动</p>
+<h3 id="安装-wifibox">安装 Wifibox</h3>
+<ol>
+<li>因为安装需要网络，我们将数据线插入电脑，开启USB网络共享，用<code>ifconfig</code>查看是否识别到设备<code>ue0</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dhclient ue0 <span style="color:#75715e"># 获取ip</span>
+</span></span></code></pre></div><p>连接完后安装 Wifibox</p>&hellip;
+	
+</div>
+					<a class="readmore" href="/posts/wifibox/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/r98-keyboard/">RK-R98键盘开箱</a></h1>
+					<time>Feb 17, 2024</time>
+					<br><div class="description">
+	
+	迟到两天的伪开箱
+	
+</div>
+					<a class="readmore" href="/posts/r98-keyboard/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/pigo-face/">Pigo实现人脸识别</a></h1>
+					<time>Jan 31, 2024</time>
+					<br><div class="description">
+	
+	<p>最近学Go的时候发现个好玩的库，可以识别图片中的人像，并且提供二进制发行版</p>
+<h2 id="使用">使用</h2>
+<p>从<a href="https://github.com/esimov/pigo/releases">Releases</a>处下载对应系统的二进制</p>
+<p>下载<a href="https://github.com/esimov/pigo/blob/master/cascade/facefinder">facefinder</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./pigo -in input.png -out out.png &lt; input/source.jpg -cf<span style="color:#f92672">=</span>/path/to/cascade
+</span></span></code></pre></div><p>即可识别<code>input.png</code>，并输出<code>output.png</code></p>
+<h2 id="预览图">预览图</h2>
+<p><img src="https://cfr2.fsunix.net/img/pigo_1.webp" alt="Rectangle face marker"></p>
+<h2 id="识别视频">识别视频</h2>
+<p>因为Pigo默认只能识别图片，想让它识别整个视频的话只能将视频切成图片进行逐一识别，毕竟视频也是图片组成的</p>
+<h3 id="下载视频">下载视频</h3>
+<p>B站不提供直接的视频下载方式，试了几个网站的下载工具发现要不就是不能用，要么分辨率太低，所以这里使用自带的缓存功能</p>
+<p>到Android设备</p>
+<pre tabindex="0"><code>/storage/emulated/0/Android/data/com.bilibili.app.in/download/
+</code></pre><p>目录下，会发现一串以数字命名的文件夹，进入其子目录，会看到一个以数字命名的文件夹，和两个<code>.xml</code>,<code>.json</code>结尾的文件</p>
+<p>进入数字文件夹，需要的两个文件出现了，<code>audio.m4s</code>为音频文件，<code>video.m4s</code>为视频文件，将音频拓展名重命名为<code>*.mp3</code>，视频为<code>*.mp4</code>，移动到任意剪辑软件能读取的目录</p>
+<p>将两个文件导入剪辑软件，将视频和音频同步拖到对应轨道，导出即可</p>
+<h3 id="切割视频">切割视频</h3>
+<p>这里博主使用的工具是<a href="https://ffmpeg.org/">FFmpeg</a></p>
+<p>最好创建一个专门的文件夹存放输出的图片</p>
+<blockquote>
+<p>A complete, cross-platform solution to record, convert and stream audio and video.</p>
+</blockquote>
+<p>使用<code>ffmpeg -i lockHand.mp4 -r 24 ./lockHand/output%d.png </code>以每秒24张图片分解视频</p>
+<p>-i: 指定分割的视频</p>
+<p>-r: 设置帧率，默认为25</p>
+<p><code>output%d.png</code>中<code>%d</code>是占位符，ffmpeg将以1.2.3&hellip;的顺序命名输出文件</p>
+<p>完成后，到<code>lockHand</code>目录下即可看到输出的图片</p>
+<h3 id="批量识别">批量识别</h3>
+<p>编写一个脚本来批量识别图片</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span><span style="color:#f92672">((</span>i<span style="color:#f92672">=</span>1;i&lt;<span style="color:#f92672">=</span>422;i++<span style="color:#f92672">))</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  ./pigo -in ./lockHand/output$i.png -out ./outHand/out$i.png -cf ./facefinder
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;处理次数:&#34;</span>$i
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>其中<code>442</code>为生成的源图片数量，<code>./lockHand/output$i.png</code>需要改为源图片文件文件夹，<code>$i</code>和<code>%d</code>差不多，产出目录同上</p>&hellip;
+	
+</div>
+					<a class="readmore" href="/posts/pigo-face/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/nat-traversal/">Frp自建内网穿透</a></h1>
+					<time>Jan 22, 2024</time>
+					<br><div class="description">
+	
+	<p>这几天一直在折腾内网穿透的事，原因很简单，服务器的ROM不够大，又没钱升级配置，又拍云的免费OSS不备案无法绑定域名，免费的内网穿透速率太小了，更别提还有流量限制</p>
+<p>想了想貌似只能自己建一个了，刚好手里有吃灰的Orangepi Zeor3，买的时候配了张128G的TF卡，虽然速度一般，但对于我来说是绰绰有余了</p>
+<h2 id="frp">frp</h2>
+<p>提到内网穿透，想到的肯定是大名顶顶的<strong>frp</strong>，目前在Github上已有76.3K starred</p>
+<p>网上的很多文章大多是教你用基于frp的一键配置脚本，但试了几个发现都没用后决定自己尝试</p>
+<h3 id="安装使用">安装&amp;使用</h3>
+<p>frp的安装很简单，参照<a href="https://gofrp.org/zh-cn/">文档</a>的教程</p>
+<ol>
+<li>
+<p>到<a href="https://github.com/fatedier/frp/releases/tag/v0.53.2">Releases</a>处下载适合的架构/系统的压缩包，解压到任意目录</p>
+</li>
+<li>
+<p>使用<code>./frps -c ./frps.toml</code>启动服务端</p>
+</li>
+<li>
+<p>使用<code>./frpc -c ./frpc.toml</code>启动客户端</p>
+</li>
+</ol>
+<h3 id="使用-systemd-开机自启动">使用 systemd 开机自启动</h3>
+<p>如果断开ssh连接，frp服务也会断开;可以将它设置为开机自启</p>
+<ol>
+<li>(如果尚未安装)使用<code>apt install systemd </code>安装，其他发行版使用其包管理器即可</li>
+<li>编辑<code>/etc/systemd/system/frps.service</code>创建frp服务配置，写入以下内容</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-service" data-lang="service"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 服务名称，可自定义</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description </span><span style="color:#f92672">=</span><span style="color:#e6db74"> frp server</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">After </span><span style="color:#f92672">=</span><span style="color:#e6db74"> network.target syslog.target</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Wants </span><span style="color:#f92672">=</span><span style="color:#e6db74"> network.target</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Type </span><span style="color:#f92672">=</span><span style="color:#e6db74"> simple</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 启动frps的命令，需修改为您的frps的安装路径</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart </span><span style="color:#f92672">=</span><span style="color:#e6db74"> /path/to/frps -c /path/to/frps.toml</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy </span><span style="color:#f92672">=</span><span style="color:#e6db74"> multi-user.target</span>
+</span></span></code></pre></div><p>3.管理命令</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 启动frp</span>
+</span></span><span style="display:flex;"><span>sudo systemctl start frps
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 停止frp</span>
+</span></span><span style="display:flex;"><span>sudo systemctl stop frps
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 重启frp</span>
+</span></span><span style="display:flex;"><span>sudo systemctl restart frps
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看frp状态</span>
+</span></span><span style="display:flex;"><span>sudo systemctl status frps
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 开机自启动</span>
+</span></span><span style="display:flex;"><span>sudo systemctl enable frps
+</span></span></code></pre></div><p>之后的frpc也是大同小异，只需要更改名字和位置即可</p>&hellip;
+	
+</div>
+					<a class="readmore" href="/posts/nat-traversal/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/arch-kde/">Arch下的Kde配置</a></h1>
+					<time>Jan 14, 2024</time>
+					<br><div class="description">
+	
+	重装6次的主流桌面体验
+	
+</div>
+					<a class="readmore" href="/posts/arch-kde/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/winter/">将你的博客部署到雨云</a></h1>
+					<time>Nov 17, 2023</time>
+					<br><div class="description">
+	
+	<h2 id="近况">近况</h2>
+<p>期中考刚考完，我也难得有时间静下心来写博客，虽然文笔不太好就是了</p>
+<p>这个星期，广州跳过了秋天，直接来到了冬天，也可以说广州根本就没有春天和秋天</p>
+<p>看了<a href="https://arch-linux.osrc.com/">archlinux 简明指南</a>的教程，在虚拟机试了一次后为我的物理机安装上了Arch,不得不说，aur是真的好使，很多包都能在上面找到</p>
+<p>每日一滚</p>
+<pre tabindex="0"><code class="language-command" data-lang="command">sudo pacman -Syu
+</code></pre><p>最近半价买了一个月雨云的云服务器，学了下Nginx，把我的博客迁移到了上面</p>
+<h2 id="nginx">Nginx</h2>
+<p>原本想再水一篇，但想着也没什么好写的，就合并在一起</p>
+<p>在你喜欢的目录创建用于存放博客的文件夹，将博客仓库<strong>git</strong>下来</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">server {
+    listen 80;
+    server_name test.inuya.ltd;
+    root /home/blog;
+    location / {
+    }
+}
+</code></pre><p>跟之前一样，在服务器<code>/etc/nginx/conf.d</code>目录下创建<code>test.inuya.ltd.conf</code>配置文件，写入以上内容，这里我用二级域名<code>test.inuya.ltd</code>演示</p>
+<p>在域名提供商添加<code>A类型</code>解析，填入你的IP，使用<code>http://test.inuya.ltd</code>即可访问博客</p>
+<h2 id="https">https</h2>
+<p>配置完，会有一个问题，就是无法通过https访问，现在很多博客的友联已经不再添加没有https的博客了</p>
+<h3 id="ssl证书">ssl证书</h3>
+<p><del>阿里云现有免费的一年ssl证书可以申请</del></p>
+<p>阿里云证书现只有三个月有效期，遂更换cerbot自动续费</p>
+<ol>
+<li>在你的debian或基于debian的发行版上安装snap</li>
+</ol>
+<pre tabindex="0"><code class="language-command" data-lang="command">sudo apt install snapd
+</code></pre><ol start="2">
+<li>安装cerbot snap包</li>
+</ol>
+<pre tabindex="0"><code class="language-command" data-lang="command">sudo snap install --classic certbot
+</code></pre><ol start="3">
+<li>准备 Certbot 命令</li>
+</ol>
+<pre tabindex="0"><code class="language-command" data-lang="command">sudo ln -s /snap 
+</code></pre><ol start="4">
+<li>获取证书，这里选择手动配置</li>
+</ol>
+<pre tabindex="0"><code class="language-command" data-lang="command">sudo certbot certonly --nginx
+</code></pre><ol start="5">
+<li>测试下自动续费</li>
+</ol>
+<pre tabindex="0"><code class="language-command" data-lang="command">sudo certbot renew --dry-run
+</code></pre><p>证书应位于<code>/etc/letsencrypt/live</code>在Nginx中填入即可</p>
+<p>其他发行版也可参考<a href="https://certbot.eff.org/instructions?">certbot instructions</a>，选择对应的发行版即可</p>
+<h3 id="配置">配置</h3>
+<p>在原本的<code>test.inuya.ltd.conf</code>的配置中添加以下内容</p>&hellip;
+	
+</div>
+					<a class="readmore" href="/posts/winter/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/hugo/">博客迁移至hugo</a></h1>
+					<time>Nov 5, 2023</time>
+					<br><div class="description">
+	
+	博客迁移到hugo的记录
+	
+</div>
+					<a class="readmore" href="/posts/hugo/">Read more ⟶</a>
+				</section>
+				
+				
+
+<ul class="pagination">
+	<span class="page-item page-prev">
+	
+	</span>
+	<span class="page-item page-next">
+	
+    <a href="/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">Next →</span></a>
+	
+	</span>
+</ul>
+
+
+			</main>
+			<footer>
+  <div style="display:flex"><a class="soc" href="https://github.com/inuyasha-660" rel="me" title="GitHub"><svg class="feather">
+       <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
+    </svg></a><a class="border"></a></div>
+  <div class="footer-info">
+    2026  © Croyoux Lite |  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</footer>
+
+
+		</div>
+		
+	</body>
+</html>

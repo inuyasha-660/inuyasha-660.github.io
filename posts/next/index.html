@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Next主题进阶配置 - croyoux&#39;s blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="最近比较忙，一方面刚开学，另一方面是因为butterfly加载速度太慢，转向next主题，很多东西需要重新配置；这篇文章与其说是教程，不如说是一篇记录" />
+	<meta property="og:image" content="http://localhost:1313/"/>
+	<meta property="og:url" content="http://localhost:1313/posts/next/">
+  <meta property="og:site_name" content="croyoux&#39;s blog">
+  <meta property="og:title" content="Next主题进阶配置">
+  <meta property="og:description" content="最近比较忙，一方面刚开学，另一方面是因为butterfly加载速度太慢，转向next主题，很多东西需要重新配置；这篇文章与其说是教程，不如说是一篇记录">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-09-17T12:21:23+00:00">
+    <meta property="article:modified_time" content="2023-09-17T12:21:23+00:00">
+    <meta property="article:tag" content="Hexo">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Next主题进阶配置">
+  <meta name="twitter:description" content="最近比较忙，一方面刚开学，另一方面是因为butterfly加载速度太慢，转向next主题，很多东西需要重新配置；这篇文章与其说是教程，不如说是一篇记录">
+
+        <link href="http://localhost:1313/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"   /><link rel="stylesheet" href="http://localhost:1313/katex/katex.min.css ">
+		<script defer src="http://localhost:1313/katex/katex.min.js"></script>
+		<script defer src="http://localhost:1313/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+		</script>
+		
+		
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
+		
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">croyoux&#39;s blog</a>
+	</div>
+	<nav>
+		
+		<a href="/posts">Archive</a>
+		
+		<a href="/tags">Tags</a>
+		
+		<a href="/friends">Friends</a>
+		
+		<a href="/about">About</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">Next主题进阶配置</h1>
+          <div class="meta">Posted on Sep 17, 2023</div>
+        </div>
+        
+        <section class="body">
+          <p>最近比较忙，一方面刚开学，另一方面是因为butterfly加载速度太慢，转向next主题，很多东西需要重新配置；这篇文章与其说是教程，不如说是一篇记录</p>
+<h2 id="next主题">Next主题</h2>
+<blockquote>
+<p>🎉 Elegant and powerful theme for Hexo.</p>
+</blockquote>
+<p>一个黑白为主色调的主题，很多人使用，却没有一个完整的中文教程；你能在Github上搜到三个next</p>
+<ul>
+<li><a href="https://github.com/next-theme/hexo-theme-next">hexo-theme/hexo-theme-next</a></li>
+<li><a href="https://github.com/theme-next/hexo-theme-next">theme-hexo/hexo-theme-next</a></li>
+<li><a href="https://github.com/iissnan/hexo-theme-next">iissnan</a></li>
+</ul>
+<p>我推荐使用第一个，也就是<strong>hexo-theme/hex-theme-next</strong> 因为讨论的人多，版本也是最新的<br>
+目前next还没有一个统一的教程，网上也有三篇不同的教程</p>
+<ul>
+<li><a href="https://hexo-next.readthedocs.io/zh_CN/latest/">Hexo-Next</a>优点是支持中文，比较完善，缺点是没有官方内容多</li>
+<li><a href="http://theme-next.iissnan.com/">Next使用文档</a>同样支持中文，但是覆盖和内容没有上一个全</li>
+<li><a href="https://theme-next.js.org/">Next</a>应该是官方文档，覆盖最全，但不支持中文</li>
+</ul>
+<p>以上三个文档建议第一和第三混合看，第二个因为有点过时可以不看</p>
+<h3 id="评论">评论</h3>
+<p>一个好的博客必定不能缺少评论系统，目前有许多解决方案可供选择，但我认为最方便，快捷的还是<a href="https://utteranc.es/">utterances</a></p>
+<h4 id="utterances">utterances</h4>
+<blockquote>
+<p>A lightweight comments widget built on GitHub issues.</p>
+</blockquote>
+<ul>
+<li>以下以utt来代替utterances</li>
+</ul>
+<p>作者尝试在butterfly主题中使用valine，但最终以失败告终，尝试gitalk同样因token被墙而失败，最后发现了这个宝藏评论系统</p>
+<ol>
+<li>要使用utt，我们首先要创建一个仓库，必须要是公开的，然后我们需要安装<a href="https://github.com/apps/utterances"> utterances app</a>到我们的仓库</li>
+<li>然后到了选择Blog Post ↔️ Issue Mapping 推荐<strong>Issue title contains page title</strong> 不容易混淆</li>
+<li>最后编辑Next的<code>_config.yml</code>中的<strong>utterances</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">utterances</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">enable</span>: <span style="color:#66d9ef">true</span>   <span style="color:#75715e">#将false改为true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">repo</span>: <span style="color:#ae81ff">user-name/repo-name</span> <span style="color:#75715e"># 填入自己的仓库</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Available values: pathname | url | title | og:title</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">issue_term</span>: <span style="color:#ae81ff">title </span> <span style="color:#75715e">#设置为title</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Available values: github-light | github-dark | preferred-color-scheme | github-dark-orange | icy-dark | dark-blue | photon-dark | boxy-light</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">theme</span>: <span style="color:#ae81ff">github-light</span>
+</span></span></code></pre></div><p>完成后，使用<code>hexo s --debug</code>本地预览博客，看是否出现评论框</p>
+<h3 id="文章关闭评论">文章关闭评论</h3>
+<p>设置完后默认会在所有page开启评论，如果想关闭分类或关于里的评论，可以在index.md中设定<code>comments: false</code>即可关闭</p>
+<h3 id="友链">友链</h3>
+<p>Next主题自带的友链位于侧边栏，但人数一旦多起来便会拥挤不堪，于是参考<a href="https://blog.fufu.ink/2023/05/improvefdlinks.html#waline">浮生若梦</a>的教程 <del>在他的基础上删去了过期和推荐</del> 大佬更新了配置，现在可以直接从yml读取配置</p>
+<blockquote>
+<p>又更新了
+之前要看 html 代码、改源代码，太麻烦了。
+仿照 butterfly 的友链书写方式做成变量都从 yml 中读取了</p>
+</blockquote>
+<ol>
+<li>首先在你<code>Next文件夹/layout</code>中创建一个名为<code>links.njk</code>的文件，写入以下内容</li>
+</ol>
+<pre tabindex="0"><code class="language-njk" data-lang="njk">    {##################}
+    {### LINKS BLOCK ###}
+    {##################}
+
+&lt;style&gt;
+    @media (min-width: 768px) {
+        .link-card {
+            width: 50%;
+            float: left;
+        }
+    }
+    .link-card{
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+        box-sizing: border-box;
+    }
+    .link-user-list{
+        margin-bottom: 5px;
+        border-radius: 3px;
+        padding: 15px;
+        display: block;
+        box-shadow: 0 2px 6px rgba(0,0,0,.1);
+        position: relative;
+    }
+    .link-user-list:hover{
+        background-color: #f6f8f8;
+        text-decoration: none;
+    }
+    #link-container a{
+        border: none;
+    }
+    .user-avatar img{
+        border: 2px solid #fff;
+        height: auto;
+        vertical-align: middle;
+        width: 100%;
+        border-radius: 20%;
+        max-width: 100%!important;
+        margin: 0px !important;
+    }
+    .clearfix:after{
+        content: &#39; &#39;; 
+        display: block; 
+        height: 0; 
+        clear: both; 
+        visibility: hidden;
+    }
+    .text-ellipsis{
+        display: block;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: 13px;
+    }
+    .user-message{
+        display: block;
+        overflow: hidden;
+    }
+    .user-description{
+        color: #a0a0a0;
+    }
+    .user-avatar{
+        display: inline-block;
+        width: 52px;
+        height: auto;
+        float: left !important;
+        margin-right: 15px;
+        position: relative;
+        white-space: nowrap;
+    }
+&lt;/style&gt;
+&lt;div id=&#34;link-container&#34;&gt;
+    {% for link_config in site.data.links %}
+    {% if link_config.class_name %}
+    &lt;h2 id=&#34;{{ link_config.class_name }}&#34;&gt;
+        &lt;a href=&#34;#{{ link_config.class_name }}&#34; class=&#34;headerlink&#34; title=&#34;{{ link_config.class_name }}&#34; data-pjax-state&gt;&lt;/a&gt;
+        {{ link_config.class_name }}
+    &lt;/h2&gt;
+    {% else %}
+    &lt;hr&gt;
+    {% endif %}
+    &lt;div class=&#34;clearfix&#34;&gt;
+    {% for link in link_config.link_list %}
+    &lt;div class=&#34;link-card&#34;&gt;
+        &lt;a href=&#34;{{ link.site }}&#34; target=&#34;_blank&#34; class=&#34;link-user-list&#34;&gt;
+            &lt;span class=&#34;user-avatar&#34;&gt;
+                &lt;img src=&#34;{{ link.avatar }}&#34; class=&#34;nofancybox&#34;&gt;
+            &lt;/span&gt;
+            &lt;span class=&#34;user-message&#34;&gt;
+                &lt;span class=&#34;text-ellipsis&#34;&gt;{{ link.nickname }}&lt;/span&gt;
+                &lt;span class=&#34;user-description text-ellipsis&#34;&gt;{{ link.info }}&lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+    {% endfor %}
+    &lt;/div&gt;
+    {% endfor %}
+
+    &lt;div&gt;
+    {{ page.content }}
+    &lt;/div&gt;
+&lt;/div&gt;
+    {######################}
+    {### END LINKS BLOCK ###}
+    {######################}
+</code></pre><p>然后再打开<code>Next文件夹/layout/page.njk</code> ，在<code>block title</code>区域中的<code>{{- __('title.schedule') + page_title_suffix }}</code>后面添加上两行</p>
+<pre tabindex="0"><code class="language-njk" data-lang="njk">{% block title %}
+  {%- set page_title_suffix = &#39; | &#39; + title %}
+
+  {%- if page.type === &#39;categories&#39; and not page.title %}
+    {{- __(&#39;title.category&#39;) + page_title_suffix }}
+  {%- elif page.type === &#39;tags&#39; and not page.title %}
+    {{- __(&#39;title.tag&#39;) + page_title_suffix }}
+  {%- elif page.type === &#39;schedule&#39; and not page.title %}
+    {{- __(&#39;title.schedule&#39;) + page_title_suffix }}
++  {%- elif page.type === &#39;links&#39; and not page.title %}
++    {{- __(&#39;title.links&#39;) + page_title_suffix }}
+  {%- else %}
+    {{- page.title + page_title_suffix }}
+  {%- endif %}
+{% endblock %}
+</code></pre><p>接下来在下面的<code>PAGE BODY</code>中添加</p>
+<pre tabindex="0"><code class="language-njk" data-lang="njk">{### PAGE BODY ###}
+      {#################}
+      &lt;div class=&#34;post-body{% if page.direction and page.direction.toLowerCase() === &#39;rtl&#39; %} rtl{% endif %}&#34;&gt;
+        {%- if page.type === &#39;tags&#39; %}
+          {%- include &#39;_partials/page/tags.njk&#39; -%}
+        {% elif page.type === &#39;categories&#39; %}
+          {%- include &#39;_partials/page/categories.njk&#39; -%}
+        {% elif page.type === &#39;schedule&#39; %}
+          {%- include &#39;_partials/page/schedule.njk&#39; -%}
++        {% elif page.type === &#39;links&#39; %}
++          {%- include &#39;links.njk&#39; -%}
+        {% else %}
+          {{ page.content }}
+        {%- endif %}
+      &lt;/div&gt;
+      {#####################}
+      {### END PAGE BODY ###}
+      {#####################}
+</code></pre><p>接下来和创建tags、about页一样，使用<code>hexo new page links</code>创建一个新页面，修改<code>index.md</code>添加申请信息和其他你想写在友链里的，设置type为links</p>
+<p>最后在<code>hexo/source/</code>创建一个目录<code>_data</code>，里面再创建一个<code>links.yml</code>文件并填入以下内容</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#75715e"># 参数说明</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># class_name 选填，可以理解为友链组的名字，如果不填则会在顶部生成一个分割线</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># nickname 博客名称</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># site 博客地址</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># info 博客简介</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># avatar 博客logo</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 填写时注意缩进！</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">class_name</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">link_list</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">nickname</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">site</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">info</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">avatar</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">nickname</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">site</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">info</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">avatar</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">class_name</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">link_list</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">nickname</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">site</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">info</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">avatar</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">nickname</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">site</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">info</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">avatar</span>:
+</span></span></code></pre></div><p>然后找到<strong>Menu</strong>区域，按照格式增加一个友链页面；完成后找到<code>languages/zh-CN.yml</code>，在Menu区域中添加友链的汉化</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">links</span>: <span style="color:#ae81ff">友链</span>
+</span></span></code></pre></div><p>即可完成配置，以后想增加友链只需要在<code>_config.yml</code>中增添信息即可</p>
+<h3 id="随笔">随笔</h3>
+<p>有时我们可能想说点什么，但太短了成不了文章，于是我打算创建一个随笔页，专门记录短篇的文章</p>
+<ol>
+<li>使用<code>hexo new page essay</code>创建一个随笔页</li>
+<li>修改<code>source/essay/index.md</code>里的内容，修改标题并添加上<code>type: essay</code></li>
+<li>在主题配置文件中的<strong>Menu</strong>区域添加上随笔页</li>
+<li>在<code>languages/zh-CN.yml</code>中添加友链的翻译即可</li>
+</ol>
+<p>之后我们就可以在index.md中写文章了，但是看空想大佬的说说比我要好看，大佬没公布教程，我也没敢直接要，只能用折中的办法了</p>
+<h2 id="域名绑定">域名绑定</h2>
+<p>因为.xyz续费太贵，本身对这个域名也不是很满意，于是，一天前，我重新注册了一个新的域名<code>inuya.ltd</code>，并将他与我的博客绑定</p>
+<ol>
+<li>要绑定域名，我们首先设置一个CNAME解析，将它指向原本的博客链接，再设置一个AAAA，通过<code>ping username.github.io</code>获取ipv6地址</li>
+<li>然后在你博客的<code>source</code>目录创建一个名为<code>CNAME</code>的文件，填入你的域名</li>
+<li>在你的设置中找到page/Custom domain，填入你的域名，点击save即可</li>
+</ol>
+<p>设置完后使用原本的username.github.io会重定向到你的网站；尝试用你的域名访问，看能否访问成功</p>
+<h2 id="google收录">Google收录</h2>
+<p>因为next的配置里带有收录的配置，所以我们只要选择HTML标记<br>
+将<code>content=</code>后面的内容复制到主题<code>_config.yml</code>中的<code>google_site_verification:</code></p>
+<p>然后再使用<code>hexo clean &amp;&amp; hexo g</code> <code>hexo d</code>部署到Github即可完成验证，bing同理</p>
+<h2 id="参考引用">参考|引用</h2>
+<ul>
+<li><a href="https://blog.csdn.net/Mancuojie/article/details/119906071">【Hexo】域名绑定篇</a></li>
+<li><a href="https://blog.fufu.ink/2023/05/improvefdlinks.html">空想笔记</a></li>
+</ul>
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/hexo/">Hexo</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+      <div class="toc">
+        <strong>Table of contents:</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#next主题">Next主题</a>
+      <ul>
+        <li><a href="#评论">评论</a></li>
+        <li><a href="#文章关闭评论">文章关闭评论</a></li>
+        <li><a href="#友链">友链</a></li>
+        <li><a href="#随笔">随笔</a></li>
+      </ul>
+    </li>
+    <li><a href="#域名绑定">域名绑定</a></li>
+    <li><a href="#google收录">Google收录</a></li>
+    <li><a href="#参考引用">参考|引用</a></li>
+  </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://github.com/inuyasha-660" rel="me" title="GitHub"><svg class="feather">
+       <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
+    </svg></a><a class="border"></a></div>
+  <div class="footer-info">
+    2026  © Croyoux Lite |  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</footer>
+
+</div>
+    </body>
+</html>

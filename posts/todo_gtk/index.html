@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>用 gtk4 写 todo - croyoux&#39;s blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="终于考完了，期末考9科实在是太折磨了；发现自己很久没写文章了，上次更新还在去年，最近都在探索gtk，
+就顺便写一篇记录下成果。
+工具
+gtk主要参考的就是官方的API reference，目前支持gtk3-4(我想也没人会去用gtk3以前的版本)的内容；其中包含
+一个Widget Gallery，里面有所有当前版本的控件介绍和API。
+官方的文档我认为还是很详细的，但有时候不清楚怎么使用时也还是需要去搜索用例，官方的文档一般不包含示例
+IDE
+和gtk有关的ide我目前找到的是Gnome Builder，介绍说是Gnome环境下的开发工具；我曾经用它编写过一些小
+项目，但我认为它的补全和插件都不够完善，所以转而使用Vscode。
+真要说起来，gtk的编写应该只需要一个文本编辑器，gtk4的大部分函数名都比较好记，这方面IDE也只是方便补全一些变量和函数名，提供高亮支持
+构建工具
+和上文说的一样，你可以选择不使用任何构建工具，使用pkg-config查找依赖和cflags后手动编译；但这样太过原始了，也不方便调试
+Meson
+Meson是gnome项目主要的编译工具，Gnome Builder也会默认安装此工具，它基于一个简单的构建配置生成build.ninja，有点像Cmake和Makefile。
+此外，在build目录下会生成compile_commands.json，clangd可以根据此文件提供高亮和补全支持；Meson还支持增量编译，比直接重新编译更快。
+Meson的文档中就包含构建gtk的示例，用dependency提供名称，Meson就能自动查找并引入依赖
+deps = [dependency(&#39;gtk4&#39;), dependency(&#39;libadwaita-1&#39;), dependency(&#39;libcjson&#39;)]
+libadwaita-1
+在依赖中引入Adw能让gtk应用更加现代化，符合Gnome的风格；使用方式和默认的gtk初始化相似
+g_autoptr (AdwApplication) app = NULL;
+app = adw_application_new (&#34;org.example.Hello&#34;, G_APPLICATION_DEFAULT_FLAGS);
+创建app并用adw_application_new()初始化；官方示例中的G_APPLICATION_FLAGS_NONE已被弃用，用G_APPLICATION_DEFAULT_FLAGS代替
+UI绘制
+我选择在ui.c中绘制ui，将app与home_ui绑定
+g_signal_connect (app, &#34;activate&#34;, G_CALLBACK (home_ui), NULL);
+搜索
+gtk提供了名为SearchEntry的控件用于搜索，还有一个信号GtkSearchEntry::search-changed，据文档说，
+
+To make filtering appear more reactive, it is a good idea to not react to every change in the entry text immediately, but only after a short delay" />
+	<meta property="og:image" content="http://localhost:1313/"/>
+	<meta property="og:url" content="http://localhost:1313/posts/todo_gtk/">
+  <meta property="og:site_name" content="croyoux&#39;s blog">
+  <meta property="og:title" content="用 gtk4 写 todo">
+  <meta property="og:description" content="终于考完了，期末考9科实在是太折磨了；发现自己很久没写文章了，上次更新还在去年，最近都在探索gtk， 就顺便写一篇记录下成果。
+工具 gtk主要参考的就是官方的API reference，目前支持gtk3-4(我想也没人会去用gtk3以前的版本)的内容；其中包含 一个Widget Gallery，里面有所有当前版本的控件介绍和API。
+官方的文档我认为还是很详细的，但有时候不清楚怎么使用时也还是需要去搜索用例，官方的文档一般不包含示例
+IDE 和gtk有关的ide我目前找到的是Gnome Builder，介绍说是Gnome环境下的开发工具；我曾经用它编写过一些小 项目，但我认为它的补全和插件都不够完善，所以转而使用Vscode。
+真要说起来，gtk的编写应该只需要一个文本编辑器，gtk4的大部分函数名都比较好记，这方面IDE也只是方便补全一些变量和函数名，提供高亮支持
+构建工具 和上文说的一样，你可以选择不使用任何构建工具，使用pkg-config查找依赖和cflags后手动编译；但这样太过原始了，也不方便调试
+Meson Meson是gnome项目主要的编译工具，Gnome Builder也会默认安装此工具，它基于一个简单的构建配置生成build.ninja，有点像Cmake和Makefile。
+此外，在build目录下会生成compile_commands.json，clangd可以根据此文件提供高亮和补全支持；Meson还支持增量编译，比直接重新编译更快。
+Meson的文档中就包含构建gtk的示例，用dependency提供名称，Meson就能自动查找并引入依赖
+deps = [dependency(&#39;gtk4&#39;), dependency(&#39;libadwaita-1&#39;), dependency(&#39;libcjson&#39;)] libadwaita-1 在依赖中引入Adw能让gtk应用更加现代化，符合Gnome的风格；使用方式和默认的gtk初始化相似
+g_autoptr (AdwApplication) app = NULL; app = adw_application_new (&#34;org.example.Hello&#34;, G_APPLICATION_DEFAULT_FLAGS); 创建app并用adw_application_new()初始化；官方示例中的G_APPLICATION_FLAGS_NONE已被弃用，用G_APPLICATION_DEFAULT_FLAGS代替
+UI绘制 我选择在ui.c中绘制ui，将app与home_ui绑定
+g_signal_connect (app, &#34;activate&#34;, G_CALLBACK (home_ui), NULL); 搜索 gtk提供了名为SearchEntry的控件用于搜索，还有一个信号GtkSearchEntry::search-changed，据文档说，
+To make filtering appear more reactive, it is a good idea to not react to every change in the entry text immediately, but only after a short delay">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-07-05T14:25:31+08:00">
+    <meta property="article:modified_time" content="2025-07-05T14:25:31+08:00">
+    <meta property="article:tag" content="C">
+    <meta property="article:tag" content="Gtk">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="用 gtk4 写 todo">
+  <meta name="twitter:description" content="终于考完了，期末考9科实在是太折磨了；发现自己很久没写文章了，上次更新还在去年，最近都在探索gtk， 就顺便写一篇记录下成果。
+工具 gtk主要参考的就是官方的API reference，目前支持gtk3-4(我想也没人会去用gtk3以前的版本)的内容；其中包含 一个Widget Gallery，里面有所有当前版本的控件介绍和API。
+官方的文档我认为还是很详细的，但有时候不清楚怎么使用时也还是需要去搜索用例，官方的文档一般不包含示例
+IDE 和gtk有关的ide我目前找到的是Gnome Builder，介绍说是Gnome环境下的开发工具；我曾经用它编写过一些小 项目，但我认为它的补全和插件都不够完善，所以转而使用Vscode。
+真要说起来，gtk的编写应该只需要一个文本编辑器，gtk4的大部分函数名都比较好记，这方面IDE也只是方便补全一些变量和函数名，提供高亮支持
+构建工具 和上文说的一样，你可以选择不使用任何构建工具，使用pkg-config查找依赖和cflags后手动编译；但这样太过原始了，也不方便调试
+Meson Meson是gnome项目主要的编译工具，Gnome Builder也会默认安装此工具，它基于一个简单的构建配置生成build.ninja，有点像Cmake和Makefile。
+此外，在build目录下会生成compile_commands.json，clangd可以根据此文件提供高亮和补全支持；Meson还支持增量编译，比直接重新编译更快。
+Meson的文档中就包含构建gtk的示例，用dependency提供名称，Meson就能自动查找并引入依赖
+deps = [dependency(&#39;gtk4&#39;), dependency(&#39;libadwaita-1&#39;), dependency(&#39;libcjson&#39;)] libadwaita-1 在依赖中引入Adw能让gtk应用更加现代化，符合Gnome的风格；使用方式和默认的gtk初始化相似
+g_autoptr (AdwApplication) app = NULL; app = adw_application_new (&#34;org.example.Hello&#34;, G_APPLICATION_DEFAULT_FLAGS); 创建app并用adw_application_new()初始化；官方示例中的G_APPLICATION_FLAGS_NONE已被弃用，用G_APPLICATION_DEFAULT_FLAGS代替
+UI绘制 我选择在ui.c中绘制ui，将app与home_ui绑定
+g_signal_connect (app, &#34;activate&#34;, G_CALLBACK (home_ui), NULL); 搜索 gtk提供了名为SearchEntry的控件用于搜索，还有一个信号GtkSearchEntry::search-changed，据文档说，
+To make filtering appear more reactive, it is a good idea to not react to every change in the entry text immediately, but only after a short delay">
+
+        <link href="http://localhost:1313/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"   /><link rel="stylesheet" href="http://localhost:1313/katex/katex.min.css ">
+		<script defer src="http://localhost:1313/katex/katex.min.js"></script>
+		<script defer src="http://localhost:1313/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+		</script>
+		
+		
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
+		
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">croyoux&#39;s blog</a>
+	</div>
+	<nav>
+		
+		<a href="/posts">Archive</a>
+		
+		<a href="/tags">Tags</a>
+		
+		<a href="/friends">Friends</a>
+		
+		<a href="/about">About</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">用 gtk4 写 todo</h1>
+          <div class="meta">Posted on Jul 5, 2025</div>
+        </div>
+        
+        <section class="body">
+          <p>终于考完了，期末考9科实在是太折磨了；发现自己很久没写文章了，上次更新还在去年，最近都在探索gtk，
+就顺便写一篇记录下成果。</p>
+<h2 id="工具">工具</h2>
+<p>gtk主要参考的就是官方的<a href="https://docs.gtk.org/gtk4/">API reference</a>，目前支持gtk3-4(我想也没人会去用gtk3以前的版本)的内容；其中包含
+一个<a href="https://docs.gtk.org/gtk4/visual_index.html">Widget Gallery</a>，里面有所有当前版本的控件介绍和API。</p>
+<p>官方的文档我认为还是很详细的，但有时候不清楚怎么使用时也还是需要去搜索用例，官方的文档一般不包含示例</p>
+<h3 id="ide">IDE</h3>
+<p>和gtk有关的ide我目前找到的是<a href="https://apps.gnome.org/Builder/">Gnome Builder</a>，介绍说是Gnome环境下的开发工具；我曾经用它编写过一些小
+项目，但我认为它的补全和插件都不够完善，所以转而使用Vscode。</p>
+<p>真要说起来，gtk的编写应该只需要一个文本编辑器，gtk4的大部分函数名都比较好记，这方面IDE也只是方便补全一些变量和函数名，提供高亮支持</p>
+<h3 id="构建工具">构建工具</h3>
+<p>和上文说的一样，你可以选择不使用任何构建工具，使用<code>pkg-config</code>查找依赖和<code>cflags</code>后手动编译；但这样太过原始了，也不方便调试</p>
+<h4 id="meson">Meson</h4>
+<p>Meson是gnome项目主要的编译工具，Gnome Builder也会默认安装此工具，它基于一个简单的构建配置生成<code>build.ninja</code>，有点像Cmake和Makefile。</p>
+<p>此外，在build目录下会生成<code>compile_commands.json</code>，clangd可以根据此文件提供高亮和补全支持；Meson还支持增量编译，比直接重新编译更快。</p>
+<p>Meson的文档中就包含构建gtk的示例，用<code>dependency</code>提供名称，Meson就能自动查找并引入依赖</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-meson" data-lang="meson"><span style="display:flex;"><span>deps <span style="color:#f92672">=</span> [dependency(<span style="color:#e6db74">&#39;gtk4&#39;</span>), dependency(<span style="color:#e6db74">&#39;libadwaita-1&#39;</span>), dependency(<span style="color:#e6db74">&#39;libcjson&#39;</span>)]
+</span></span></code></pre></div><h2 id="libadwaita-1">libadwaita-1</h2>
+<p>在依赖中引入<code>Adw</code>能让gtk应用更加现代化，符合Gnome的风格；使用方式和默认的gtk初始化相似</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">g_autoptr</span> (AdwApplication) app <span style="color:#f92672">=</span> NULL;
+</span></span><span style="display:flex;"><span>app <span style="color:#f92672">=</span> <span style="color:#a6e22e">adw_application_new</span> (<span style="color:#e6db74">&#34;org.example.Hello&#34;</span>, G_APPLICATION_DEFAULT_FLAGS);
+</span></span></code></pre></div><p>创建<code>app</code>并用<code>adw_application_new()</code>初始化；官方示例中的<code>G_APPLICATION_FLAGS_NONE</code>已被弃用，用<code>G_APPLICATION_DEFAULT_FLAGS</code>代替</p>
+<h2 id="ui绘制">UI绘制</h2>
+<p>我选择在<code>ui.c</code>中绘制ui，将<code>app</code>与<code>home_ui</code>绑定</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">g_signal_connect</span> (app, <span style="color:#e6db74">&#34;activate&#34;</span>, <span style="color:#a6e22e">G_CALLBACK</span> (home_ui), NULL);
+</span></span></code></pre></div><h3 id="搜索">搜索</h3>
+<p>gtk提供了名为<code>SearchEntry</code>的控件用于搜索，还有一个信号<code>GtkSearchEntry::search-changed</code>，据文档说，</p>
+<blockquote>
+<p>To make filtering appear more reactive, it is a good idea to not react to every change in the entry text immediately, but only after a short delay</p>
+</blockquote>
+<p>也就是延迟操作输入的内容</p>
+<h4 id="输入处理">输入处理</h4>
+<p>在获取到查询内容后，先删除原有的todo，再循环匹配所有目标类型的符合todo</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">strcmp</span> (Todo_s.type[i], Todo_type)) <span style="color:#75715e">// 目标类型
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">strstr</span> (Todo_s.event[i], target) <span style="color:#f92672">!=</span> NULL) <span style="color:#75715e">// 包含输入的todo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    {
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>再分别处理<code>done</code>和<code>undone</code>类型的todo</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">strcmp</span> (Todo_type, <span style="color:#e6db74">&#34;done&#34;</span>))
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">gtk_check_button_set_active</span> (<span style="color:#a6e22e">GTK_CHECK_BUTTON</span> (ckbox_todo), true); <span style="color:#75715e">// 设置状态为true(已完成)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">gtk_widget_set_sensitive</span> (ckbox_todo, FALSE); <span style="color:#75715e">// 将checkbox设为非敏感
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">g_signal_connect</span> (ckbox_todo, <span style="color:#e6db74">&#34;toggled&#34;</span>, <span style="color:#a6e22e">G_CALLBACK</span> (change_todo_to_done), NULL);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="样式">样式</h3>
+<p>gtk支持用类css格式设置控件的样式，如字体大小，背景等</p>
+<p>我也不知道怎么翻译provider更好，就当作css样式的提供者</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>GtkCssProvider <span style="color:#f92672">*</span>provider;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>provider <span style="color:#f92672">=</span> <span style="color:#a6e22e">gtk_css_provider_new</span> ();
+</span></span></code></pre></div><p>加载样式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">gtk_css_provider_load_from_string</span> (provider, <span style="color:#e6db74">&#34;checkbutton {&#34;</span>
+</span></span><span style="display:flex;"><span>                                                 <span style="color:#e6db74">&#34; font-size: 22px;&#34;</span>
+</span></span><span style="display:flex;"><span>                                                 <span style="color:#e6db74">&#34; background-color: #322f3b;&#34;</span>
+</span></span><span style="display:flex;"><span>                                                 <span style="color:#e6db74">&#34; border-radius: 10px;&#34;</span>
+</span></span><span style="display:flex;"><span>                                                 <span style="color:#e6db74">&#34;}&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gtk_style_context_add_provider_for_display</span> (<span style="color:#a6e22e">gdk_display_get_default</span> (), <span style="color:#a6e22e">GTK_STYLE_PROVIDER</span> (provider),
+</span></span><span style="display:flex;"><span>                                                GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+</span></span></code></pre></div><p>也可以直接用<code>gtk_widget_set_size_request()</code>函数调整大小</p>
+<h2 id="添加todo">添加todo</h2>
+<p>点击添加时在中间创建<code>Entey</code>和<code>Button</code>，点击<code>取消</code>或<code>确定</code>时删除</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">gtk_center_box_set_center_widget</span> (<span style="color:#a6e22e">GTK_CENTER_BOX</span> (Cntbox), NULL);
+</span></span></code></pre></div><h3 id="删除控件">删除控件</h3>
+<p>容器中包含删除函数，可以用<code>gtk_widget_get_first_child (&lt;Containers)</code>获取控件后用<code>gtk_box_remove (GTK_&lt;CONTAINER&gt; (&lt;Container&gt;), widget)</code>删除</p>
+<h2 id="成品">成品</h2>
+<p>完成后的效果如下</p>
+<p><img src="https://gitlab.com/croy_proj/todo_gtk/-/raw/main/todo_gtk.png?ref_type=heads" alt="todo_gtk">
+有点粗糙，有一些想实现的功能搁置了，后续慢慢更新吧</p>
+<p>Gitlab: <a href="https://gitlab.com/croy_proj/todo_gtk">todo_gtk</a></p>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/c/">c</a></li>
+              
+              <li><a href="/tags/gtk/">gtk</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+      <div class="toc">
+        <strong>Table of contents:</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#工具">工具</a>
+      <ul>
+        <li><a href="#ide">IDE</a></li>
+        <li><a href="#构建工具">构建工具</a></li>
+      </ul>
+    </li>
+    <li><a href="#libadwaita-1">libadwaita-1</a></li>
+    <li><a href="#ui绘制">UI绘制</a>
+      <ul>
+        <li><a href="#搜索">搜索</a></li>
+        <li><a href="#样式">样式</a></li>
+      </ul>
+    </li>
+    <li><a href="#添加todo">添加todo</a>
+      <ul>
+        <li><a href="#删除控件">删除控件</a></li>
+      </ul>
+    </li>
+    <li><a href="#成品">成品</a></li>
+  </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://github.com/inuyasha-660" rel="me" title="GitHub"><svg class="feather">
+       <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
+    </svg></a><a class="border"></a></div>
+  <div class="footer-info">
+    2026  © Croyoux Lite |  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</footer>
+
+</div>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on croyoux&#39;s blog</title>
+    <link>http://localhost:1313/categories/</link>
+    <description>Recent content in Categories on croyoux&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>© Croyoux Lite</copyright>
+    <lastBuildDate>Sun, 05 Nov 2023 13:23:01 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo</title>
+      <link>http://localhost:1313/categories/hugo/</link>
+      <pubDate>Sun, 05 Nov 2023 13:23:01 +0000</pubDate>
+      <guid>http://localhost:1313/categories/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>开发板</title>
+      <link>http://localhost:1313/categories/%E5%BC%80%E5%8F%91%E6%9D%BF/</link>
+      <pubDate>Wed, 23 Aug 2023 18:21:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/%E5%BC%80%E5%8F%91%E6%9D%BF/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

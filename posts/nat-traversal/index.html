@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Frp自建内网穿透 - croyoux&#39;s blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="这几天一直在折腾内网穿透的事，原因很简单，服务器的ROM不够大，又没钱升级配置，又拍云的免费OSS不备案无法绑定域名，免费的内网穿透速率太小了，更别提还有流量限制
+想了想貌似只能自己建一个了，刚好手里有吃灰的Orangepi Zeor3，买的时候配了张128G的TF卡，虽然速度一般，但对于我来说是绰绰有余了
+frp
+提到内网穿透，想到的肯定是大名顶顶的frp，目前在Github上已有76.3K starred
+网上的很多文章大多是教你用基于frp的一键配置脚本，但试了几个发现都没用后决定自己尝试
+安装&amp;使用
+frp的安装很简单，参照文档的教程
+
+
+到Releases处下载适合的架构/系统的压缩包，解压到任意目录
+
+
+使用./frps -c ./frps.toml启动服务端
+
+
+使用./frpc -c ./frpc.toml启动客户端
+
+
+使用 systemd 开机自启动
+如果断开ssh连接，frp服务也会断开;可以将它设置为开机自启
+
+(如果尚未安装)使用apt install systemd 安装，其他发行版使用其包管理器即可
+编辑/etc/systemd/system/frps.service创建frp服务配置，写入以下内容
+
+[Unit]
+# 服务名称，可自定义
+Description = frp server
+After = network.target syslog.target
+Wants = network.target
+
+[Service]
+Type = simple
+# 启动frps的命令，需修改为您的frps的安装路径
+ExecStart = /path/to/frps -c /path/to/frps.toml
+
+[Install]
+WantedBy = multi-user.target
+3.管理命令
+# 启动frp
+sudo systemctl start frps
+# 停止frp
+sudo systemctl stop frps
+# 重启frp
+sudo systemctl restart frps
+# 查看frp状态
+sudo systemctl status frps
+# 开机自启动
+sudo systemctl enable frps
+之后的frpc也是大同小异，只需要更改名字和位置即可" />
+	<meta property="og:image" content="http://localhost:1313/"/>
+	<meta property="og:url" content="http://localhost:1313/posts/nat-traversal/">
+  <meta property="og:site_name" content="croyoux&#39;s blog">
+  <meta property="og:title" content="Frp自建内网穿透">
+  <meta property="og:description" content="这几天一直在折腾内网穿透的事，原因很简单，服务器的ROM不够大，又没钱升级配置，又拍云的免费OSS不备案无法绑定域名，免费的内网穿透速率太小了，更别提还有流量限制
+想了想貌似只能自己建一个了，刚好手里有吃灰的Orangepi Zeor3，买的时候配了张128G的TF卡，虽然速度一般，但对于我来说是绰绰有余了
+frp 提到内网穿透，想到的肯定是大名顶顶的frp，目前在Github上已有76.3K starred
+网上的很多文章大多是教你用基于frp的一键配置脚本，但试了几个发现都没用后决定自己尝试
+安装&amp;使用 frp的安装很简单，参照文档的教程
+到Releases处下载适合的架构/系统的压缩包，解压到任意目录
+使用./frps -c ./frps.toml启动服务端
+使用./frpc -c ./frpc.toml启动客户端
+使用 systemd 开机自启动 如果断开ssh连接，frp服务也会断开;可以将它设置为开机自启
+(如果尚未安装)使用apt install systemd 安装，其他发行版使用其包管理器即可 编辑/etc/systemd/system/frps.service创建frp服务配置，写入以下内容 [Unit] # 服务名称，可自定义 Description = frp server After = network.target syslog.target Wants = network.target [Service] Type = simple # 启动frps的命令，需修改为您的frps的安装路径 ExecStart = /path/to/frps -c /path/to/frps.toml [Install] WantedBy = multi-user.target 3.管理命令
+# 启动frp sudo systemctl start frps # 停止frp sudo systemctl stop frps # 重启frp sudo systemctl restart frps # 查看frp状态 sudo systemctl status frps # 开机自启动 sudo systemctl enable frps 之后的frpc也是大同小异，只需要更改名字和位置即可">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-01-22T18:20:30+00:00">
+    <meta property="article:modified_time" content="2024-01-22T18:20:30+00:00">
+    <meta property="article:tag" content="图床">
+    <meta property="article:tag" content="Linux">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Frp自建内网穿透">
+  <meta name="twitter:description" content="这几天一直在折腾内网穿透的事，原因很简单，服务器的ROM不够大，又没钱升级配置，又拍云的免费OSS不备案无法绑定域名，免费的内网穿透速率太小了，更别提还有流量限制
+想了想貌似只能自己建一个了，刚好手里有吃灰的Orangepi Zeor3，买的时候配了张128G的TF卡，虽然速度一般，但对于我来说是绰绰有余了
+frp 提到内网穿透，想到的肯定是大名顶顶的frp，目前在Github上已有76.3K starred
+网上的很多文章大多是教你用基于frp的一键配置脚本，但试了几个发现都没用后决定自己尝试
+安装&amp;使用 frp的安装很简单，参照文档的教程
+到Releases处下载适合的架构/系统的压缩包，解压到任意目录
+使用./frps -c ./frps.toml启动服务端
+使用./frpc -c ./frpc.toml启动客户端
+使用 systemd 开机自启动 如果断开ssh连接，frp服务也会断开;可以将它设置为开机自启
+(如果尚未安装)使用apt install systemd 安装，其他发行版使用其包管理器即可 编辑/etc/systemd/system/frps.service创建frp服务配置，写入以下内容 [Unit] # 服务名称，可自定义 Description = frp server After = network.target syslog.target Wants = network.target [Service] Type = simple # 启动frps的命令，需修改为您的frps的安装路径 ExecStart = /path/to/frps -c /path/to/frps.toml [Install] WantedBy = multi-user.target 3.管理命令
+# 启动frp sudo systemctl start frps # 停止frp sudo systemctl stop frps # 重启frp sudo systemctl restart frps # 查看frp状态 sudo systemctl status frps # 开机自启动 sudo systemctl enable frps 之后的frpc也是大同小异，只需要更改名字和位置即可">
+
+        <link href="http://localhost:1313/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"   /><link rel="stylesheet" href="http://localhost:1313/katex/katex.min.css ">
+		<script defer src="http://localhost:1313/katex/katex.min.js"></script>
+		<script defer src="http://localhost:1313/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+		</script>
+		
+		
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
+		
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">croyoux&#39;s blog</a>
+	</div>
+	<nav>
+		
+		<a href="/posts">Archive</a>
+		
+		<a href="/tags">Tags</a>
+		
+		<a href="/friends">Friends</a>
+		
+		<a href="/about">About</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">Frp自建内网穿透</h1>
+          <div class="meta">Posted on Jan 22, 2024</div>
+        </div>
+        
+        <section class="body">
+          <p>这几天一直在折腾内网穿透的事，原因很简单，服务器的ROM不够大，又没钱升级配置，又拍云的免费OSS不备案无法绑定域名，免费的内网穿透速率太小了，更别提还有流量限制</p>
+<p>想了想貌似只能自己建一个了，刚好手里有吃灰的Orangepi Zeor3，买的时候配了张128G的TF卡，虽然速度一般，但对于我来说是绰绰有余了</p>
+<h2 id="frp">frp</h2>
+<p>提到内网穿透，想到的肯定是大名顶顶的<strong>frp</strong>，目前在Github上已有76.3K starred</p>
+<p>网上的很多文章大多是教你用基于frp的一键配置脚本，但试了几个发现都没用后决定自己尝试</p>
+<h3 id="安装使用">安装&amp;使用</h3>
+<p>frp的安装很简单，参照<a href="https://gofrp.org/zh-cn/">文档</a>的教程</p>
+<ol>
+<li>
+<p>到<a href="https://github.com/fatedier/frp/releases/tag/v0.53.2">Releases</a>处下载适合的架构/系统的压缩包，解压到任意目录</p>
+</li>
+<li>
+<p>使用<code>./frps -c ./frps.toml</code>启动服务端</p>
+</li>
+<li>
+<p>使用<code>./frpc -c ./frpc.toml</code>启动客户端</p>
+</li>
+</ol>
+<h3 id="使用-systemd-开机自启动">使用 systemd 开机自启动</h3>
+<p>如果断开ssh连接，frp服务也会断开;可以将它设置为开机自启</p>
+<ol>
+<li>(如果尚未安装)使用<code>apt install systemd </code>安装，其他发行版使用其包管理器即可</li>
+<li>编辑<code>/etc/systemd/system/frps.service</code>创建frp服务配置，写入以下内容</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-service" data-lang="service"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 服务名称，可自定义</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description </span><span style="color:#f92672">=</span><span style="color:#e6db74"> frp server</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">After </span><span style="color:#f92672">=</span><span style="color:#e6db74"> network.target syslog.target</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Wants </span><span style="color:#f92672">=</span><span style="color:#e6db74"> network.target</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Type </span><span style="color:#f92672">=</span><span style="color:#e6db74"> simple</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 启动frps的命令，需修改为您的frps的安装路径</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart </span><span style="color:#f92672">=</span><span style="color:#e6db74"> /path/to/frps -c /path/to/frps.toml</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy </span><span style="color:#f92672">=</span><span style="color:#e6db74"> multi-user.target</span>
+</span></span></code></pre></div><p>3.管理命令</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 启动frp</span>
+</span></span><span style="display:flex;"><span>sudo systemctl start frps
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 停止frp</span>
+</span></span><span style="display:flex;"><span>sudo systemctl stop frps
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 重启frp</span>
+</span></span><span style="display:flex;"><span>sudo systemctl restart frps
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看frp状态</span>
+</span></span><span style="display:flex;"><span>sudo systemctl status frps
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 开机自启动</span>
+</span></span><span style="display:flex;"><span>sudo systemctl enable frps
+</span></span></code></pre></div><p>之后的frpc也是大同小异，只需要更改名字和位置即可</p>
+<h3 id="配置">配置</h3>
+<p>重点来了，frp有两个配置，一个<code>frps.toml</code>用于服务端，一个<code>frpc.toml</code>用于客户端</p>
+<ol>
+<li>配置frps.toml</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">bindPort</span> = <span style="color:#ae81ff">7000</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">vhostHTTPPort</span> = <span style="color:#ae81ff">7890</span>
+</span></span></code></pre></div><p><code>bindPort</code>不用管，<code>vhostHTTPPort</code>为连接的端口，默认为8080,但端口被我的评论占用了，所以改成7890</p>
+<p>如像我这样，配置完后可以通过<code>http://www.yourdomain.com:7890</code>访问</p>
+<ol start="2">
+<li>配置frpc.toml</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">serverAddr</span> = <span style="color:#e6db74">&#34;x.x.x.x&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">serverPort</span> = <span style="color:#ae81ff">7000</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[[<span style="color:#a6e22e">proxies</span>]]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">name</span> = <span style="color:#e6db74">&#34;image-hosting&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">type</span> = <span style="color:#e6db74">&#34;http&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">localIP</span> = <span style="color:#e6db74">&#34;192.168.xx.xxx&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">localPort</span> = <span style="color:#ae81ff">7890</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">customDomains</span> = [<span style="color:#e6db74">&#34;www.example.com&#34;</span>]
+</span></span></code></pre></div><p>serverAddr: 服务器IP</p>
+<p>name: 取一个好记的名字</p>
+<p>type: 因为要搭建网站所以选择http</p>
+<p>localIP: 本机IP</p>
+<p>localPort: 内网服务部署端口</p>
+<p>customDomains: 绑定的域名</p>
+<p>PS: 原本还有一个<code>remotePort = 6000</code>配置，看到文档没有就删了，实测没有影响</p>
+<p>将和 <a href="https://www.example.com">www.example.com</a> 的域名 A 记录解析到服务器的 IP 地址<code>x.x.x.x</code></p>
+<p>访问<code>www.example.com:7890</code>即可访问内网机器上的<code>7890</code>服务</p>
+<h3 id="nginx配置">Nginx配置</h3>
+<p>不得不说Nginx真是好用，配置方便，功能强大; 配置完frp,接下来就是nginx</p>
+<p>因为上面只进行了内网穿透，内网的机器还需要配置nginx来显示网站</p>
+<ol>
+<li>还没有安装的在等什么，使用<code>apt install nginx</code>安装nginx</li>
+<li>在<code>etc/nginx/conf.d/</code>文件夹内添加配置文件，文件名随意，以<code>.conf</code>作为拓展名</li>
+<li>增添配置，以下为我的配置</li>
+</ol>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">server {
+    listen 7890;
+    server_name www.example.com;
+    root /home/image-hosting;
+
+    fancyindex on;            
+    fancyindex_exact_size off; 
+    fancyindex_localtime on; 
+    fancyindex_name_length 255; 
+    fancyindex_time_format &#34;%Y-%m-%d %H:%M:%S&#34;;
+
+    location / {
+    }
+}
+</code></pre><p>listen: 监听7890端口</p>
+<p>server_name: 绑定的域名</p>
+<p>root: 网站所在文件夹</p>
+<p>以下配置开启文件引索，若无需求可以忽略</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf"> fancyindex on;            
+    fancyindex_exact_size on; 
+    fancyindex_localtime on; 
+    fancyindex_name_length 255; 
+    fancyindex_time_format &#34;%Y-%m-%d %H:%M:%S&#34;;
+</code></pre><p>再一次尝试访问<code>www.example.com:7890</code>查看是否正常显示</p>
+<h4 id="去端口访问">去端口访问</h4>
+<p>整天带端口访问太丑了，可以使用nginx的反向代理功能解决，原理就是在服务器上套层nginx，将<code>www.example.com</code>反向代理至<code>www.example.com:7890</code></p>
+<p>以下是我的配置</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">server {
+    listen 80;
+    server_name www.example.com; # 设置的域名
+    location / {
+             proxy_pass  http://www.example.com:7890; # 反向代理至8080端口
+    }
+}
+</code></pre><p>配置完尝试使用<code>www.example.com</code>访问</p>
+<h3 id="https">HTTPS</h3>
+<p>虽然现在已经可以较为优雅地访问了，但因为缺少ssl证书，每次访问都给我警告</p>
+<p>frp支持为本地 HTTP 服务启用 HTTPS，但需要自行下载证书到内网机器，而且无法使用像certbot这样的工具，所以我选择在服务器的Nginx配置证书</p>
+<p>关于如何获取证书，我的<a href="https://blog.inuya.ltd/posts/winter/">上上篇文章</a>已经讲的很清楚了，下面是我的配置</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">server {
+    listen 80;
+    server_name img.inuya.ltd; # 设置的域名
+    location / {
+             proxy_pass  http://img.inuya.ltd:7890; # 反向代理至7890端口
+    }
+}
+
+server {
+    listen 443;
+    server_name img.inuya.ltd;
+    ssl_certificate /etc/letsencrypt/live/img.inuya.ltd/fullchain.pem;  # 配置证书
+    ssl_certificate_key /etc/letsencrypt/live/img.inuya.ltd/privkey.pem;
+    ssl_session_timeout 5m;
+    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+    # 表示使用的加密套件的类型。
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2; # 表示使用的TLS协议的类型。
+    ssl_prefer_server_ciphers on;
+    location / {
+            proxy_pass http://img.inuya.ltd:7890;
+    }
+}
+</code></pre><h2 id="图床">图床</h2>
+<p>搞定了内网穿透，但怎么把图片显示出来呢，1P面板有个图床的docker镜像，用了下感觉很一般，不如自己建一个</p>
+<p>因为没学过前端，所以只能边学边建，写出来的东西也是漏洞百出，但最起码能用了</p>
+<h3 id="文件引索">文件引索</h3>
+<p>原本是想写一个文件引索，看了几篇文章都是无从下手，偶然看到一篇关闭<code>Apache</code>默认文件引索功能的文章，想到Nginx是否也有这个功能，找了一下还真有，只不过需要手动开启</p>
+<p>在内网机器的nginx配置中添加以下内容</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">server {
+    listen  80;
+    server_name 192.168.31.112;
+    root /home/image-hosting;
+    autoindex on;    	#启用或禁用目录列表输出
+    autoindex_format html； #设置目录列表的格式
+    autoindex_localtime on;  #指定目录列表中的时间是否应以本地时区或 UTC 输出
+    autoindex_exact_size off;  #是否应在目录列表中输出确切的文件大小
+}
+</code></pre><p>输入一个网站目录，看是否能浏览文件</p>
+<h3 id="嵌入引索">嵌入引索</h3>
+<p>因索有了，但我不想手动一个个翻图片，于是将它嵌入到了我的主页</p>
+<p>在代码中添加<code>&lt;iframe&gt;</code>标签即可嵌入一个网页，因为我想显示<code>Images</code>目录的引索，所以src中填入了<code>images/</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;div-pic&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;images/&#34;</span> <span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;100%&#34;</span> <span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;800px&#34;</span> <span style="color:#a6e22e">scrolling</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;auto&#34;</span> <span style="color:#a6e22e">framespacing</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">allowfullscreen</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>&gt; &lt;/<span style="color:#f92672">iframe</span>&gt;   
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><p>如果想要更换嵌入的网站，只需要修改<code>src=&quot;&quot;</code> 里的内容为目标网址即可</p>
+<h4 id="美化引索">美化引索</h4>
+<p>但这样还有一个问题，默认的引索在网站的背景是透明的，导致看不清文件名，CSS添加的背景太亮了，又偶然看见一篇用第三方模块来美化的文章</p>
+<p>使用<code>fancyindex</code>模块替代默认的引索，来达到美化的效果</p>
+<ol>
+<li><code>apt install libnginx-mod-http-fancyindex</code>安装模块</li>
+<li>修改/创建<code>/etc/nginx/conf.d/</code>下的配置，添加以下内容以开启引索</li>
+</ol>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">server {
+    listen 80;
+    server_name 192.168.31.112;
+    root /home/image-hosting;
+
+    fancyindex on;            
+    fancyindex_exact_size off; 
+    fancyindex_localtime on; 
+    fancyindex_name_length 255; 
+    fancyindex_time_format &#34;%Y-%m-%d %H:%M:%S&#34;;
+
+    location / {
+    }
+}
+</code></pre><p>返回网站，刷新即可看到新样式</p>
+<p>fancyindex还有许多主题可选，如<a href="https://github.com/Naereen/Nginx-Fancyindex-Theme">Nginx-Fancyindex-Theme</a>和<a href="https://github.com/alehaa/nginx-fancyindex-flat-theme">nginx-fancyindex-flat-theme</a></p>
+<p>也可以用<code>fancyindex</code>加<code>theme</code>关键字在Guthub搜索其他主题</p>
+<h2 id="补充">补充</h2>
+<p>其实内网穿透这个想法很早就有了，但一直搁置到现在;未来可能还会把Twikoo评论也放到开发板上，还是要看评论的人多不多</p>
+<p>最后祝大家玩得开心</p>
+<h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://nginx.org/en/docs/http/ngx_http_autoindex_module.html">Module ngx_http_autoindex_module</a></li>
+<li><a href="https://gofrp.org/zh-cn/">frp</a></li>
+</ul>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/%E5%9B%BE%E5%BA%8A/">图床</a></li>
+              
+              <li><a href="/tags/linux/">Linux</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+      <div class="toc">
+        <strong>Table of contents:</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#frp">frp</a>
+      <ul>
+        <li><a href="#安装使用">安装&amp;使用</a></li>
+        <li><a href="#使用-systemd-开机自启动">使用 systemd 开机自启动</a></li>
+        <li><a href="#配置">配置</a></li>
+        <li><a href="#nginx配置">Nginx配置</a></li>
+        <li><a href="#https">HTTPS</a></li>
+      </ul>
+    </li>
+    <li><a href="#图床">图床</a>
+      <ul>
+        <li><a href="#文件引索">文件引索</a></li>
+        <li><a href="#嵌入引索">嵌入引索</a></li>
+      </ul>
+    </li>
+    <li><a href="#补充">补充</a></li>
+  </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://github.com/inuyasha-660" rel="me" title="GitHub"><svg class="feather">
+       <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
+    </svg></a><a class="border"></a></div>
+  <div class="footer-info">
+    2026  © Croyoux Lite |  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</footer>
+
+</div>
+    </body>
+</html>

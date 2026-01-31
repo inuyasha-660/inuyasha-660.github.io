@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>博客迁移至hugo - croyoux&#39;s blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="博客迁移到hugo的记录" />
+	<meta property="og:image" content="http://localhost:1313/"/>
+	<meta property="og:url" content="http://localhost:1313/posts/hugo/">
+  <meta property="og:site_name" content="croyoux&#39;s blog">
+  <meta property="og:title" content="博客迁移至hugo">
+  <meta property="og:description" content="博客迁移到hugo的记录">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-11-05T13:23:01+00:00">
+    <meta property="article:modified_time" content="2023-11-05T13:23:01+00:00">
+    <meta property="article:tag" content="Hugo">
+    <meta property="article:tag" content="Nginx">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="博客迁移至hugo">
+  <meta name="twitter:description" content="博客迁移到hugo的记录">
+
+        <link href="http://localhost:1313/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"   /><link rel="stylesheet" href="http://localhost:1313/katex/katex.min.css ">
+		<script defer src="http://localhost:1313/katex/katex.min.js"></script>
+		<script defer src="http://localhost:1313/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+		</script>
+		
+		
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
+		
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">croyoux&#39;s blog</a>
+	</div>
+	<nav>
+		
+		<a href="/posts">Archive</a>
+		
+		<a href="/tags">Tags</a>
+		
+		<a href="/friends">Friends</a>
+		
+		<a href="/about">About</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">博客迁移至hugo</h1>
+          <div class="meta">Posted on Nov 5, 2023</div>
+        </div>
+        
+        <section class="body">
+          <p>前几天，因为一个主题，我把博客从hexo换成hugo，也就是现在看到的</p>
+<h2 id="迁移">迁移</h2>
+<p>hugo的操作比hexo要难，热门程度也不及hexo，所以遇到一些问题需要自己解决</p>
+<h3 id="安装">安装</h3>
+<p><code>go</code>和<code>hugo</code>已经存档于主流发行版的软件源中，使用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># Debian系</span>
+</span></span><span style="display:flex;"><span>sudo apt install golang hugo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Arch系</span>
+</span></span><span style="display:flex;"><span>sudo pacman -S go hugo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fedora</span>
+</span></span><span style="display:flex;"><span>sudo dnf install golang hugo
+</span></span></code></pre></div><p>安装go和带拓展的hugo</p>
+<p>更多安装说明请看 <a href="https://gohugo.io/installation/linux/">https://gohugo.io/installation/linux/</a></p>
+<h3 id="建站">建站</h3>
+<p>三连快速创建</p>
+<pre tabindex="0"><code class="language-command" data-lang="command">hugo new site &lt;sitename&gt;
+cd &lt;sitename&gt;
+git init
+</code></pre><p>这时候可以下载你喜欢的主题了，编辑<code>hugo.toml</code>，添加<code>theme = &quot;themename&quot;</code>指定主题</p>
+<h3 id="基础">基础</h3>
+<p>基础的指令和hexo差不多，不过原本的source变成了content，使用<code>hexo server</code>即可<br>
+如果提示<code>由于本地 development 环境的限制， 评论系统 , CDN 和 fingerprint 不会在 development 环境下启用。</code>，使用<code>hugo server -e production</code>更改环境即可</p>
+<p>文章直接复制过来就能用，不过tags和categories的书写方式有点不同</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>tags: 
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-</span> tags1
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-</span> tegs2
+</span></span><span style="display:flex;"><span>categories:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-</span> catrgories1
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-</span> categories2
+</span></span></code></pre></div><h2 id="部署">部署</h2>
+<p>hexo的部署很简单，<code>hexo g</code>生成页面<code>hexo d</code>部署，同样需要ssh key，而hugo需要手动push到repo</p>
+<pre tabindex="0"><code class="language-command" data-lang="command">hugo # 生成页面
+cd public
+git init # 初始化仓库
+git remote add origin &lt;repo link&gt;
+git add .
+git commit -m &#34;提交说明&#34;
+git push -u origin master
+</code></pre><p>这是访问域名，不出意外应该能看到你的博客</p>
+<h2 id="命令">命令</h2>
+<p>更新主题(FixIt)</p>
+<pre tabindex="0"><code class="language-command" data-lang="command">git submodule update --remote --merge
+</code></pre><h2 id="阿里云服务器">阿里云服务器</h2>
+<p>因为依然部署在Github Page，所以访问还是有点慢，于是我打开阿里云，想看看有什么便宜的服务器，突然看到免费试用三个月，这种好事怎么能错过</p>
+<h3 id="配置">配置</h3>
+<ul>
+<li>2核2GB或者2核4GB</li>
+<li>每月280元额度，3个月试用时长</li>
+</ul>
+<p>这配置搭建博客可谓是绰绰有余</p>
+<h2 id="主页导航页">主页(导航页)</h2>
+<p>域名目前只解析了博客，闲着也是闲着，不如建一个导航页</p>
+<h3 id="搭建">搭建</h3>
+<p>使用了<a href="https://github.com/kaygb/KZHomePage">KZHomePage</a>的主页，稍微配置下还是很好看的</p>
+<ol>
+<li>将仓库git到你的服务器</li>
+</ol>
+<pre tabindex="0"><code class="language-command" data-lang="command">git clone https://github.com/kaygb/KZHomePage.git
+</code></pre><ol start="2">
+<li>在喜欢的地方新建一个用于存放主页的文件夹</li>
+<li>使用<code>sudo apt install nginx</code>安装Nginx</li>
+<li>使用<code>sudo systemctl enable nginx</code>设置开机自启</li>
+<li>启动Nginx<code>sudo systemctl start nginx</code></li>
+<li><code>sudo systemctl status nginx</code>查看Ngxin状态</li>
+</ol>
+<p>访问域名/IP，若出现<code>Welcome to Nginx</code>即为成功</p>
+<h3 id="配置nginx">配置Nginx</h3>
+<p>编写配置文件<code>sudo nvim /etc/nginx/conf.d/yoursite.com.conf</code></p>
+<p>写入以下配置</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">server {
+    listen 80;
+    server_name yoursite.com;
+    root path-to-blog-name;
+    location / {
+    }
+}
+</code></pre><p><code>80</code>为监听端口，<code>yoursite.com</code>为你的域名，<code>path-to-blog-name</code>为存放主页文件夹的位置</p>
+<p>完成后使用<code>sudo systemctl restart nginx</code>重启Ngixn服务，访问域名查看是否生效</p>
+<p>之后就简单多了，修改<code>index.html</code>，可以看作者写的<a href="https://www.kezez.com/archives/25.html">教程</a>无需重新启动，刷新即可</p>
+<h3 id="博客">博客</h3>
+<p>博客和主页差不多，将Github上的仓库git clone下载，再创建一个文件夹用于存放，一个配置文件，端口改成你想要的，别太离谱即可</p>
+<p>完成后设置域名解析，直接解析到你的IP，博客可以添加隐性url转发到你的域名+端口</p>
+<h2 id="总结">总结</h2>
+<p>因为没有备案，所以只能通过IP访问网站，不得不说，阿里云的服务器是真的贵，终于明白未成年不能备案的原因了</p>
+<h2 id="参考">参考</h2>
+<ul>
+<li>
+<p><a href="https://thooooor.github.io/posts/%E8%84%B1%E5%9D%91%E8%AE%B0%E5%BD%95/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#33-%E6%9C%8D%E5%8A%A1%E5%99%A8">基于hugo搭建博客并部署</a></p>
+</li>
+<li>
+<p><a href="http://www.sulvblog.cn/posts/blog/hugo_deploy/">hugo博客部署到腾讯云轻量级服务器</a></p>
+</li>
+<li>
+<p><a href="https://gohugo.io/">HUGO</a></p>
+</li>
+</ul>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/hugo/">hugo</a></li>
+              
+              <li><a href="/tags/nginx/">nginx</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+      <div class="toc">
+        <strong>Table of contents:</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#迁移">迁移</a>
+      <ul>
+        <li><a href="#安装">安装</a></li>
+        <li><a href="#建站">建站</a></li>
+        <li><a href="#基础">基础</a></li>
+      </ul>
+    </li>
+    <li><a href="#部署">部署</a></li>
+    <li><a href="#命令">命令</a></li>
+    <li><a href="#阿里云服务器">阿里云服务器</a>
+      <ul>
+        <li><a href="#配置">配置</a></li>
+      </ul>
+    </li>
+    <li><a href="#主页导航页">主页(导航页)</a>
+      <ul>
+        <li><a href="#搭建">搭建</a></li>
+        <li><a href="#配置nginx">配置Nginx</a></li>
+        <li><a href="#博客">博客</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://github.com/inuyasha-660" rel="me" title="GitHub"><svg class="feather">
+       <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
+    </svg></a><a class="border"></a></div>
+  <div class="footer-info">
+    2026  © Croyoux Lite |  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</footer>
+
+</div>
+    </body>
+</html>

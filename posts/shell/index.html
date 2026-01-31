@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Linux下的各种shell - croyoux&#39;s blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="安装完linux要干什么？ 当然是美化一下终端啦
+FIsh
+
+fish is a smart and user-friendly command line shell for Linux, macOS, and the rest of the family.
+
+我接触到的第一个shell，自带语法高亮和自动补全这两项神器，如果你不嫌弃默认的主题的话，fish可以说是开箱即用" />
+	<meta property="og:image" content="http://localhost:1313/"/>
+	<meta property="og:url" content="http://localhost:1313/posts/shell/">
+  <meta property="og:site_name" content="croyoux&#39;s blog">
+  <meta property="og:title" content="Linux下的各种shell">
+  <meta property="og:description" content="安装完linux要干什么？ 当然是美化一下终端啦
+FIsh fish is a smart and user-friendly command line shell for Linux, macOS, and the rest of the family.
+我接触到的第一个shell，自带语法高亮和自动补全这两项神器，如果你不嫌弃默认的主题的话，fish可以说是开箱即用">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-08-19T21:34:04+00:00">
+    <meta property="article:modified_time" content="2023-08-19T21:34:04+00:00">
+    <meta property="article:tag" content="Linux">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Linux下的各种shell">
+  <meta name="twitter:description" content="安装完linux要干什么？ 当然是美化一下终端啦
+FIsh fish is a smart and user-friendly command line shell for Linux, macOS, and the rest of the family.
+我接触到的第一个shell，自带语法高亮和自动补全这两项神器，如果你不嫌弃默认的主题的话，fish可以说是开箱即用">
+
+        <link href="http://localhost:1313/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"   /><link rel="stylesheet" href="http://localhost:1313/katex/katex.min.css ">
+		<script defer src="http://localhost:1313/katex/katex.min.js"></script>
+		<script defer src="http://localhost:1313/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+		</script>
+		
+		
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
+		
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">croyoux&#39;s blog</a>
+	</div>
+	<nav>
+		
+		<a href="/posts">Archive</a>
+		
+		<a href="/tags">Tags</a>
+		
+		<a href="/friends">Friends</a>
+		
+		<a href="/about">About</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">Linux下的各种shell</h1>
+          <div class="meta">Posted on Aug 19, 2023</div>
+        </div>
+        
+        <section class="body">
+          <p>安装完linux要干什么？ 当然是美化一下终端啦</p>
+<h2 id="fish">FIsh</h2>
+<blockquote>
+<p>fish is a smart and user-friendly command line shell for Linux, macOS, and the rest of the family.</p>
+</blockquote>
+<p>我接触到的第一个shell，自带语法高亮和自动补全这两项神器，如果你不嫌弃默认的主题的话，fish可以说是开箱即用</p>
+<h3 id="安装">安装</h3>
+<p>ubuntu环境下，使用<strong>apt</strong>命令进行安装</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt install fish
+</span></span></code></pre></div><p>安装完成后直接输入<code>fish</code>即可进入，默认会有一段欢迎语，如果不喜欢，可以用<code>fish -c &quot;set -U fish_greeting&quot;</code>来关闭</p>
+<p>如果想要设置为默认的shell，则需使用<code>chsh -s $(which fish)</code>进行设置</p>
+<h3 id="主题">主题</h3>
+<p>安装完成后当然要再装一个主题<del>除非你喜欢默认</del></p>
+<p>这里我们使用<a href="https://github.com/oh-my-fish/oh-my-fish/tree/master/docs/zh-CN">oh-my-fish</a>来安装主题</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
+</span></span><span style="display:flex;"><span>omf help
+</span></span></code></pre></div><p>完成后输入omf，在fish下，如果命令是绿色的，那就是安装成功了，否则检查是否安装成功</p>
+<p>输入omf theme即可查看能够安装的主题，以fox主题为例，下列是omf的使用方法</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>omf theme  <span style="color:#75715e">#列出主题</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>omf install fox <span style="color:#75715e">#安装fox主题</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>omf theme fox  <span style="color:#75715e">#更换fox主题</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>omf doctor  <span style="color:#75715e">#自检</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>omf destroy  <span style="color:#75715e">#卸载</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>omf update <span style="color:#75715e">#更新</span>
+</span></span></code></pre></div><p>如需安装更多主题请看<a href="https://xiao_beita.gitee.io/009_fish_omf/">小贝塔</a>，里面把所有的主题样式都展示出来</p>
+<h3 id="别名">别名</h3>
+<p>fish自带了<code>la</code>也就是<code>ls -A</code>的别名，能更方便我们查看</p>
+<h2 id="zsh">Zsh</h2>
+<blockquote>
+<p>Zsh is a shell designed for interactive use, although it is also a powerful scripting language. Many of the useful features of bash, ksh, and tcsh were incorporated into zsh; many original features were added.</p>
+</blockquote>
+<p>zsh对于bash的兼容性要好很多，相对的，想要配置zsh对比fish也要难</p>
+<h3 id="安装-1">安装</h3>
+<p>同样，使用<strong>apt</strong>命令安装</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt install zsh
+</span></span></code></pre></div><p>不同的是，zsh安装下一次启动终端时会弹出配置界面，使用和数字键选择即可完成配置</p>
+<h3 id="主题-1">主题</h3>
+<p>因为omz会拖慢zsh的速度，所以我们不选用omz来配置</p>
+<p>这里以p10k主题为例;需要注意的是，因为p10k使用一部分的emoji图标，所以要想完美的显示最好安装nerd字体</p>
+<blockquote>
+<p>不想安装或已经安装完成的小伙伴可以跳过这一步
+依据github上的文档，下载这四个字体文件，并分别双击安装，然后在终端的首选项里选择nerd字体即可</p>
+</blockquote>
+<p><a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf">MesloLGS NF Regular.ttf</a></p>
+<p><a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf">MesloLGS NF Bold.ttf</a></p>
+<p><a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf">MesloLGS NF 斜体.ttf</a></p>
+<p><a href="https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf">MesloLGS NF Bold Italic.ttf</a></p>
+<p>安装完字体就可以正式开始安装p10k主题</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git clone --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> https://gitee.com/romkatv/powerlevel10k.git ~/powerlevel10k
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;source ~/powerlevel10k/powerlevel10k.zsh-theme&#39;</span> &gt;&gt;~/.zshrc
+</span></span></code></pre></div><p>使用以上命令即可完成安装
+使用<code>exec zsh</code>重新启动zsh，完成后即可看到p10k的配置界面，按照提示，完成配置即可</p>
+<h3 id="插件">插件</h3>
+<p>因为zsh默认没有语法高亮和自动补全，所以需要两个插件来实现</p>
+<h4 id="语法高亮">语法高亮</h4>
+<p>使用<a href="https://github.com/zsh-users/zsh-syntax-highlighting">zsh-syntax-highlighting</a>这个插件来实现高亮</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;source </span><span style="color:#e6db74">${</span>(q-)PWD<span style="color:#e6db74">}</span><span style="color:#e6db74">/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh&#34;</span> &gt;&gt; <span style="color:#e6db74">${</span>ZDOTDIR<span style="color:#66d9ef">:-</span>$HOME<span style="color:#e6db74">}</span>/.zshrc
+</span></span></code></pre></div><p>使用以上两条命令安装插件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+</span></span></code></pre></div><p>开启插件</p>
+<h4 id="自动补全">自动补全</h4>
+<p>使用[zsh-autosuggestions](git clone <a href="https://github.com/zsh-users/zsh-autosuggestions">https://github.com/zsh-users/zsh-autosuggestions</a> ~/.zsh/zsh-autosuggestions
+)这一个插件实现</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+</span></span></code></pre></div><p>可能有细心的小伙伴发现，对语法高亮，自动补全貌似少了一条命令，因为自动补全没有将插件<code>echo</code>到<code>.zshrc</code>配置文件中，会导致重启终端后不启动插件，需要手动执行source命令开启，而语法高亮因为<code>echo</code>到<code>.zshrc</code>中，所以会跟着zsh一同启动</p>
+<p>我们可以手动添加一条命令到<code>.zshrc</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;source </span><span style="color:#e6db74">${</span>(q-)PWD<span style="color:#e6db74">}</span><span style="color:#e6db74">~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh&#34;</span> &gt;&gt; <span style="color:#e6db74">${</span>ZDOTDIR<span style="color:#66d9ef">:-</span>$HOME<span style="color:#e6db74">}</span>/.zshrc
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#                  ~/ 插件文件夹 / 插件.zsh               &gt;&gt;&gt;写入到.zshrc                    </span>
+</span></span></code></pre></div><p>修改完成后执行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+</span></span></code></pre></div><p>多重启几次终端，查看是否开启自动补全，如果重启没有自动补全，则需要检查上面的<code>echo</code>命令的路径是否是你插件的位置</p>
+<h3 id="别名-1">别名</h3>
+<p>zsh默认是没有带任何别名的，我们要去<code>.zshrc</code>中自行配置，zsh的配置文件在<code>/home/username/.zshrc</code></p>
+<pre tabindex="0"><code>alias la=&#39;ls -A&#39;
+alias ll=&#39;ls -alF&#39;
+alias l=&#39;ls -CF&#39;
+</code></pre><p>即可设置别名，也可以仿照上面的格式自定义</p>
+<h2 id="bash">Bash</h2>
+<blockquote>
+<p>This is an sh-compatible shell that incorporates useful features from the Korn shell (ksh) and the C shell (csh)</p>
+</blockquote>
+<p>这是debian和众多发行版默认的shell，<del>也是作者正在用的shell</del> 用回zsh了，p10k真香</p>
+<p>因为zsh和fish对bash的不兼容，使我在打包AnyKernel3的时候需要手动添加一行命令到.zshrc，以我的性格肯定不能忍，于是我就想有没有一种既对bash兼容性好，又方便易用的解决方案</p>
+<h3 id="语法">语法</h3>
+<p>因为脚本大多用的解释器都是bash,所以学习了下bash的语法</p>
+<ul>
+<li>脚本解释器</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span></code></pre></div><ul>
+<li>变量</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> 
+</span></span><span style="display:flex;"><span>b<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> 
+</span></span><span style="display:flex;"><span>c<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span>$a<span style="color:#f92672">+</span>$b<span style="color:#66d9ef">))</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo $c
+</span></span></code></pre></div><p>输出结果为3</p>
+<ul>
+<li>环境变量
+使用<strong>export</strong>命令</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export ABC<span style="color:#f92672">=</span>/usr/local/abc <span style="color:#75715e">#重启终端后失效</span>
+</span></span></code></pre></div><ul>
+<li>逻辑运算
+<code>&amp;&amp;</code>与运算，需要同时为True</li>
+</ul>
+<p><code>||</code>或运算，其中一个为True</p>
+<ul>
+<li>if语句</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> 条件 <span style="color:#f92672">]</span>;<span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>        command
+</span></span><span style="display:flex;"><span>        ...
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span> <span style="color:#75715e">#以fi结尾</span>
+</span></span></code></pre></div><ul>
+<li>for语句</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> arg in <span style="color:#f92672">[</span>list<span style="color:#f92672">]</span>;<span style="color:#66d9ef">do</span> 
+</span></span><span style="display:flex;"><span>    command1
+</span></span><span style="display:flex;"><span>    command2
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>不要忘了do前的;</p>
+<ul>
+<li>while语句</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> <span style="color:#f92672">[</span> condition <span style="color:#f92672">]</span>;<span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    command1
+</span></span><span style="display:flex;"><span>    command2
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><ul>
+<li>until循环</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">until</span> condition;<span style="color:#66d9ef">do</span> <span style="color:#75715e"># 条件为false则进入循环</span>
+</span></span><span style="display:flex;"><span>    command1
+</span></span><span style="display:flex;"><span>    command2
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><ul>
+<li>函数</li>
+</ul>
+<p>使用<code>function</code>定义一个函数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> func_name<span style="color:#f92672">(){</span> 
+</span></span><span style="display:flex;"><span>    command1
+</span></span><span style="display:flex;"><span>    command2
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">[</span><span style="color:#66d9ef">return</span> value<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>可直接使用函数名调用函数，例如</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> helloworld<span style="color:#f92672">(){</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Hello World&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>helloworld
+</span></span></code></pre></div><p>将在屏幕输出<code>HelloWorld</code></p>
+<ul>
+<li>sed命令</li>
+</ul>
+<p>作用是找到并替换文本，如</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sed -i <span style="color:#e6db74">&#34;s/world/hugo/g&#34;</span> helloworld.sh <span style="color:#75715e">#将helloworld.sh中的world全部替换成hugo  </span>
+</span></span></code></pre></div><h3 id="starship">Starship</h3>
+<ol>
+<li>这是一个以兼容性优先，使用Rust编写，高度自定义的命令的提示符</li>
+<li>它可以用于各种shell，包括常见的Bash/zsh/fish等，所以基本不存在兼容性问题，又能得到美丽的终端</li>
+<li><del>自带自动补全和语法高亮</del> 需要shell支持，开箱即用，安装简单，对小白极其友好</li>
+</ol>
+<h3 id="安装-2">安装</h3>
+<p>starship的安装十分简单，只需要执行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -sS https://starship.rs/install.sh | sh
+</span></span></code></pre></div><p>即可完成安装，之后你需要在<code>.bashrc</code>里开启starship<br>
+在.bashrc的最后，添加以下内容</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>starship init bash<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>重启终端，即可看到starship的默认样式</p>
+<h3 id="进阶">进阶</h3>
+<p>如果不满意默认的主题，可以使用以下命令创建配置</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mkdir -p ~/.config <span style="color:#f92672">&amp;&amp;</span> touch ~/.config/starship.toml
+</span></span></code></pre></div><p>修改配置请看 <a href="https://starship.rs/config/">https://starship.rs/config/</a> 预设里还能找到别人的主题配置</p>
+<h3 id="ps1">PS1</h3>
+<p>在用了一段时间的starship后，可能会有小伙伴发现，打开多文件的文件夹会比较卡顿，路径有时会折叠</p>
+<p>于是我果断卸载，改用最简单粗暴的方式，直接修改<code>PS1</code>变量<br>
+S1的含义太多了，这里就不全列出来</p>
+<table>
+  <thead>
+      <tr>
+          <th>\u</th>
+          <th>用户名</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>\n</td>
+          <td>换行</td>
+      </tr>
+      <tr>
+          <td>\w</td>
+          <td>绝对路径</td>
+      </tr>
+      <tr>
+          <td>\W</td>
+          <td>路径的最后一个文件夹</td>
+      </tr>
+      <tr>
+          <td>\t</td>
+          <td>24小时制时间</td>
+      </tr>
+      <tr>
+          <td>\T</td>
+          <td>12小时制</td>
+      </tr>
+      <tr>
+          <td>$</td>
+          <td>root用户为#,普通$</td>
+      </tr>
+      <tr>
+          <td>\h</td>
+          <td>主题名</td>
+      </tr>
+      <tr>
+          <td>\d</td>
+          <td>日期</td>
+      </tr>
+  </tbody>
+</table>
+<p>你也可以设置颜色</p>
+<table>
+  <thead>
+      <tr>
+          <th>30m</th>
+          <th>黑色</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>31m</td>
+          <td>红色</td>
+      </tr>
+      <tr>
+          <td>32m</td>
+          <td>绿色</td>
+      </tr>
+      <tr>
+          <td>33m</td>
+          <td>黄色</td>
+      </tr>
+      <tr>
+          <td>34m</td>
+          <td>蓝色</td>
+      </tr>
+  </tbody>
+</table>
+<p>更多变量和颜色请看</p>
+<p><a href="https://www.gnu.org/savannah-checkouts/gnu/bash/manual/html_node/Controlling-the-Prompt.html">官方文档</a></p>
+<p><a href="https://blog.csdn.net/qq_33958966/article/details/106080204">CSDN</a></p>
+<p>除此之外，还可以使用一些其他的符号和文字美化，例如 &gt; /~/abc/./+等都可以，也可以使用表情</p>
+<p>我现在用的是CSDN里找的<a href="https://blog.csdn.net/u011145574/article/details/105160496">ParrotOS风格</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>PS1<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;\[\033[0;31m\]\342\224\214\342\224\200$([[ $? != 0 ]] &amp;&amp; echo &#34;[\[\033[0;31m\]\342\234\227\[\033[0;37m\]]\342\224\200&#34;)[\[\033[0;39m\]\u\[\033[01;33m\]@\[\033[01;96m\]\h\[\033[0;31m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;31m\]]\n\[\033[0;31m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]\[\e[01;33m\]\$ \[\e[0m\]&#39;</span>
+</span></span></code></pre></div><blockquote>
+<p>ps1来自csdn@Jiuh-star，侵联删</p>
+</blockquote>
+<p>因为<code>$</code>和命令贴的太近，于是在 $和&quot;[\e[0m]]&ldquo;中间加了一个空格</p>
+<h2 id="参考">参考</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/452686607">一文掌握shell脚本的基本语法</a></p>
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/linux/">Linux</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+      <div class="toc">
+        <strong>Table of contents:</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#fish">FIsh</a>
+      <ul>
+        <li><a href="#安装">安装</a></li>
+        <li><a href="#主题">主题</a></li>
+        <li><a href="#别名">别名</a></li>
+      </ul>
+    </li>
+    <li><a href="#zsh">Zsh</a>
+      <ul>
+        <li><a href="#安装-1">安装</a></li>
+        <li><a href="#主题-1">主题</a></li>
+        <li><a href="#插件">插件</a></li>
+        <li><a href="#别名-1">别名</a></li>
+      </ul>
+    </li>
+    <li><a href="#bash">Bash</a>
+      <ul>
+        <li><a href="#语法">语法</a></li>
+        <li><a href="#starship">Starship</a></li>
+        <li><a href="#安装-2">安装</a></li>
+        <li><a href="#进阶">进阶</a></li>
+        <li><a href="#ps1">PS1</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://github.com/inuyasha-660" rel="me" title="GitHub"><svg class="feather">
+       <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
+    </svg></a><a class="border"></a></div>
+  <div class="footer-info">
+    2026  © Croyoux Lite |  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</footer>
+
+</div>
+    </body>
+</html>

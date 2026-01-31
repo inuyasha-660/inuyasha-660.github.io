@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>香橙派zero3 - croyoux&#39;s blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="基础配置
+
+  
+      
+          CPU
+          全志H618高性能四核Cortex-A53处理器 1.5GHz
+      
+  
+  
+      
+          GPU
+          Mali G31 MP2
+      
+      
+          RAM
+          1GB/1.5GB/2GB/4GB LPDDR4
+      
+      
+          储存
+          16MB SPI Flash
+      
+      
+          板载WiFi&#43;蓝牙
+          WiFi5和蓝牙5.0
+      
+      
+          网络
+          10M/100M/1000M以太网接口
+      
+      
+          音频输入、输出
+          13Pin扩展端口支持2路输出1路输入
+      
+      
+          视频输出
+          Micro HDMI支持4K@60fps
+      
+      
+          USB
+          USB 2.0 x 3（需搭配扩展版）
+      
+      
+          SD卡接口
+          Micro SD
+      
+      
+          电源输入
+          5V3A，Type-c接口
+      
+      
+          拓展接口
+          26Pin GPIO接口 &amp;&amp; 13Pin GPIO接口
+      
+  
+
+因为原本买它是用来搭建mc服务器的，所以ram选择4g版" />
+	<meta property="og:image" content="http://localhost:1313/"/>
+	<meta property="og:url" content="http://localhost:1313/posts/orangepi/">
+  <meta property="og:site_name" content="croyoux&#39;s blog">
+  <meta property="og:title" content="香橙派zero3">
+  <meta property="og:description" content="基础配置 CPU 全志H618高性能四核Cortex-A53处理器 1.5GHz GPU Mali G31 MP2 RAM 1GB/1.5GB/2GB/4GB LPDDR4 储存 16MB SPI Flash 板载WiFi&#43;蓝牙 WiFi5和蓝牙5.0 网络 10M/100M/1000M以太网接口 音频输入、输出 13Pin扩展端口支持2路输出1路输入 视频输出 Micro HDMI支持4K@60fps USB USB 2.0 x 3（需搭配扩展版） SD卡接口 Micro SD 电源输入 5V3A，Type-c接口 拓展接口 26Pin GPIO接口 &amp;&amp; 13Pin GPIO接口 因为原本买它是用来搭建mc服务器的，所以ram选择4g版">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-08-10T18:21:22+00:00">
+    <meta property="article:modified_time" content="2023-08-10T18:21:22+00:00">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="开发板">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="香橙派zero3">
+  <meta name="twitter:description" content="基础配置 CPU 全志H618高性能四核Cortex-A53处理器 1.5GHz GPU Mali G31 MP2 RAM 1GB/1.5GB/2GB/4GB LPDDR4 储存 16MB SPI Flash 板载WiFi&#43;蓝牙 WiFi5和蓝牙5.0 网络 10M/100M/1000M以太网接口 音频输入、输出 13Pin扩展端口支持2路输出1路输入 视频输出 Micro HDMI支持4K@60fps USB USB 2.0 x 3（需搭配扩展版） SD卡接口 Micro SD 电源输入 5V3A，Type-c接口 拓展接口 26Pin GPIO接口 &amp;&amp; 13Pin GPIO接口 因为原本买它是用来搭建mc服务器的，所以ram选择4g版">
+
+        <link href="http://localhost:1313/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"   /><link rel="stylesheet" href="http://localhost:1313/katex/katex.min.css ">
+		<script defer src="http://localhost:1313/katex/katex.min.js"></script>
+		<script defer src="http://localhost:1313/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+		</script>
+		
+		
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
+		
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">croyoux&#39;s blog</a>
+	</div>
+	<nav>
+		
+		<a href="/posts">Archive</a>
+		
+		<a href="/tags">Tags</a>
+		
+		<a href="/friends">Friends</a>
+		
+		<a href="/about">About</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">香橙派zero3</h1>
+          <div class="meta">Posted on Aug 10, 2023</div>
+        </div>
+        
+        <section class="body">
+          <h2 id="基础配置">基础配置</h2>
+<table>
+  <thead>
+      <tr>
+          <th>CPU</th>
+          <th>全志H618高性能四核Cortex-A53处理器 1.5GHz</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>GPU</td>
+          <td>Mali G31 MP2</td>
+      </tr>
+      <tr>
+          <td>RAM</td>
+          <td>1GB/1.5GB/2GB/4GB LPDDR4</td>
+      </tr>
+      <tr>
+          <td>储存</td>
+          <td>16MB SPI Flash</td>
+      </tr>
+      <tr>
+          <td>板载WiFi+蓝牙</td>
+          <td>WiFi5和蓝牙5.0</td>
+      </tr>
+      <tr>
+          <td>网络</td>
+          <td>10M/100M/1000M以太网接口</td>
+      </tr>
+      <tr>
+          <td>音频输入、输出</td>
+          <td>13Pin扩展端口支持2路输出1路输入</td>
+      </tr>
+      <tr>
+          <td>视频输出</td>
+          <td>Micro HDMI支持4K@60fps</td>
+      </tr>
+      <tr>
+          <td>USB</td>
+          <td>USB 2.0 x 3（需搭配扩展版）</td>
+      </tr>
+      <tr>
+          <td>SD卡接口</td>
+          <td>Micro SD</td>
+      </tr>
+      <tr>
+          <td>电源输入</td>
+          <td>5V3A，Type-c接口</td>
+      </tr>
+      <tr>
+          <td>拓展接口</td>
+          <td>26Pin GPIO接口 &amp;&amp; 13Pin GPIO接口</td>
+      </tr>
+  </tbody>
+</table>
+<p>因为原本买它是用来搭建mc服务器的，所以ram选择4g版</p>
+<h2 id="安装系统">安装系统</h2>
+<p>开发版出场带一个微型的linxu，因为板载储存只有16m，所以仅供测试使用，我们需要刷入一个新的系统</p>
+<h3 id="格式化">格式化</h3>
+<p>我用的是京东京造麒麟128g的sd卡，第一次直接用balena写入镜像，插入能识别到卡但还是默认的微型Linux，所以改sd card formatter格式化之后再用win32写入，工具再官网即可下载，系统镜像也可在此下载（万恶的百度网盘）</p>
+<p>BTW，买完后最好还是看一遍用户手册，写的还是比较详细的，能帮助快速入门</p>
+<h3 id="刷入">刷入</h3>
+<p>直接将写入系统的的sd卡怼到卡槽，重启就完事了</p>
+<h3 id="登陆">登陆</h3>
+<p>因为没有屏幕，所以我们需要使用ssh来远程控制，先接上网线，注意，网线的另一头要接到路由器上<br>
+登陆路由器后台，找到orangepi3,查看设备ip，使用<code>ssh root@ip</code>登陆<br>
+如果在用windows的话可以使用mobaxterm进行图形化登陆</p>
+<p>如果登不上后台，可以使用<code>ifconfig</code>获取网络信息</p>
+<ol>
+<li>使用<code>sudo pacman -S net-tools nmap</code>安装所需包</li>
+<li>执行命令后找到<code>inet 192.168.xx.xxx</code>这一行</li>
+<li>使用<code>nmap 192.168.xx.0/24</code>扫描局域网下的设备</li>
+<li>找到类似<code>Nmap scan report for orangepizero3 (192.168.xx.xxx)</code>就是香橙派的IP,ssh连接即可</li>
+</ol>
+<h2 id="系统配置">系统配置</h2>
+<p>和普通的linxu一样，我们首先进行换源，作者选择<a href="https://mirrors.tuna.tsinghua.edu.cn/help/debian/">清华源</a>,系统debian，其他的例如ubuntu也可以在镜像站找到<br>
+因为debian普通用户默认不再sudo组的，所以我们直接以root用户登陆</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>apt install vim 
+</span></span></code></pre></div><p>使用<code>vim /etc/apt/sources.lis</code>修改，将源改为清华大学源<br>
+<code>:wq</code>保存并退出修改</p>
+<p>软件自带了python、zsh我们这里安装一个<code>neofetch</code>来砍下系统是否为debian</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>apt install neofetch
+</span></span></code></pre></div><p>让我们来n以下</p>
+<pre tabindex="0"><code>neofetch
+</code></pre><p>有圈圈似的图案就说明Debian已经成功刷入了，如果图案是企鹅的话就说明我们还在默认的微型Linux</p>
+<h2 id="美化">美化</h2>
+<p>因为自带了zsh，所以不需要额外安装，使用<code>zsh</code>即可切换<br>
+使用<code>chsh -s $(which zsh)</code>即可设置默认shell</p>
+<h3 id="主题">主题</h3>
+<p>选用p10k主题，教程来自<a href="https://github.com/romkatv/powerlevel10k#installation">官方</a>如果慢的话可以克隆gitee镜像</p>
+<h3 id="插件">插件</h3>
+<p>插件依然选用<a href="https://github.com/zsh-users/zsh-syntax-highlighting">语法高亮</a>和<a href="https://github.com/zsh-users/zsh-autosuggestions">自动补全</a></p>
+<p>这里要补充下，因为自动补全少了将插件添加到.zshrc文件这一步，所以导致每次关闭终端再打开就需要重新加载插件，只需要执行这下面的命令就可以将自动补全添加到zsh配置</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;source </span><span style="color:#e6db74">${</span>(q-)PWD<span style="color:#e6db74">}</span><span style="color:#e6db74">/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh&#34;</span> &gt;&gt; <span style="color:#e6db74">${</span>ZDOTDIR<span style="color:#66d9ef">:-</span>$HOME<span style="color:#e6db74">}</span>/.zshrc
+</span></span></code></pre></div><p>如果报错了那请检查自动补全下载到哪个文件夹，然后把<code>.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh</code>替换成自己插件目录里的<code>zsh-autosuggestions.zsh</code>文件的路径</p>
+<p><code>${(q-)PWD}/</code>指向当前目录，请在<code>${(q-)PWD}/</code>的后面填写当前目录下插件的位置</p>
+<h2 id="时区设置">时区设置</h2>
+<p>因为开发板默认是UTC时间，也就是标准时间+0000，所以导致和东八区相差8小时<br>
+这里参考<a href="https://blog.csdn.net/yongroot/article/details/90676764?spm=1001.2014.3001.5506">CSDN</a>的文章，是我测试唯一有用的一篇</p>
+<ol>
+<li>使用<code>date -R</code>查看时间</li>
+<li>虽然<code>tzselect</code>看上去很像一个设定时区的命令，但是它仅仅只是告诉你该怎么写TZ变量，比如北京时间就是<code>Asia/Shanghai</code>对于想更改时间的小伙伴没什么用</li>
+<li>正确的做法是修改TZ变量，使用<code>export TZ= 'Asia/Shanghai'</code>命令设置时间
+但是直接修改叉掉终端后又会变回原本的时间，我们需要修改<code>/etc/profile</code>文件来永久设定系统时间</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span> sudo vim /etc/profile
+</span></span><span style="display:flex;"><span> export  TZ<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Asia/Shanghai&#39;</span> <span style="color:#75715e">#复制</span>
+</span></span><span style="display:flex;"><span> :wq <span style="color:#75715e">#退出</span>
+</span></span></code></pre></div><p>这样即使重新登录也还是北京时间</p>
+<h2 id="docker">Docker</h2>
+<blockquote>
+<p>docker是一个用Go语言实现的开源项目，可以让我们方便的创建和使用容器</p>
+</blockquote>
+<p>在安装宝塔面板前，先安装docker<br>
+因为开发版自带安装脚本，所以具体步骤请以用户手册为准</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>enable_docker.sh
+</span></span></code></pre></div><p>使用以上命令安装，完成后测试一下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker run hello-world
+</span></span></code></pre></div><p>如果有输出<code>hello from docker</code>那就是成功了</p>
+<h2 id="宝塔面板">宝塔面板</h2>
+<p>安装完debian后，为了方便管理，选择安装宝塔面板<br>
+教程来自用户文档</p>
+<ol>
+<li>首先我们扩容tmp分区，使用命令查看<code>/tmp</code>分区大小，如果是2G，那就不需要扩容，如果小于2G，执行以下命令扩容</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>df -h | grep <span style="color:#e6db74">&#34;/tmp&#34;</span>  <span style="color:#75715e">#查看分区大小</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo sed -i <span style="color:#e6db74">&#39;s/nosuid/&amp;,size=2G/&#39;</span> /etc/fstab   <span style="color:#75715e">#扩容</span>
+</span></span></code></pre></div><p>完成后<code>sudo reboot</code>重启下</p>
+<ol>
+<li>使用<code>sudo install_bt_panel.sh</code>安装宝塔面板，需要的时间比较久，作者用了35分钟</li>
+<li>安装完成后，会打印面板地址，如果你有公网ip，那么两个都可以，如果没有还是老老实实用内网地址</li>
+<li>进去后会提示安装套件，不知道为什么作者需要从源码编译安装，太耗时间了所以没装完</li>
+</ol>
+<h2 id="minecraft开服">Minecraft开服</h2>
+<p>这也是我买开发板的主要用途，首先查看能安装的Openjdk版本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt search openjdk
+</span></span></code></pre></div><p>我安装的版本是<code>openjdk-17-jdk</code>具体以你的输出为准</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt install openjdk-17-jdk <span style="color:#75715e">#安装</span>
+</span></span></code></pre></div><p>接下来安装MCSmanager面板
+什么是MCSmanager呢？</p>
+<blockquote>
+<p>分布式，稳定可靠，开箱即用，高扩展性，支持 Minecraft 和其他少数游戏的控制面板</p>
+</blockquote>
+<p>参考官方文档，使用以下命令安装</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>wget -qO- https://gitee.com/mcsmanager/script/raw/master/setup_cn.sh | bash
+</span></span></code></pre></div><p>基础命令</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># 先启动面板守护进程。</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 这是用于进程控制，终端管理的服务进程。</span>
+</span></span><span style="display:flex;"><span>systemctl start mcsm-daemon.service
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 再启动面板 Web 服务。</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 这是用来实现支持网页访问和用户管理的服务。</span>
+</span></span><span style="display:flex;"><span>systemctl start mcsm-web.service 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 重启面板命令</span>
+</span></span><span style="display:flex;"><span>systemctl restart mcsm-daemon.service
+</span></span><span style="display:flex;"><span>systemctl restart mcsm-web.service
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 停止面板命令</span>
+</span></span><span style="display:flex;"><span>systemctl stop mcsm-web.service
+</span></span><span style="display:flex;"><span>systemctl stop mcsm-daemon.service
+</span></span></code></pre></div><p>启动面板后浏览器输入<code>&lt;IP&gt;:23333</code>进入面板，如果进不去的话去宝塔面板找到安装-添加端口规则，填入<code>23333</code>端口即可</p>
+<p>mcs面板实例打不开也可以用此方法</p>
+<h2 id="alist">AList</h2>
+<p>买开发板还有一个目的就是为了搭建一个个人nas，这里以在docker内安装alist为例</p>
+<ol>
+<li>为了方便管理，我们先安装一个docker管理器，直接在宝塔的应用商城内搜索即可</li>
+<li>使用命令安装Alist</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker run -d --restart<span style="color:#f92672">=</span>always -v /etc/alist:/opt/alist/data -p 5244:5244 -e PUID<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> -e PGID<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> -e UMASK<span style="color:#f92672">=</span><span style="color:#ae81ff">022</span> --name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;alist&#34;</span> xhofe/alist:latest
+</span></span></code></pre></div><ol start="3">
+<li>安装完成后使用<code>docker exec -it alist ./alist admin set NEW_PASSWORD</code>设定密码，<code>NEW_PASSWORD</code>改为你要设置的密码
+浏览器输入<code>http://&lt;ip&gt;:5244</code>进入alist，账号默认为<code>admin</code></li>
+</ol>
+<h3 id="alist挂载阿里云">alist挂载阿里云</h3>
+<ol>
+<li>刷新令牌<br>
+前往</li>
+</ol>
+<pre tabindex="0"><code>https://alist.nn.ci/tool/aliyundrive/request.html
+</code></pre><p>点击login in，登陆自己的账号即可生成令牌</p>
+<ol>
+<li>Oauth令牌链接<br>
+由于原api <code>https://api.nn.ci</code>被sni阻断，导致国内无法连接，所以要添加新的api</li>
+</ol>
+<pre tabindex="0"><code>https://api-cf.nn.ci/alist/ali_open/token   #二选一
+https://api.xhofe.top/alist/ali_open/token
+</code></pre><ol>
+<li>云盘类型<br>
+这里一定要选对，如果错了会导致加载不了，登录阿里云盘手机端4.9.0以上的版本就可以看到。如果不确定可以两个都试试</li>
+</ol>
+<h3 id="更改密码">更改密码</h3>
+<p>如果像我一样忘了密码，可以用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>docker exec -it alist ./alist admin set NEW_PASSWORD
+</span></span></code></pre></div><p>重新设置一个密码，<code>NEW_PASSWORD</code>为你的密码</p>
+<h3 id="挂载本地">挂载本地</h3>
+<ol>
+<li>将要挂载的文件/文件夹移至alist容器内</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> docker cp /home/image-hosting 200adb99680d:/orangepi/web
+</span></span></code></pre></div><p># 200adb99680d - 容器ID</p>
+<p># /home/image-hosting - 以东的文件夹或目录</p>
+<p># /orangepi/web - 目标目录</p>
+<p>完成后在后台添加<code>/orangepi</code>即可挂载文件/文件夹</p>
+<h2 id="结尾">结尾</h2>
+<p>开发板还有许多好玩的东西，比如刷openwrt作软路由，刷android tv作机顶盒等，这里只是列举除了一部分</p>
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/linux/">Linux</a></li>
+              
+              <li><a href="/tags/%E5%BC%80%E5%8F%91%E6%9D%BF/">开发板</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+      <div class="toc">
+        <strong>Table of contents:</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#基础配置">基础配置</a></li>
+    <li><a href="#安装系统">安装系统</a>
+      <ul>
+        <li><a href="#格式化">格式化</a></li>
+        <li><a href="#刷入">刷入</a></li>
+        <li><a href="#登陆">登陆</a></li>
+      </ul>
+    </li>
+    <li><a href="#系统配置">系统配置</a></li>
+    <li><a href="#美化">美化</a>
+      <ul>
+        <li><a href="#主题">主题</a></li>
+        <li><a href="#插件">插件</a></li>
+      </ul>
+    </li>
+    <li><a href="#时区设置">时区设置</a></li>
+    <li><a href="#docker">Docker</a></li>
+    <li><a href="#宝塔面板">宝塔面板</a></li>
+    <li><a href="#minecraft开服">Minecraft开服</a></li>
+    <li><a href="#alist">AList</a>
+      <ul>
+        <li><a href="#alist挂载阿里云">alist挂载阿里云</a></li>
+        <li><a href="#更改密码">更改密码</a></li>
+        <li><a href="#挂载本地">挂载本地</a></li>
+      </ul>
+    </li>
+    <li><a href="#结尾">结尾</a></li>
+  </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://github.com/inuyasha-660" rel="me" title="GitHub"><svg class="feather">
+       <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
+    </svg></a><a class="border"></a></div>
+  <div class="footer-info">
+    2026  © Croyoux Lite |  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</footer>
+
+</div>
+    </body>
+</html>

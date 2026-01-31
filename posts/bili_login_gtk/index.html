@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>WebKitGtk 实现 BiliBili 登录 - croyoux&#39;s blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="最近在研究 BiliBili 的 api， 想做一个以视频为音源的播放器；其中的一个功能允许导入收藏夹的视频
+主要有两个 api
+通过 mid 获取所有收藏夹信息
+https://api.bilibili.com/x/v3/fav/folder/created/list-all?up_mid=&lt;mid&gt;
+
+通过 media_id 获取指定收藏夹信息
+https://api.bilibili.com/x/v3/fav/resource/list?media_id=&lt;media_id&gt;&amp;pn=&lt;页数&gt;&amp;ps=&lt;每页显示的视频个数&gt;
+但是光有 mid 还不够；这两个 api 都需要设置特定的 Cookie 进行认证，所以只能在请求前先实现登录
+登录
+BiliBili 主要支持短信登录，密码登录和二维码登录；除了二维码登录外，其余两种都需要在登录前进行人机验证(由 geetest 提供)
+Cookie
+在完成登录后，BiliBili 将设置几个 Cookie
+HTTP/1.1 200 OK
+Date: Mon, 13 Jul 2020 09:57:33 GMT
+Content-Type: application/json;charset=UTF-8
+Content-Length: 78
+Connection: keep-alive
+Server: Apache-Coyote/1.1
+Set-Cookie: DedeUserID=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/
+Set-Cookie: DedeUserID__ckMd5=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/
+Set-Cookie: SESSDATA=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/; HttpOnly
+Set-Cookie: bili_jct=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/
+Set-Cookie: sid=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/
+Expires: Mon, 13 Jul 2020 09:57:32 GMT
+Cache-Control: no-cache
+X-Cache-Webcdn: BYPASS from jd-sxhz-dx-w-01
+示例来自 BAC Document" />
+	<meta property="og:image" content="http://localhost:1313/"/>
+	<meta property="og:url" content="http://localhost:1313/posts/bili_login_gtk/">
+  <meta property="og:site_name" content="croyoux&#39;s blog">
+  <meta property="og:title" content="WebKitGtk 实现 BiliBili 登录">
+  <meta property="og:description" content="最近在研究 BiliBili 的 api， 想做一个以视频为音源的播放器；其中的一个功能允许导入收藏夹的视频
+主要有两个 api
+通过 mid 获取所有收藏夹信息 https://api.bilibili.com/x/v3/fav/folder/created/list-all?up_mid=&lt;mid&gt; 通过 media_id 获取指定收藏夹信息 https://api.bilibili.com/x/v3/fav/resource/list?media_id=&lt;media_id&gt;&amp;pn=&lt;页数&gt;&amp;ps=&lt;每页显示的视频个数&gt; 但是光有 mid 还不够；这两个 api 都需要设置特定的 Cookie 进行认证，所以只能在请求前先实现登录
+登录 BiliBili 主要支持短信登录，密码登录和二维码登录；除了二维码登录外，其余两种都需要在登录前进行人机验证(由 geetest 提供)
+Cookie 在完成登录后，BiliBili 将设置几个 Cookie
+HTTP/1.1 200 OK Date: Mon, 13 Jul 2020 09:57:33 GMT Content-Type: application/json;charset=UTF-8 Content-Length: 78 Connection: keep-alive Server: Apache-Coyote/1.1 Set-Cookie: DedeUserID=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/ Set-Cookie: DedeUserID__ckMd5=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/ Set-Cookie: SESSDATA=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/; HttpOnly Set-Cookie: bili_jct=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/ Set-Cookie: sid=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/ Expires: Mon, 13 Jul 2020 09:57:32 GMT Cache-Control: no-cache X-Cache-Webcdn: BYPASS from jd-sxhz-dx-w-01 示例来自 BAC Document">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-08-05T16:55:07+08:00">
+    <meta property="article:modified_time" content="2025-08-05T16:55:07+08:00">
+    <meta property="article:tag" content="C">
+    <meta property="article:tag" content="Gtk">
+    <meta property="article:tag" content="Bilibili">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="WebKitGtk 实现 BiliBili 登录">
+  <meta name="twitter:description" content="最近在研究 BiliBili 的 api， 想做一个以视频为音源的播放器；其中的一个功能允许导入收藏夹的视频
+主要有两个 api
+通过 mid 获取所有收藏夹信息 https://api.bilibili.com/x/v3/fav/folder/created/list-all?up_mid=&lt;mid&gt; 通过 media_id 获取指定收藏夹信息 https://api.bilibili.com/x/v3/fav/resource/list?media_id=&lt;media_id&gt;&amp;pn=&lt;页数&gt;&amp;ps=&lt;每页显示的视频个数&gt; 但是光有 mid 还不够；这两个 api 都需要设置特定的 Cookie 进行认证，所以只能在请求前先实现登录
+登录 BiliBili 主要支持短信登录，密码登录和二维码登录；除了二维码登录外，其余两种都需要在登录前进行人机验证(由 geetest 提供)
+Cookie 在完成登录后，BiliBili 将设置几个 Cookie
+HTTP/1.1 200 OK Date: Mon, 13 Jul 2020 09:57:33 GMT Content-Type: application/json;charset=UTF-8 Content-Length: 78 Connection: keep-alive Server: Apache-Coyote/1.1 Set-Cookie: DedeUserID=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/ Set-Cookie: DedeUserID__ckMd5=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/ Set-Cookie: SESSDATA=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/; HttpOnly Set-Cookie: bili_jct=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/ Set-Cookie: sid=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/ Expires: Mon, 13 Jul 2020 09:57:32 GMT Cache-Control: no-cache X-Cache-Webcdn: BYPASS from jd-sxhz-dx-w-01 示例来自 BAC Document">
+
+        <link href="http://localhost:1313/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"   /><link rel="stylesheet" href="http://localhost:1313/katex/katex.min.css ">
+		<script defer src="http://localhost:1313/katex/katex.min.js"></script>
+		<script defer src="http://localhost:1313/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+		</script>
+		
+		
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
+		
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">croyoux&#39;s blog</a>
+	</div>
+	<nav>
+		
+		<a href="/posts">Archive</a>
+		
+		<a href="/tags">Tags</a>
+		
+		<a href="/friends">Friends</a>
+		
+		<a href="/about">About</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">WebKitGtk 实现 BiliBili 登录</h1>
+          <div class="meta">Posted on Aug 5, 2025</div>
+        </div>
+        
+        <section class="body">
+          <p>最近在研究 BiliBili 的 api， 想做一个以视频为音源的播放器；其中的一个功能允许导入收藏夹的视频</p>
+<p>主要有两个 api</p>
+<pre tabindex="0"><code class="language-api" data-lang="api">通过 mid 获取所有收藏夹信息
+https://api.bilibili.com/x/v3/fav/folder/created/list-all?up_mid=&lt;mid&gt;
+
+通过 media_id 获取指定收藏夹信息
+https://api.bilibili.com/x/v3/fav/resource/list?media_id=&lt;media_id&gt;&amp;pn=&lt;页数&gt;&amp;ps=&lt;每页显示的视频个数&gt;
+</code></pre><p>但是光有 mid 还不够；这两个 api 都需要设置特定的 Cookie 进行认证，所以只能在请求前先实现登录</p>
+<h1 id="登录">登录</h1>
+<p>BiliBili 主要支持<code>短信登录</code>，<code>密码登录</code>和<code>二维码登录</code>；除了<code>二维码登录</code>外，其余两种都需要在登录前进行<code>人机验证(由 geetest 提供)</code></p>
+<h2 id="cookie">Cookie</h2>
+<p>在完成登录后，BiliBili 将设置几个 Cookie</p>
+<pre tabindex="0"><code class="language-respon" data-lang="respon">HTTP/1.1 200 OK
+Date: Mon, 13 Jul 2020 09:57:33 GMT
+Content-Type: application/json;charset=UTF-8
+Content-Length: 78
+Connection: keep-alive
+Server: Apache-Coyote/1.1
+Set-Cookie: DedeUserID=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/
+Set-Cookie: DedeUserID__ckMd5=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/
+Set-Cookie: SESSDATA=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/; HttpOnly
+Set-Cookie: bili_jct=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/
+Set-Cookie: sid=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/
+Expires: Mon, 13 Jul 2020 09:57:32 GMT
+Cache-Control: no-cache
+X-Cache-Webcdn: BYPASS from jd-sxhz-dx-w-01
+</code></pre><p>示例来自 <a href="https://socialsisteryi.github.io/bilibili-API-collect/docs/login/login_action/SMS.html#%E4%BD%BF%E7%94%A8%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95-web%E7%AB%AF">BAC Document</a></p>
+<p>其中 <code>SESSDATA</code> 就是我们需要在请求中设置的 Cookie</p>
+<h2 id="webkitgtk">WebKitGtk</h2>
+<p>如果加上人机验证，实现起来太复杂，不如用 <code>WebKitGtk</code> 打开登录界面，登录完成后读取设置的 <code>cookie</code></p>
+<p>WebKitGtk 能很轻松地和 Gtk 组合在一起</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>GtkWidget <span style="color:#f92672">*</span>login_webkit;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>login_webkit <span style="color:#f92672">=</span> <span style="color:#a6e22e">webkit_web_view_new</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">webkit_web_view_load_uri</span>(<span style="color:#a6e22e">WEBKIT_WEB_VIEW</span>(login_webkit), <span style="color:#e6db74">&#34;https://passport.bilibili.com/login&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">gtk_widget_set_size_request</span>(login_webkit, <span style="color:#ae81ff">1300</span>, <span style="color:#ae81ff">800</span>);
+</span></span></code></pre></div><p>新建一个 <code>web_view</code> 并打开登录界面</p>
+<p>我们还可以创建一个按钮，在登录完成时被按下，调用回调函数读取 Cookie</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>GtkWidget <span style="color:#f92672">*</span>btn_next;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>btn_next <span style="color:#f92672">=</span> <span style="color:#a6e22e">gtk_button_new_with_label</span>(<span style="color:#e6db74">&#34;下一步&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">g_signal_connect</span>(btn_finish_login, <span style="color:#e6db74">&#34;clicked&#34;</span>, <span style="color:#a6e22e">G_CALLBACK</span>(load_changed), NULL);
+</span></span></code></pre></div><p>读取 Cookie</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">get_cookie</span>(WebKitCookieManager <span style="color:#f92672">*</span>cookie_mgr, GAsyncResult <span style="color:#f92672">*</span>res)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    GList <span style="color:#f92672">*</span>cookit_ls <span style="color:#f92672">=</span> <span style="color:#a6e22e">webkit_cookie_manager_get_cookies_finish</span>(cookie_mgr, res, NULL);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (GList <span style="color:#f92672">*</span>cookie_l <span style="color:#f92672">=</span> cookit_ls; cookie_l <span style="color:#f92672">!=</span> NULL; cookie_l <span style="color:#f92672">=</span> cookie_l<span style="color:#f92672">-&gt;</span>next) {
+</span></span><span style="display:flex;"><span>        SoupCookie <span style="color:#f92672">*</span>soup_cookie <span style="color:#f92672">=</span> (SoupCookie <span style="color:#f92672">*</span>)cookie_l<span style="color:#f92672">-&gt;</span>data;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">strcmp</span>(<span style="color:#a6e22e">soup_cookie_get_name</span>(soup_cookie), <span style="color:#e6db74">&#34;SESSDATA&#34;</span>)) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>value <span style="color:#f92672">=</span> <span style="color:#a6e22e">soup_cookie_get_value</span>(soup_cookie);
+</span></span><span style="display:flex;"><span>            account<span style="color:#f92672">-&gt;</span>SESSDATA <span style="color:#f92672">=</span> <span style="color:#a6e22e">strdup</span>(value);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">g_list_free</span>(cookit_ls);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">api_get_basic_info_net</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">load_changed</span>(GtkWidget <span style="color:#f92672">*</span>widget)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    WebKitNetworkSession <span style="color:#f92672">*</span>net_session <span style="color:#f92672">=</span> <span style="color:#a6e22e">webkit_network_session_get_default</span>();
+</span></span><span style="display:flex;"><span>    WebKitCookieManager <span style="color:#f92672">*</span>cookie_mgr <span style="color:#f92672">=</span> <span style="color:#a6e22e">webkit_network_session_get_cookie_manager</span>(net_session);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">webkit_cookie_manager_get_all_cookies</span>(cookie_mgr, NULL, (GAsyncReadyCallback)get_cookie, NULL);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote>
+<p>All the networking APIs have been moved from <strong>WebKitWebContext</strong> and <strong>WebKitWebsiteDataManager</strong> to the new class <strong>WebKitNetworkSession</strong></p>
+</blockquote>
+<p>新版的 <code>WebKitGtk</code> 将所有 API 从 <code>WebKitWebContext</code> 和 <code>WebKitWebsiteDataManager</code> 转移到了 <code>WebKitNetworkSession</code>，现在我们只需要
+通过<code>webkit_network_session_get_default()</code>获取一个全局持久会话就能得到<code>cookie_manager</code></p>
+<h2 id="发送请求">发送请求</h2>
+<p>最后添加得到的 Cookie 即可获取收藏夹信息</p>
+<p>curl</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl https://api.bilibili.com/x/v3/fav/folder/created/list-all?up_mid<span style="color:#f92672">=</span>&lt;mid&gt; -b <span style="color:#e6db74">&#34;SESSDATA=&lt;SESSDATA&gt;&#34;</span>
+</span></span></code></pre></div><p>设置 Cookie(libcurl)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">curl_easy_setopt</span>(easy_handle, CURLOPT_COOKIE, <span style="color:#e6db74">&#34;SESSDATA=&lt;SESSDATA&gt;&#34;</span>);
+</span></span></code></pre></div>
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/c/">c</a></li>
+              
+              <li><a href="/tags/gtk/">gtk</a></li>
+              
+              <li><a href="/tags/bilibili/">bilibili</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://github.com/inuyasha-660" rel="me" title="GitHub"><svg class="feather">
+       <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
+    </svg></a><a class="border"></a></div>
+  <div class="footer-info">
+    2026  © Croyoux Lite |  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</footer>
+
+</div>
+    </body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>hexo建立个人博客并部署到GitHub - croyoux&#39;s blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="hexo是一个快速，简洁且高效的博客框架，本文为使用hexo搭建博客并部署到github的教程" />
+	<meta property="og:image" content="http://localhost:1313/"/>
+	<meta property="og:url" content="http://localhost:1313/posts/hexo/">
+  <meta property="og:site_name" content="croyoux&#39;s blog">
+  <meta property="og:title" content="hexo建立个人博客并部署到GitHub">
+  <meta property="og:description" content="hexo是一个快速，简洁且高效的博客框架，本文为使用hexo搭建博客并部署到github的教程">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-08-12T08:21:23+00:00">
+    <meta property="article:modified_time" content="2023-08-12T08:21:23+00:00">
+    <meta property="article:tag" content="Hexo">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="hexo建立个人博客并部署到GitHub">
+  <meta name="twitter:description" content="hexo是一个快速，简洁且高效的博客框架，本文为使用hexo搭建博客并部署到github的教程">
+
+        <link href="http://localhost:1313/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"   /><link rel="stylesheet" href="http://localhost:1313/katex/katex.min.css ">
+		<script defer src="http://localhost:1313/katex/katex.min.js"></script>
+		<script defer src="http://localhost:1313/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+		</script>
+		
+		
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
+		
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">croyoux&#39;s blog</a>
+	</div>
+	<nav>
+		
+		<a href="/posts">Archive</a>
+		
+		<a href="/tags">Tags</a>
+		
+		<a href="/friends">Friends</a>
+		
+		<a href="/about">About</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">hexo建立个人博客并部署到GitHub</h1>
+          <div class="meta">Posted on Aug 12, 2023</div>
+        </div>
+        
+        <section class="body">
+          <h2 id="介绍">介绍</h2>
+<p>hexo是什么</p>
+<blockquote>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他标记语言）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+</blockquote>
+<p>fluid是什么</p>
+<blockquote>
+<p>Fluid 是基于 Hexo 的一款 Material Design 风格的主题</p>
+</blockquote>
+<h2 id="开始">开始</h2>
+<p>推荐搭配<a href="https://hexo.io/zh-cn/index.html">官方文档</a>一起看</p>
+<p>本教程基于Linux环境，作者用的是Debian12，window环境请搜索别的教程</p>
+<ol>
+<li>使用以下命令安装<strong>git</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt-get install git-core
+</span></span></code></pre></div><ol start="2">
+<li>安装<strong>Node.js</strong>
+下载并导入 Nodesource GPG 密钥</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install -y ca-certificates curl gnupg
+</span></span><span style="display:flex;"><span>sudo mkdir -p /etc/apt/keyrings
+</span></span><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+</span></span></code></pre></div><p>创建 deb 存储库</p>
+<blockquote>
+<p>NODE_MAJOR可以根据需要的版本进行更改</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>NODE_MAJOR<span style="color:#f92672">=</span><span style="color:#ae81ff">21</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_</span>$NODE_MAJOR<span style="color:#e6db74">.x nodistro main&#34;</span> | sudo tee /etc/apt/sources.list.d/nodesource.list
+</span></span></code></pre></div><p>更新并安装</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install nodejs -y
+</span></span></code></pre></div><ol start="3">
+<li>安装<strong>hexo</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>npm install -g hexo-cli
+</span></span></code></pre></div><ol start="4">
+<li>安装完成后选择一个目录新建所需文件，作者这里用<code>hexo</code>文件夹</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>hexo init &lt;folder&gt;   <span style="color:#75715e">#新建所选目录</span>
+</span></span><span style="display:flex;"><span>cd &lt;folder&gt;
+</span></span><span style="display:flex;"><span>npm install
+</span></span></code></pre></div><h3 id="主题">主题</h3>
+<p>到这里基本的安装已经完成，作者安装fluid主题，当然，别的也可以</p>
+<ol start="5">
+<li>
+<p>到<a href="https://github.com/fluid-dev/hexo-theme-fluid/releases">fluid</a>下载最新的<strong>source code.tar.gz</strong></p>
+</li>
+<li>
+<p>使用<code>tar -zxvf xxxxx.tar.gz</code>解压</p>
+</li>
+<li>
+<p>然后将解压完的文件重命名为<strong>fliud</strong></p>
+</li>
+<li>
+<p>将它移动到第四步你设定的目录下的<strong>themes</strong>文件夹</p>
+</li>
+<li>
+<p>修改hexo根目录下的<code>_config.yml</code>文件，设定主题</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">theme</span>: <span style="color:#ae81ff">fluid</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">language</span>: <span style="color:#ae81ff">zh-CN</span>
+</span></span></code></pre></div><ol start="10">
+<li>根据主题的教程，这时候我们需要创建一个关于页</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>hexo new page about
+</span></span></code></pre></div><ol start="11">
+<li>创建后修改<code>/source/about/index.md</code>的内容，添加<code>layout</code>属性</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: 你的标题
+</span></span><span style="display:flex;"><span>layout: about
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>#下面写正文
+</span></span></code></pre></div><p>其他的请看<a href="https://hexo.fluid-dev.com/docs/start/">用户手册</a>，就不细说了</p>
+<ol start="12">
+<li>配置好主题后我们生成一个本地的预览网页</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>hexo s
+</span></span></code></pre></div><p>输入<code>http://localhost:4000</code>就能看到生成的预览，注意只能本机访问</p>
+<ol start="13">
+<li>默认的文章是hello world,你可以使用<code>hexo n &quot;标题&quot;</code>来新建博客，包括初始的hello world ，都在<code>source/_posts</code>目录，如果想删掉文章，直接用rm命令就行</li>
+</ol>
+<h3 id="目录介绍">目录介绍</h3>
+<table>
+  <thead>
+      <tr>
+          <th>source/_posts</th>
+          <th>存放文章</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>public</td>
+          <td>生成的html</td>
+      </tr>
+      <tr>
+          <td>themes</td>
+          <td>存放主题</td>
+      </tr>
+      <tr>
+          <td>_config.yml</td>
+          <td>配置文件，主题文件夹里的是主题的配置文件</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="部署到github">部署到Github</h2>
+<p>因为本地启动之能我们自己看，要想让别人也看到就要部署到GitHub或者绑定域名</p>
+<p>其他托管网站也行，比如gitee，只是方法有点不同，这里用GitHub</p>
+<ol>
+<li>确保你安装了<strong>git</strong>执行以下命令配置git</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git config --global user.name <span style="color:#e6db74">&#34;你的Github用户名&#34;</span>  <span style="color:#75715e">#冒号不用删</span>
+</span></span><span style="display:flex;"><span>git config --global user.email <span style="color:#e6db74">&#34;你的Github邮箱&#34;</span>
+</span></span></code></pre></div><ol start="2">
+<li>配置完后开始生成密钥</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh-keygen -t rsa -C <span style="color:#e6db74">&#34;你的Github邮箱&#34;</span>
+</span></span></code></pre></div><p>默认三个全回车就行，完成后会生成<strong>id_rsa.pub</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cat ~/.ssh/id_rsa.pub  <span style="color:#75715e">#查看密钥</span>
+</span></span></code></pre></div><ol start="3">
+<li>复制<strong>ssh</strong>开头的输出，打开GitHub，找到<code>settings-SSH and GPG Keys</code> 选择<code>add new</code>名字随便取，在ssh里填入你刚刚复制的内容，点击添加</li>
+<li>执行以下命令，会询问你是否连接，输入<strong>yes</strong>后如果有<code>Hi xxx! You’ve successfully authenticated…</code>就代表连接成功</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh -T git@github.com
+</span></span></code></pre></div><ol start="5">
+<li>再去创建一个名为<code>用户名.github.io</code>的仓库，选项默认就行</li>
+<li>回到hexo，vim编辑<code>_config.yml</code>文件，修改<strong>deploy</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">deploy</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">git</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">repo</span>: <span style="color:#ae81ff">git@github.com:你的用户名/你的用户名.github.io.git</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">branch</span>: <span style="color:#ae81ff">master</span>
+</span></span></code></pre></div><ol start="7">
+<li>修改完后用以下命令生成并部署到GitHub</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>hexo clean <span style="color:#75715e">#清理缓存</span>
+</span></span><span style="display:flex;"><span>hexo g  <span style="color:#75715e">#生成静态网页</span>
+</span></span><span style="display:flex;"><span>hexo d  <span style="color:#75715e">#部署到GitHub</span>
+</span></span></code></pre></div><ol start="8">
+<li>完成后再浏览器里访问<code>用户名.github.io</code>如果没有404，那就成功了</li>
+</ol>
+<p>如果出现<code>extends includes/layout.pug block content include includes/recent-posts.pug include includes/partial</code>，可以尝试安装</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>npm install --save hexo-renderer-jade hexo-generator-feed hexo-generator-sitemap hexo-browsersync hexo-generator-archive
+</span></span></code></pre></div><h2 id="基础写作">基础写作</h2>
+<p>开始写文章前需要设定几个参数，我这里列举几个比较常用的</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: #你的标题
+</span></span><span style="display:flex;"><span>date: #写作日期
+</span></span><span style="display:flex;"><span>tags: #标签
+</span></span><span style="display:flex;"><span>categories: #分类
+</span></span><span style="display:flex;"><span>updated: #更新日期
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><p>如果想添加多个tags，可以用<code>[tags1,tags2,tags3]</code>来设定</p>
+<h2 id="迁移至新电脑">迁移至新电脑</h2>
+<p>如果换电脑或重装系统，只需保留</p>
+<pre tabindex="0"><code>_config.yml #配置文件
+themes #主题文件夹
+_config.&lt;themename&gt;.yml #如果有
+package.json #插件列表
+package-lock.json 
+source #文章
+scaffolds 
+db.json
+</code></pre><p>将文件移入hexo文件夹，使用<code>npm install</code>安装插件</p>
+<h2 id="参考">参考</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/552639819">2022【保姆级教程】含泪搭建hexo博客</a></p>
+<p><a href="https://hexo.io/zh-cn/">hexo文档</a></p>
+<p><a href="https://blog.csdn.net/weixin_44318830/article/details/104884936">CSDN-大数据梦想家</a></p>
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/hexo/">Hexo</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+      <div class="toc">
+        <strong>Table of contents:</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#介绍">介绍</a></li>
+    <li><a href="#开始">开始</a>
+      <ul>
+        <li><a href="#主题">主题</a></li>
+        <li><a href="#目录介绍">目录介绍</a></li>
+      </ul>
+    </li>
+    <li><a href="#部署到github">部署到Github</a></li>
+    <li><a href="#基础写作">基础写作</a></li>
+    <li><a href="#迁移至新电脑">迁移至新电脑</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://github.com/inuyasha-660" rel="me" title="GitHub"><svg class="feather">
+       <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
+    </svg></a><a class="border"></a></div>
+  <div class="footer-info">
+    2026  © Croyoux Lite |  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</footer>
+
+</div>
+    </body>
+</html>

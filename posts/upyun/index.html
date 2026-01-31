@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Icarus主题下的配置 - croyoux&#39;s blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="又换主题了，这次是Icarus" />
+	<meta property="og:image" content="http://localhost:1313/"/>
+	<meta property="og:url" content="http://localhost:1313/posts/upyun/">
+  <meta property="og:site_name" content="croyoux&#39;s blog">
+  <meta property="og:title" content="Icarus主题下的配置">
+  <meta property="og:description" content="又换主题了，这次是Icarus">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-10-06T18:21:00+00:00">
+    <meta property="article:modified_time" content="2023-10-06T18:21:00+00:00">
+    <meta property="article:tag" content="图床">
+    <meta property="article:tag" content="又拍云">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Icarus主题下的配置">
+  <meta name="twitter:description" content="又换主题了，这次是Icarus">
+
+        <link href="http://localhost:1313/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"   /><link rel="stylesheet" href="http://localhost:1313/katex/katex.min.css ">
+		<script defer src="http://localhost:1313/katex/katex.min.js"></script>
+		<script defer src="http://localhost:1313/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+		</script>
+		
+		
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
+		
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://localhost:1313/">croyoux&#39;s blog</a>
+	</div>
+	<nav>
+		
+		<a href="/posts">Archive</a>
+		
+		<a href="/tags">Tags</a>
+		
+		<a href="/friends">Friends</a>
+		
+		<a href="/about">About</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">Icarus主题下的配置</h1>
+          <div class="meta">Posted on Oct 6, 2023</div>
+        </div>
+        
+        <section class="body">
+          <h2 id="题外话">题外话</h2>
+<p>久违地打开了VScode写起了文章，不得不说，用VScode来写MarkDown是真的方便，装个插件就可以预览了</p>
+<h2 id="icarus主题">Icarus主题</h2>
+<p><strong>回到正题</strong></p>
+<p>因为Keep老出问题，于是，在几天前，我将主题更换为BUtterfly，可配置的选项非常多，整体美观度也非常不错；看似一切都很完美，<del>那就没有这篇文章了</del></p>
+<p>可是有一个缺点，就是加载的速度太慢了，除了必要的头像等，已经尽力让网站不出现图片，但首次加载仍需2～5秒的时间，如果刚好网不好，那就至少得8秒以上了。</p>
+<blockquote>
+<p>其实早在几天前，我就开始申请又拍云联盟了，但因为网站访问时间太长，审核误认为无法访问给拒了</p>
+</blockquote>
+<p>办法当然有，最好的方法就是换主题，前一段时候用的next主题就不错，黑白色调，除了图片其他的都不用怎么加载</p>
+<p>于是我<del>又</del>换主题了，这次是有6K star的Icarus主题，整体看着也很不错，也没什么图片需要加载的</p>
+<h2 id="又拍云联盟">又拍云联盟</h2>
+<p>光换主题还不行，还得上魔法，因为我的博客部署在Github，所以访问比较慢，于是我打算给我的博客套个CDN</p>
+<blockquote>
+<p>CDN是什么</p>
+<p>简单来说就是把我的文章分散在各个节点，如果你在广州，就可以直接访问广州CDN上的缓存资源，就不用跨越半个地球去Github的服务器上找了</p>
+</blockquote>
+<p>你可能注意到了页脚处添加了<code>本网站由又拍云提供CDN加速/云储存服务</code>这是因为我加入了又拍云联盟；那么加入又拍云联盟又什么好处呢</p>
+<blockquote>
+<p>免费获取每月 10GB 存储空间 + 15GB 流量</p>
+</blockquote>
+<p>15GB流量对于我这种小型的博客完全够用了，而且10GB的云存储刚好可以用来作图床，这下所有的问题都解决了&mdash;&ndash;吗？</p>
+<h3 id="加入又拍云联盟">加入又拍云联盟</h3>
+<p>想要白嫖首先得在网站的下方添加又拍云的标记和链接(本教程基于Icarus，可能不适用于您的主题)</p>
+<ol>
+<li>首先找到<code>~/hexo/themes/icarus/layout/common/footer.jsx</code>其他主题的大概在这个目录或者上级目录<code>layout</code>中，用<code>vim footer.jsx</code>编辑它</li>
+<li>仿照格式，添加上又拍云的文字</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span> &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referral&#34;</span> <span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_blank&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;noopener&#34;</span>&gt;<span style="color:#a6e22e">本网站由</span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/images/upyun.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logo&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{{<span style="color:#a6e22e">width</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;50px&#39;</span>,<span style="color:#a6e22e">height</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;25px&#39;</span>}}/&gt;<span style="color:#a6e22e">提供CDN加速</span><span style="color:#f92672">/</span><span style="color:#a6e22e">云储存服务</span>&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span></code></pre></div><p>其中<code>https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referra</code>为又拍云提供的链接，<code>src=&quot;/images/upyun.png&quot;</code>为logo的路径</p>
+<h4 id="icp备案">ICP备案</h4>
+<p>Icarus默认是没有ICP备案填写的配置的，我们可以仿照添加一个ICP</p>
+<p>同样的文件，添加上</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span> &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://icp.gov.moe/?keyword=20230439&#34;</span> <span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_blank&#34;</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;noreferrer noopener&#34;</span>&gt;<span style="color:#a6e22e">萌ICP备20230439号</span>&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>                                &lt;<span style="color:#f92672">span</span>&gt;<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">nbsp</span>; <span style="color:#f92672">||</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">nbsp</span>;&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span></code></pre></div><p>其中添加上<code>&lt;span&gt;&amp;nbsp; || &amp;nbsp;&lt;/span&gt;</code>可于网站访问人数一同显示，中间用<code>||</code>隔开</p>
+<p>完成后填写号信息点击申请，1-3个工作日内会回复，但我的域名没备案，所以CDN用不了，图床给的测试域名也不知道什么时候会失效</p>
+<h2 id="又一题外话">又一题外话</h2>
+<p>真的很喜欢写题外话</p>
+<h3 id="友链">友链</h3>
+<p>Icarus的友链在侧边栏，这点和Next很像，同样的，一多就很难管理</p>
+<p>我单独创建了一个友链页来展示我的朋友们(再插一嘴，空想笔记的站长去备案了，暂时访问不了)</p>
+<p>用<code>hexo new page link</code>创建一个友链页面</p>
+<p>原本想看下又没有好的解决方案，但找到的都没用，最后只能自己折腾一个了。</p>
+<p>想要<a href="https://www.imaegoo.com/friends/">imaegoo</a>大佬的友链页</p>
+<p>在<code>source/link/index.md</code>填入以下内容生成一组(两个)友链</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>&lt;div class=&#34;columns&#34;&gt;
+</span></span><span style="display:flex;"><span>  &lt;div class=&#34;column is-half&#34;&gt;
+</span></span><span style="display:flex;"><span>     &lt;div class=&#34;box&#34;&gt;
+</span></span><span style="display:flex;"><span>      &lt;a target=&#34;_blank&#34; rel=&#34;noopener&#34; href=&#34;博客链接&#34;&gt;博客名称&lt;/a&gt;
+</span></span><span style="display:flex;"><span>          &lt;br&gt;
+</span></span><span style="display:flex;"><span>           博客简介
+</span></span><span style="display:flex;"><span>       &lt;/p&gt;
+</span></span><span style="display:flex;"><span>    &lt;/div&gt;
+</span></span><span style="display:flex;"><span>  &lt;/div&gt;
+</span></span><span style="display:flex;"><span>&lt;div class=&#34;column is-half&#34;&gt;
+</span></span><span style="display:flex;"><span>    &lt;div class=&#34;box&#34;&gt;
+</span></span><span style="display:flex;"><span>      &lt;a target=&#34;_blank&#34; rel=&#34;noopener&#34; href=&#34;博客链接&#34;&gt;博客名称&lt;/a&gt;
+</span></span><span style="display:flex;"><span>          &lt;br&gt;
+</span></span><span style="display:flex;"><span>           博客简介
+</span></span><span style="display:flex;"><span>        &lt;/p&gt;
+</span></span><span style="display:flex;"><span>    &lt;/div&gt;
+</span></span><span style="display:flex;"><span>  &lt;/div&gt;
+</span></span><span style="display:flex;"><span>&lt;/div&gt;
+</span></span></code></pre></div><p>其中，每一个<code>&lt;div class=&quot;column is-half&quot;&gt;</code>就是一个友链，<code>&lt;div class=&quot;columns&quot;&gt;</code>范围内<code>&lt;div class=&quot;column is-half&quot;&gt;</code>的个数，就是一行显示的个数</p>
+<p>作者这里写了两个，一行就显示两个友链，手机等屏幕较小的就显示一个</p>
+<h4 id="简介超出字数省略">简介超出字数省略</h4>
+<p>如果你的友链简介过长，就会出现一个友链占用过多空间导致布局不美观；在书写友链前添加以下css即可解决</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#f92672">style</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">box</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">text-overflow</span>: <span style="color:#66d9ef">ellipsis</span>;
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">white-space</span>: <span style="color:#66d9ef">nowrap</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/</span><span style="color:#f92672">style</span><span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><h3 id="评论">评论</h3>
+<p>之前Keep用的是Giscus评论系统，感觉还不错，最重要的是有两条全站唯一的评论在</p>
+<p>但Icarus不支持Giscus，需要手动修改comment.jsx</p>
+<p>还是同样的<code>~/hexo/themes/icarus/layout/common</code>目录，找到<strong>comment.jsx</strong></p>
+<p>在<code>&lt;h3 class=&quot;title is-5&quot;&gt;{__('article.comments')}&lt;/h3&gt;</code></p>
+<p>和<code>{(() =&gt; {</code>中填入Giscus生成的代码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">logger</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;hexo-log&#39;</span>)();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">Component</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;inferno&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">view</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;hexo-component-inferno/lib/core/view&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">class</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">render</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">config</span>, <span style="color:#a6e22e">page</span>, <span style="color:#a6e22e">helper</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">__</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">helper</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">comment</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">config</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">comment</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">comment</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;string&#39;</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;card-content&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#f92672">h3</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;title is-5&#34;</span>&gt;{<span style="color:#a6e22e">__</span>(<span style="color:#e6db74">&#39;article.comments&#39;</span>)}&lt;/<span style="color:#f92672">h3</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span>               &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://giscus.app/client.js&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">+</span>                                <span style="color:#a6e22e">data</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">repo</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[在此输入仓库]&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">+</span>                                <span style="color:#a6e22e">data</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">repo</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[在此输入仓库 ID]&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">+</span>                                <span style="color:#a6e22e">data</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">category</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[在此输入分类名]&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">+</span>                                <span style="color:#a6e22e">data</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">category</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[在此输入分类 ID]&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">+</span>                                <span style="color:#a6e22e">data</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">mapping</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pathname&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">+</span>                                <span style="color:#a6e22e">data</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">strict</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">+</span>                                <span style="color:#a6e22e">data</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">reactions</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">enabled</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">+</span>                                <span style="color:#a6e22e">data</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">emit</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">metadata</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">+</span>                                <span style="color:#a6e22e">data</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">input</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">position</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bottom&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">+</span>                                <span style="color:#a6e22e">data</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">theme</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;preferred_color_scheme&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">+</span>                                <span style="color:#a6e22e">data</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;zh-CN&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">+</span>                                <span style="color:#a6e22e">crossorigin</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;anonymous&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">+</span>                                <span style="color:#a6e22e">async</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span>               &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                {(() =&gt; {
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">Comment</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">view</span>.<span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;comment/&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">comment</span>.<span style="color:#a6e22e">type</span>);
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">Comment</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Comment</span>.<span style="color:#a6e22e">Cacheable</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">Comment</span>.<span style="color:#a6e22e">Cacheable</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">Comment</span>;
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">return</span> &lt;<span style="color:#f92672">Comment</span> <span style="color:#a6e22e">config</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">config</span>} <span style="color:#a6e22e">page</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">page</span>} <span style="color:#a6e22e">helper</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">helper</span>} <span style="color:#a6e22e">comment</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">comment</span>} /&gt;;
+</span></span><span style="display:flex;"><span>                    } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+</span></span><span style="display:flex;"><span>                        <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">w</span>(<span style="color:#e6db74">`Icarus cannot load comment &#34;</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">comment</span>.<span style="color:#a6e22e">type</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;`</span>);
+</span></span><span style="display:flex;"><span>                        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                })()}
+</span></span><span style="display:flex;"><span>            &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">div</span>&gt;;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>添加完后，使用<code>hexo s --debug</code>本地预览，看是否出现评论框</p>
+<p>这里又有一个问题，因为Icarus不支持Giscus，所以在<code>_config.icarus.yml</code>中，如果填入Giscus或者其他评论系统，生成界面和本地预览时都会出现warning，但不影响生成和预览</p>
+<h3 id="添加valine评论">添加Valine评论</h3>
+<p>用了一天的Utterances，发现不登陆就看不到评论；反正评论也没了，不如选个更好的评论系统，最终选择了Valine</p>
+<blockquote>
+<p>不用Waline的原因很简单，Vercel部署的时候提示我账号被锁了，懒得搞Gitlab，发邮件也没回我，无奈选用Valine</p>
+</blockquote>
+<p>因为Icarus支持Valine，所以只需要填写配置即可，无需再修改comment.jsx</p>
+<h4 id="learncloud">LearnCloud</h4>
+<ol>
+<li><a href="https://leancloud.cn/dashboard/login.html#/signin">登陆</a>或<a href="https://leancloud.cn/dashboard/login.html#/signup">注册</a>一个LearnCloud账号，进入<a href="https://leancloud.cn/dashboard/applist.html#/apps">控制台</a>创建一个应用，随便取一个名字，选择开发版</li>
+<li>找到设置/应用凭证，复制你的<code>AppID</code>和<code>AppKey</code></li>
+<li>转到主题配置文件<code>_config.icarus.yml</code>，在comment写入以下内容</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">comment</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">type</span>: <span style="color:#ae81ff">valine</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">app_id</span>: <span style="color:#ae81ff">xxxxxxxxxxx-xxxxx</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">app_key</span>: <span style="color:#ae81ff">xxxxxxxxxxxxxxxxxxxxxx</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">placeholder</span>: <span style="color:#e6db74">&#34;&#34;</span>                 <span style="color:#75715e"># 可选填</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">avatar</span>: <span style="color:#ae81ff">mm                     </span> <span style="color:#75715e"># 可选填</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">avatar_force</span>: <span style="color:#66d9ef">false</span>             <span style="color:#75715e"># 可选填</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">meta</span>: [<span style="color:#e6db74">&#34;nick&#34;</span>, <span style="color:#e6db74">&#34;mail&#34;</span>, <span style="color:#e6db74">&#34;link&#34;</span>]  <span style="color:#75715e"># 可选填</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">page_size</span>: <span style="color:#ae81ff">10</span>                   <span style="color:#75715e"># 可选填</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">lang</span>: <span style="color:#ae81ff">zh-CN                    </span> <span style="color:#75715e"># 可选填</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">visitor</span>: <span style="color:#66d9ef">false</span>                  <span style="color:#75715e"># 可选填</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">highlight</span>: <span style="color:#66d9ef">true</span>                 <span style="color:#75715e"># 可选填</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">record_ip</span>: <span style="color:#66d9ef">false</span>                <span style="color:#75715e"># 可选填</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">server_urls</span>:                    <span style="color:#75715e"># 可选填</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">emoji_cdn</span>:                      <span style="color:#75715e"># 可选填</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">emoji_maps</span>:                     <span style="color:#75715e"># 可选填</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">enable_qq</span>: <span style="color:#66d9ef">false</span>                <span style="color:#75715e"># 可选填</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">required_fields</span>: []             <span style="color:#75715e"># 可选填</span>
+</span></span></code></pre></div><p>具体每个配置是什么意思请看<a href="https://valine.js.org/configuration.html">Valine文档</a></p>
+<h4 id="坑1">坑1</h4>
+<p>因为us.avoscloud.com域名失效，如果不填写<code>serverURLs</code>，就会导致<code>net::ERR_CONNECTION_CLOSED</code>这个错误</p>
+<p>解决方法很简单，只需设置</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">server_urls</span>: <span style="color:#ae81ff">https://xxxxxxxx.api.lncldglobal.com</span> <span style="color:#75715e"># 把xxxxxxxx替换成你自己AppID的前8位字符</span>
+</span></span></code></pre></div><p>重新hexo三联即可评论</p>
+<h4 id="坑2">坑2</h4>
+<blockquote>
+<p>为履行合规责任，降低平台风险， LeanCloud 国际版共享域名将于 2022 年 8 月 1 日起不再向中国大陆的最终用户提供服务，国际版共享域名仅服务于海外用户。</p>
+</blockquote>
+<p>因为这个原因，解决完坑1后国内用户如果要评论只能挂代理，国内网路也看不到别人的评论，需要我们绑定自己的域名</p>
+<ol>
+<li>打开<code>设置/域名绑定</code>，输入你想绑定的二级域名</li>
+<li>转到你购买域名的地方，添加一个CNAME解析，值为绑定时生成的值</li>
+<li>等待DNS刷新，完成绑定</li>
+<li>将上面的<code>server_urls: </code>设置为绑定的域名</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">server_urls</span>: <span style="color:#ae81ff">https://xxxx.example.xxx</span>
+</span></span></code></pre></div><p>注意不要漏了<code>https://</code></p>
+<h2 id="参考">参考</h2>
+<ul>
+<li>
+<p><a href="https://www.imaegoo.com/2022/dec-27/">博客主题源码和配置文件
+</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ppoffice/hexo-theme-icarus/issues/1207">能否支持一下 giscus 评论 #1207</a></p>
+</li>
+<li>
+<p><a href="https://ppoffice.github.io/hexo-theme-icarus/Plugins/Comment/icarus%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97-%E7%94%A8%E6%88%B7%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6/#Valine">Icarus用户指南 - 用户评论插件</a></p>
+</li>
+<li>
+<p><a href="https://github.com/xCss/Valine/issues/423">无法正常发送评论 #423</a></p>
+</li>
+<li>
+<p><a href="https://blog.yidaozhan.top/2022/07/19/valine-block-china-fix/">LeanCloud 更改用户条款后，Valine 在中国大陆不能评论的解决办法</a></p>
+</li>
+<li>
+<p><a href="https://valine.js.org/">Valine</a></p>
+</li>
+</ul>
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/%E5%9B%BE%E5%BA%8A/">图床</a></li>
+              
+              <li><a href="/tags/%E5%8F%88%E6%8B%8D%E4%BA%91/">又拍云</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+      <div class="toc">
+        <strong>Table of contents:</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#题外话">题外话</a></li>
+    <li><a href="#icarus主题">Icarus主题</a></li>
+    <li><a href="#又拍云联盟">又拍云联盟</a>
+      <ul>
+        <li><a href="#加入又拍云联盟">加入又拍云联盟</a></li>
+      </ul>
+    </li>
+    <li><a href="#又一题外话">又一题外话</a>
+      <ul>
+        <li><a href="#友链">友链</a></li>
+        <li><a href="#评论">评论</a></li>
+        <li><a href="#添加valine评论">添加Valine评论</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://github.com/inuyasha-660" rel="me" title="GitHub"><svg class="feather">
+       <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
+    </svg></a><a class="border"></a></div>
+  <div class="footer-info">
+    2026  © Croyoux Lite |  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</footer>
+
+</div>
+    </body>
+</html>

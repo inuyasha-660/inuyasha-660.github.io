@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>开发板 on croyoux&#39;s blog</title>
+    <link>http://localhost:1313/tags/%E5%BC%80%E5%8F%91%E6%9D%BF/</link>
+    <description>Recent content in 开发板 on croyoux&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>© Croyoux Lite</copyright>
+    <lastBuildDate>Thu, 10 Aug 2023 18:21:22 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E5%BC%80%E5%8F%91%E6%9D%BF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>香橙派zero3</title>
+      <link>http://localhost:1313/posts/orangepi/</link>
+      <pubDate>Thu, 10 Aug 2023 18:21:22 +0000</pubDate>
+      <guid>http://localhost:1313/posts/orangepi/</guid>
+      <description>&lt;h2 id=&#34;基础配置&#34;&gt;基础配置&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;CPU&lt;/th&gt;&#xA;          &lt;th&gt;全志H618高性能四核Cortex-A53处理器 1.5GHz&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;GPU&lt;/td&gt;&#xA;          &lt;td&gt;Mali G31 MP2&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;RAM&lt;/td&gt;&#xA;          &lt;td&gt;1GB/1.5GB/2GB/4GB LPDDR4&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;储存&lt;/td&gt;&#xA;          &lt;td&gt;16MB SPI Flash&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;板载WiFi+蓝牙&lt;/td&gt;&#xA;          &lt;td&gt;WiFi5和蓝牙5.0&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;网络&lt;/td&gt;&#xA;          &lt;td&gt;10M/100M/1000M以太网接口&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;音频输入、输出&lt;/td&gt;&#xA;          &lt;td&gt;13Pin扩展端口支持2路输出1路输入&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;视频输出&lt;/td&gt;&#xA;          &lt;td&gt;Micro HDMI支持4K@60fps&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;USB&lt;/td&gt;&#xA;          &lt;td&gt;USB 2.0 x 3（需搭配扩展版）&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;SD卡接口&lt;/td&gt;&#xA;          &lt;td&gt;Micro SD&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;电源输入&lt;/td&gt;&#xA;          &lt;td&gt;5V3A，Type-c接口&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;拓展接口&lt;/td&gt;&#xA;          &lt;td&gt;26Pin GPIO接口 &amp;amp;&amp;amp; 13Pin GPIO接口&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;因为原本买它是用来搭建mc服务器的，所以ram选择4g版&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

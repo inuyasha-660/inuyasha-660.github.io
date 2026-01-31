@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hexo on croyoux&#39;s blog</title>
+    <link>http://localhost:1313/tags/hexo/</link>
+    <description>Recent content in Hexo on croyoux&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>© Croyoux Lite</copyright>
+    <lastBuildDate>Sun, 17 Sep 2023 12:21:23 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/hexo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Next主题进阶配置</title>
+      <link>http://localhost:1313/posts/next/</link>
+      <pubDate>Sun, 17 Sep 2023 12:21:23 +0000</pubDate>
+      <guid>http://localhost:1313/posts/next/</guid>
+      <description>&lt;p&gt;最近比较忙，一方面刚开学，另一方面是因为butterfly加载速度太慢，转向next主题，很多东西需要重新配置；这篇文章与其说是教程，不如说是一篇记录&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>hexo建立个人博客并部署到GitHub</title>
+      <link>http://localhost:1313/posts/hexo/</link>
+      <pubDate>Sat, 12 Aug 2023 08:21:23 +0000</pubDate>
+      <guid>http://localhost:1313/posts/hexo/</guid>
+      <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;&#xA;&lt;p&gt;hexo是什么&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他标记语言）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;fluid是什么&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Fluid 是基于 Hexo 的一款 Material Design 风格的主题&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>google/bing收录</title>
+      <link>http://localhost:1313/posts/google.bing/</link>
+      <pubDate>Fri, 11 Aug 2023 12:22:12 +0000</pubDate>
+      <guid>http://localhost:1313/posts/google.bing/</guid>
+      <description>&lt;p&gt;博客目前已被bing和google收录，bing的点击率比google要多，我们的&lt;del&gt;网站真是蒸蒸日上&lt;/del&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
