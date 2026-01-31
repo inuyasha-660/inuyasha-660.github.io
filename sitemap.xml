@@ -2,139 +2,139 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://blog.fsunix.net/</loc>
     <lastmod>2025-09-13T17:33:01+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://blog.fsunix.net/posts/</loc>
     <lastmod>2025-09-13T17:33:01+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://blog.fsunix.net/tags/</loc>
     <lastmod>2025-09-13T17:33:01+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/card_cmb/</loc>
+    <loc>https://blog.fsunix.net/posts/card_cmb/</loc>
     <lastmod>2025-09-13T17:33:01+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E9%93%B6%E8%A1%8C%E5%8D%A1/</loc>
+    <loc>https://blog.fsunix.net/tags/%E9%93%B6%E8%A1%8C%E5%8D%A1/</loc>
     <lastmod>2025-09-13T17:33:01+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/bilibili/</loc>
+    <loc>https://blog.fsunix.net/tags/bilibili/</loc>
     <lastmod>2025-08-05T16:55:07+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/c/</loc>
+    <loc>https://blog.fsunix.net/tags/c/</loc>
     <lastmod>2025-08-05T16:55:07+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/gtk/</loc>
+    <loc>https://blog.fsunix.net/tags/gtk/</loc>
     <lastmod>2025-08-05T16:55:07+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/bili_login_gtk/</loc>
+    <loc>https://blog.fsunix.net/posts/bili_login_gtk/</loc>
     <lastmod>2025-08-05T16:55:07+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/todo_gtk/</loc>
+    <loc>https://blog.fsunix.net/posts/todo_gtk/</loc>
     <lastmod>2025-07-05T14:25:31+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/driver/</loc>
+    <loc>https://blog.fsunix.net/tags/driver/</loc>
     <lastmod>2024-08-08T15:31:05+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/freebsd/</loc>
+    <loc>https://blog.fsunix.net/tags/freebsd/</loc>
     <lastmod>2024-08-08T15:31:05+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/wifibox/</loc>
+    <loc>https://blog.fsunix.net/posts/wifibox/</loc>
     <lastmod>2024-08-08T15:31:05+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/r98-keyboard/</loc>
+    <loc>https://blog.fsunix.net/posts/r98-keyboard/</loc>
     <lastmod>2024-02-17T12:01:02+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E6%97%A5%E5%B8%B8/</loc>
+    <loc>https://blog.fsunix.net/tags/%E6%97%A5%E5%B8%B8/</loc>
     <lastmod>2024-02-17T12:01:02+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E9%94%AE%E7%9B%98/</loc>
+    <loc>https://blog.fsunix.net/tags/%E9%94%AE%E7%9B%98/</loc>
     <lastmod>2024-02-17T12:01:02+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/go/</loc>
+    <loc>https://blog.fsunix.net/tags/go/</loc>
     <lastmod>2024-01-31T12:34:05+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/linux/</loc>
+    <loc>https://blog.fsunix.net/tags/linux/</loc>
     <lastmod>2024-11-23T00:59:06+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/pigo-face/</loc>
+    <loc>https://blog.fsunix.net/posts/pigo-face/</loc>
     <lastmod>2024-01-31T12:34:05+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/nat-traversal/</loc>
+    <loc>https://blog.fsunix.net/posts/nat-traversal/</loc>
     <lastmod>2024-01-22T18:20:30+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E5%9B%BE%E5%BA%8A/</loc>
+    <loc>https://blog.fsunix.net/tags/%E5%9B%BE%E5%BA%8A/</loc>
     <lastmod>2024-01-22T18:20:30+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/arch-kde/</loc>
+    <loc>https://blog.fsunix.net/posts/arch-kde/</loc>
     <lastmod>2024-01-14T09:21:23+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/kernel/</loc>
+    <loc>https://blog.fsunix.net/tags/kernel/</loc>
     <lastmod>2024-11-23T00:59:06+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/nginx/</loc>
+    <loc>https://blog.fsunix.net/tags/nginx/</loc>
     <lastmod>2023-11-17T18:48:10+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/winter/</loc>
+    <loc>https://blog.fsunix.net/posts/winter/</loc>
     <lastmod>2023-11-17T18:48:10+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://blog.fsunix.net/categories/</loc>
     <lastmod>2023-11-05T13:23:01+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/hugo/</loc>
+    <loc>https://blog.fsunix.net/categories/hugo/</loc>
     <lastmod>2023-11-05T13:23:01+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hugo/</loc>
+    <loc>https://blog.fsunix.net/tags/hugo/</loc>
     <lastmod>2023-11-05T13:23:01+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hugo/</loc>
+    <loc>https://blog.fsunix.net/posts/hugo/</loc>
     <lastmod>2023-11-05T13:23:01+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/friends/</loc>
+    <loc>https://blog.fsunix.net/friends/</loc>
     <lastmod>2024-08-08T15:31:05+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/upyun/</loc>
+    <loc>https://blog.fsunix.net/posts/upyun/</loc>
     <lastmod>2023-10-06T18:21:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E5%8F%88%E6%8B%8D%E4%BA%91/</loc>
+    <loc>https://blog.fsunix.net/tags/%E5%8F%88%E6%8B%8D%E4%BA%91/</loc>
     <lastmod>2023-10-06T18:21:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hexo/</loc>
+    <loc>https://blog.fsunix.net/tags/hexo/</loc>
     <lastmod>2023-09-17T12:21:23+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/next/</loc>
+    <loc>https://blog.fsunix.net/posts/next/</loc>
     <lastmod>2023-09-17T12:21:23+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://blog.fsunix.net/about/</loc>
     <lastmod>2024-08-08T15:31:05+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ipv6/</loc>
+    <loc>https://blog.fsunix.net/tags/ipv6/</loc>
     <lastmod>2023-08-23T18:21:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/ipv_6/</loc>
+    <loc>https://blog.fsunix.net/posts/ipv_6/</loc>
     <lastmod>2023-08-23T18:21:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/%E5%BC%80%E5%8F%91%E6%9D%BF/</loc>
+    <loc>https://blog.fsunix.net/categories/%E5%BC%80%E5%8F%91%E6%9D%BF/</loc>
     <lastmod>2023-08-23T18:21:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/shell/</loc>
+    <loc>https://blog.fsunix.net/posts/shell/</loc>
     <lastmod>2023-08-19T21:34:04+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hexo/</loc>
+    <loc>https://blog.fsunix.net/posts/hexo/</loc>
     <lastmod>2023-08-12T08:21:23+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/google.bing/</loc>
+    <loc>https://blog.fsunix.net/posts/google.bing/</loc>
     <lastmod>2023-08-11T12:22:12+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E5%BC%80%E5%8F%91%E6%9D%BF/</loc>
+    <loc>https://blog.fsunix.net/tags/%E5%BC%80%E5%8F%91%E6%9D%BF/</loc>
     <lastmod>2023-08-10T18:21:22+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/orangepi/</loc>
+    <loc>https://blog.fsunix.net/posts/orangepi/</loc>
     <lastmod>2023-08-10T18:21:22+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/kernelsu/</loc>
+    <loc>https://blog.fsunix.net/posts/kernelsu/</loc>
     <lastmod>2024-11-23T00:59:06+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/termux/</loc>
+    <loc>https://blog.fsunix.net/posts/termux/</loc>
     <lastmod>2023-08-05T17:32:03+00:00</lastmod>
   </url>
 </urlset>

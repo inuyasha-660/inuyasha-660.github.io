@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bilibili on croyoux&#39;s blog</title>
-    <link>http://localhost:1313/tags/bilibili/</link>
+    <link>https://blog.fsunix.net/tags/bilibili/</link>
     <description>Recent content in Bilibili on croyoux&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© Croyoux Lite</copyright>
     <lastBuildDate>Tue, 05 Aug 2025 16:55:07 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/bilibili/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.fsunix.net/tags/bilibili/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WebKitGtk 实现 BiliBili 登录</title>
-      <link>http://localhost:1313/posts/bili_login_gtk/</link>
+      <link>https://blog.fsunix.net/posts/bili_login_gtk/</link>
       <pubDate>Tue, 05 Aug 2025 16:55:07 +0800</pubDate>
-      <guid>http://localhost:1313/posts/bili_login_gtk/</guid>
+      <guid>https://blog.fsunix.net/posts/bili_login_gtk/</guid>
       <description>&lt;p&gt;最近在研究 BiliBili 的 api， 想做一个以视频为音源的播放器；其中的一个功能允许导入收藏夹的视频&lt;/p&gt;&#xA;&lt;p&gt;主要有两个 api&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-api&#34; data-lang=&#34;api&#34;&gt;通过 mid 获取所有收藏夹信息&#xA;https://api.bilibili.com/x/v3/fav/folder/created/list-all?up_mid=&amp;lt;mid&amp;gt;&#xA;&#xA;通过 media_id 获取指定收藏夹信息&#xA;https://api.bilibili.com/x/v3/fav/resource/list?media_id=&amp;lt;media_id&amp;gt;&amp;amp;pn=&amp;lt;页数&amp;gt;&amp;amp;ps=&amp;lt;每页显示的视频个数&amp;gt;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;但是光有 mid 还不够；这两个 api 都需要设置特定的 Cookie 进行认证，所以只能在请求前先实现登录&lt;/p&gt;&#xA;&lt;h1 id=&#34;登录&#34;&gt;登录&lt;/h1&gt;&#xA;&lt;p&gt;BiliBili 主要支持&lt;code&gt;短信登录&lt;/code&gt;，&lt;code&gt;密码登录&lt;/code&gt;和&lt;code&gt;二维码登录&lt;/code&gt;；除了&lt;code&gt;二维码登录&lt;/code&gt;外，其余两种都需要在登录前进行&lt;code&gt;人机验证(由 geetest 提供)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;cookie&#34;&gt;Cookie&lt;/h2&gt;&#xA;&lt;p&gt;在完成登录后，BiliBili 将设置几个 Cookie&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-respon&#34; data-lang=&#34;respon&#34;&gt;HTTP/1.1 200 OK&#xA;Date: Mon, 13 Jul 2020 09:57:33 GMT&#xA;Content-Type: application/json;charset=UTF-8&#xA;Content-Length: 78&#xA;Connection: keep-alive&#xA;Server: Apache-Coyote/1.1&#xA;Set-Cookie: DedeUserID=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/&#xA;Set-Cookie: DedeUserID__ckMd5=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/&#xA;Set-Cookie: SESSDATA=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/; HttpOnly&#xA;Set-Cookie: bili_jct=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/&#xA;Set-Cookie: sid=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/&#xA;Expires: Mon, 13 Jul 2020 09:57:32 GMT&#xA;Cache-Control: no-cache&#xA;X-Cache-Webcdn: BYPASS from jd-sxhz-dx-w-01&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;示例来自 &lt;a href=&#34;https://socialsisteryi.github.io/bilibili-API-collect/docs/login/login_action/SMS.html#%E4%BD%BF%E7%94%A8%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95-web%E7%AB%AF&#34;&gt;BAC Document&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
