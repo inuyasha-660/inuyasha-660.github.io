@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html><head lang="en">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Linux Input Subsystem - croyoux&#39;s blog</title><link rel="icon" type="image/png" href=/favicon.ico /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="最近在写一个能够显示键盘输入的应用，需要实时获取键盘输入；在 SDL的 API 中有用于获取键盘输入的函数
+SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
+{
+    if (event-&gt;type == SDL_EVENT_KEY_DOWN) {
+        SDL_Log(&#34;key: %s&#34;, SDL_GetKeyName(event-&gt;key.key));
+    }
+}
+通过 SDL_KeyboardEvent结构体能获取所有的按键输入，但当窗口焦点丢失时，无论是否置顶窗口，都无法
+继续获取输入。
+input 子系统
+
+Input subsystem is a collection of drivers that is designed to support all input devices under Linux. Most of the drivers reside in drivers/input, although quite a few live in drivers/hid and drivers/platform.
+The core of the input subsystem is the input module, which must be loaded before any other of the input modules - it serves as a way of communication between two groups of modules:" />
+	<meta property="og:image" content="https://blog.fsunix.net/"/>
+	<meta property="og:url" content="https://blog.fsunix.net/posts/linux_input/">
+  <meta property="og:site_name" content="croyoux&#39;s blog">
+  <meta property="og:title" content="Linux Input Subsystem">
+  <meta property="og:description" content="最近在写一个能够显示键盘输入的应用，需要实时获取键盘输入；在 SDL的 API 中有用于获取键盘输入的函数
+SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event) { if (event-&gt;type == SDL_EVENT_KEY_DOWN) { SDL_Log(&#34;key: %s&#34;, SDL_GetKeyName(event-&gt;key.key)); } } 通过 SDL_KeyboardEvent结构体能获取所有的按键输入，但当窗口焦点丢失时，无论是否置顶窗口，都无法 继续获取输入。
+input 子系统 Input subsystem is a collection of drivers that is designed to support all input devices under Linux. Most of the drivers reside in drivers/input, although quite a few live in drivers/hid and drivers/platform.
+The core of the input subsystem is the input module, which must be loaded before any other of the input modules - it serves as a way of communication between two groups of modules:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-02-06T13:19:14+08:00">
+    <meta property="article:modified_time" content="2026-02-06T13:19:14+08:00">
+    <meta property="article:tag" content="C">
+    <meta property="article:tag" content="Linux">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Linux Input Subsystem">
+  <meta name="twitter:description" content="最近在写一个能够显示键盘输入的应用，需要实时获取键盘输入；在 SDL的 API 中有用于获取键盘输入的函数
+SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event) { if (event-&gt;type == SDL_EVENT_KEY_DOWN) { SDL_Log(&#34;key: %s&#34;, SDL_GetKeyName(event-&gt;key.key)); } } 通过 SDL_KeyboardEvent结构体能获取所有的按键输入，但当窗口焦点丢失时，无论是否置顶窗口，都无法 继续获取输入。
+input 子系统 Input subsystem is a collection of drivers that is designed to support all input devices under Linux. Most of the drivers reside in drivers/input, although quite a few live in drivers/hid and drivers/platform.
+The core of the input subsystem is the input module, which must be loaded before any other of the input modules - it serves as a way of communication between two groups of modules:">
+
+        <link href="https://blog.fsunix.net/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+	
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://blog.fsunix.net/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://blog.fsunix.net/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"   /><link rel="stylesheet" href="https://blog.fsunix.net/katex/katex.min.css ">
+		<script defer src="https://blog.fsunix.net/katex/katex.min.js"></script>
+		<script defer src="https://blog.fsunix.net/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+		</script>
+		
+		
+		<link rel="stylesheet" type="text/css" href="https://blog.fsunix.net/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
+		
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://blog.fsunix.net/">croyoux&#39;s blog</a>
+	</div>
+	<nav>
+		
+		<a href="/posts">Archive</a>
+		
+		<a href="/tags">Tags</a>
+		
+		<a href="/friends">Friends</a>
+		
+		<a href="/about">About</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">Linux Input Subsystem</h1>
+          <div class="meta">Posted on Feb 6, 2026</div>
+        </div>
+        
+        <section class="body">
+          <p>最近在写一个能够显示键盘输入的应用，需要实时获取键盘输入；在 <code>SDL</code>的 API 中有用于获取键盘输入的函数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>SDL_AppResult <span style="color:#a6e22e">SDL_AppEvent</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>appstate, SDL_Event <span style="color:#f92672">*</span>event)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (event<span style="color:#f92672">-&gt;</span>type <span style="color:#f92672">==</span> SDL_EVENT_KEY_DOWN) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">SDL_Log</span>(<span style="color:#e6db74">&#34;key: %s&#34;</span>, <span style="color:#a6e22e">SDL_GetKeyName</span>(event<span style="color:#f92672">-&gt;</span>key.key));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>通过 <code>SDL_KeyboardEvent</code>结构体能获取所有的按键输入，但当窗口焦点丢失时，无论是否置顶窗口，都无法
+继续获取输入。</p>
+<h2 id="input-子系统">input 子系统</h2>
+<blockquote>
+<p>Input subsystem is a collection of drivers that is designed to support all input devices under Linux. Most of the drivers reside in drivers/input, although quite a few live in drivers/hid and drivers/platform.</p>
+<p>The core of the input subsystem is the input module, which must be loaded before any other of the input modules - it serves as a way of communication between two groups of modules:</p>
+</blockquote>
+<p>在<code>dev/input</code>目录下有一系列输入接口文件，读取后可获得设备输入信息。但一个文件只能获取一个设备的输入，如果有外接键盘
+需要读取多个文件。</p>
+<p>事件结构体的定义为</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> input_event {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">struct</span> timeval time;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">short</span> type;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">short</span> code;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> value;
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p><code>time</code>为时间戳，<code>type</code>为事件类型，<code>code</code>表示输入的按键编码，在<a href="https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h"> include/uapi/linux/input-event-codes.h</a>中定义，<code>value</code>是事件携带的值</p>
+<p>因为我们只需要获取按键按下的事件 所以用<code>if (in_event.type != EV_KEY || in_event.value != 1)</code>过滤事件。</p>
+<p>最终得到</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;fcntl.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;linux/input.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">read_input</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>name)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> input_event in_event;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> fd <span style="color:#f92672">=</span> <span style="color:#a6e22e">open</span>(name, O_RDONLY);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (fd <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Failed to open %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, name);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">read</span>(fd, <span style="color:#f92672">&amp;</span>in_event, <span style="color:#66d9ef">sizeof</span>(in_event)) <span style="color:#f92672">==</span> <span style="color:#66d9ef">sizeof</span>(in_event)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (in_event.type <span style="color:#f92672">!=</span> EV_KEY <span style="color:#f92672">||</span> in_event.value <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">continue</span>;     
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">SDL_Log</span>(<span style="color:#e6db74">&#34;time: %ld key: %hu</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, in_event.time.tv_sec, in_event.code);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>如果需获取按键名称，可以按照定义创建映射表</p>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/c/">c</a></li>
+              
+              <li><a href="/tags/linux/">linux</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://github.com/inuyasha-660" rel="me" title="GitHub"><svg class="feather">
+       <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
+    </svg></a><a class="border"></a></div>
+  <div class="footer-info">
+    2026  © Croyoux Lite |  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</footer>
+
+
+
+</div>
+    </body>
+</html>

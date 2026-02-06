@@ -7,8 +7,22 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© Croyoux Lite</copyright>
-    <lastBuildDate>Sat, 13 Sep 2025 17:33:01 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 06 Feb 2026 13:19:14 +0800</lastBuildDate>
     <atom:link href="https://blog.fsunix.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C</title>
+      <link>https://blog.fsunix.net/tags/c/</link>
+      <pubDate>Fri, 06 Feb 2026 13:19:14 +0800</pubDate>
+      <guid>https://blog.fsunix.net/tags/c/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>https://blog.fsunix.net/tags/linux/</link>
+      <pubDate>Fri, 06 Feb 2026 13:19:14 +0800</pubDate>
+      <guid>https://blog.fsunix.net/tags/linux/</guid>
+      <description></description>
+    </item>
     <item>
       <title>银行卡</title>
       <link>https://blog.fsunix.net/tags/%E9%93%B6%E8%A1%8C%E5%8D%A1/</link>
@@ -21,13 +35,6 @@
       <link>https://blog.fsunix.net/tags/bilibili/</link>
       <pubDate>Tue, 05 Aug 2025 16:55:07 +0800</pubDate>
       <guid>https://blog.fsunix.net/tags/bilibili/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>C</title>
-      <link>https://blog.fsunix.net/tags/c/</link>
-      <pubDate>Tue, 05 Aug 2025 16:55:07 +0800</pubDate>
-      <guid>https://blog.fsunix.net/tags/c/</guid>
       <description></description>
     </item>
     <item>
@@ -70,13 +77,6 @@
       <link>https://blog.fsunix.net/tags/go/</link>
       <pubDate>Wed, 31 Jan 2024 12:34:05 +0000</pubDate>
       <guid>https://blog.fsunix.net/tags/go/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Linux</title>
-      <link>https://blog.fsunix.net/tags/linux/</link>
-      <pubDate>Wed, 31 Jan 2024 12:34:05 +0000</pubDate>
-      <guid>https://blog.fsunix.net/tags/linux/</guid>
       <description></description>
     </item>
     <item>

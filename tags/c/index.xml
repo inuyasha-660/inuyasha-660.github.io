@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© Croyoux Lite</copyright>
-    <lastBuildDate>Tue, 05 Aug 2025 16:55:07 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 06 Feb 2026 13:19:14 +0800</lastBuildDate>
     <atom:link href="https://blog.fsunix.net/tags/c/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux Input Subsystem</title>
+      <link>https://blog.fsunix.net/posts/linux_input/</link>
+      <pubDate>Fri, 06 Feb 2026 13:19:14 +0800</pubDate>
+      <guid>https://blog.fsunix.net/posts/linux_input/</guid>
+      <description>&lt;p&gt;最近在写一个能够显示键盘输入的应用，需要实时获取键盘输入；在 &lt;code&gt;SDL&lt;/code&gt;的 API 中有用于获取键盘输入的函数&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;SDL_AppResult &lt;span style=&#34;color:#a6e22e&#34;&gt;SDL_AppEvent&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;appstate, SDL_Event &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;event)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (event&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;type &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; SDL_EVENT_KEY_DOWN) {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;SDL_Log&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;key: %s&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;SDL_GetKeyName&lt;/span&gt;(event&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;key.key));&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;通过 &lt;code&gt;SDL_KeyboardEvent&lt;/code&gt;结构体能获取所有的按键输入，但当窗口焦点丢失时，无论是否置顶窗口，都无法&#xA;继续获取输入。&lt;/p&gt;&#xA;&lt;h2 id=&#34;input-子系统&#34;&gt;input 子系统&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Input subsystem is a collection of drivers that is designed to support all input devices under Linux. Most of the drivers reside in drivers/input, although quite a few live in drivers/hid and drivers/platform.&lt;/p&gt;&#xA;&lt;p&gt;The core of the input subsystem is the input module, which must be loaded before any other of the input modules - it serves as a way of communication between two groups of modules:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>WebKitGtk 实现 BiliBili 登录</title>
       <link>https://blog.fsunix.net/posts/bili_login_gtk/</link>

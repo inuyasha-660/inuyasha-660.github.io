@@ -2,14 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.fsunix.net/tags/c/</loc>
+    <lastmod>2026-02-06T13:19:14+08:00</lastmod>
+  </url><url>
     <loc>https://blog.fsunix.net/</loc>
-    <lastmod>2025-09-13T17:33:01+08:00</lastmod>
+    <lastmod>2026-02-06T13:19:14+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.fsunix.net/tags/linux/</loc>
+    <lastmod>2026-02-06T13:19:14+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.fsunix.net/posts/linux_input/</loc>
+    <lastmod>2026-02-06T13:19:14+08:00</lastmod>
   </url><url>
     <loc>https://blog.fsunix.net/posts/</loc>
-    <lastmod>2025-09-13T17:33:01+08:00</lastmod>
+    <lastmod>2026-02-06T13:19:14+08:00</lastmod>
   </url><url>
     <loc>https://blog.fsunix.net/tags/</loc>
-    <lastmod>2025-09-13T17:33:01+08:00</lastmod>
+    <lastmod>2026-02-06T13:19:14+08:00</lastmod>
   </url><url>
     <loc>https://blog.fsunix.net/posts/card_cmb/</loc>
     <lastmod>2025-09-13T17:33:01+08:00</lastmod>
@@ -18,9 +27,6 @@
     <lastmod>2025-09-13T17:33:01+08:00</lastmod>
   </url><url>
     <loc>https://blog.fsunix.net/tags/bilibili/</loc>
-    <lastmod>2025-08-05T16:55:07+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.fsunix.net/tags/c/</loc>
     <lastmod>2025-08-05T16:55:07+08:00</lastmod>
   </url><url>
     <loc>https://blog.fsunix.net/tags/gtk/</loc>
@@ -52,9 +58,6 @@
   </url><url>
     <loc>https://blog.fsunix.net/tags/go/</loc>
     <lastmod>2024-01-31T12:34:05+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.fsunix.net/tags/linux/</loc>
-    <lastmod>2024-11-23T00:59:06+08:00</lastmod>
   </url><url>
     <loc>https://blog.fsunix.net/posts/pigo-face/</loc>
     <lastmod>2024-01-31T12:34:05+00:00</lastmod>

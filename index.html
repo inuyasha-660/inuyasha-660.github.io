@@ -2,7 +2,7 @@
 <html>
 	<head lang="en">
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>croyoux&#39;s blog | Home </title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>croyoux&#39;s blog | Home </title><link rel="icon" type="image/png" href=/favicon.ico /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="" />
 	<meta property="og:image" content="https://blog.fsunix.net/"/>
 	<link rel="alternate" type="application/rss+xml" href="https://blog.fsunix.net/index.xml" title="croyoux's blog" />
@@ -65,6 +65,29 @@
 				<div class="site-description"></div>
 				
 				
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/linux_input/">Linux Input Subsystem</a></h1>
+					<time>Feb 6, 2026</time>
+					<br><div class="description">
+	
+	<p>最近在写一个能够显示键盘输入的应用，需要实时获取键盘输入；在 <code>SDL</code>的 API 中有用于获取键盘输入的函数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>SDL_AppResult <span style="color:#a6e22e">SDL_AppEvent</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>appstate, SDL_Event <span style="color:#f92672">*</span>event)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (event<span style="color:#f92672">-&gt;</span>type <span style="color:#f92672">==</span> SDL_EVENT_KEY_DOWN) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">SDL_Log</span>(<span style="color:#e6db74">&#34;key: %s&#34;</span>, <span style="color:#a6e22e">SDL_GetKeyName</span>(event<span style="color:#f92672">-&gt;</span>key.key));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>通过 <code>SDL_KeyboardEvent</code>结构体能获取所有的按键输入，但当窗口焦点丢失时，无论是否置顶窗口，都无法
+继续获取输入。</p>
+<h2 id="input-子系统">input 子系统</h2>
+<blockquote>
+<p>Input subsystem is a collection of drivers that is designed to support all input devices under Linux. Most of the drivers reside in drivers/input, although quite a few live in drivers/hid and drivers/platform.</p>
+<p>The core of the input subsystem is the input module, which must be loaded before any other of the input modules - it serves as a way of communication between two groups of modules:</p>&hellip;
+	
+</div>
+					<a class="readmore" href="/posts/linux_input/">Read more ⟶</a>
+				</section>
 				
 				<section class="list-item">
 					<h1 class="title"><a href="/posts/card_cmb/">招行新万事达普卡办理</a></h1>
@@ -381,17 +404,6 @@ X-Cache-Webcdn: BYPASS from jd-sxhz-dx-w-01
 	
 </div>
 					<a class="readmore" href="/posts/winter/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/hugo/">博客迁移至hugo</a></h1>
-					<time>Nov 5, 2023</time>
-					<br><div class="description">
-	
-	博客迁移到hugo的记录
-	
-</div>
-					<a class="readmore" href="/posts/hugo/">Read more ⟶</a>
 				</section>
 				
 				
