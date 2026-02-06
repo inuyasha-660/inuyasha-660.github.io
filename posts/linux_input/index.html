@@ -106,7 +106,7 @@ The core of the input subsystem is the input module, which must be loaded before
 <p>Input subsystem is a collection of drivers that is designed to support all input devices under Linux. Most of the drivers reside in drivers/input, although quite a few live in drivers/hid and drivers/platform.</p>
 <p>The core of the input subsystem is the input module, which must be loaded before any other of the input modules - it serves as a way of communication between two groups of modules:</p>
 </blockquote>
-<p>在<code>dev/input</code>目录下有一系列输入接口文件，读取后可获得设备输入信息。但一个文件只能获取一个设备的输入，如果有外接键盘
+<p>在<code>/dev/input</code>目录下有一系列输入接口文件，读取后可获得设备输入信息。但一个文件只能获取一个设备的输入，如果有外接键盘
 需要读取多个文件。</p>
 <p>事件结构体的定义为</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> input_event {
@@ -122,6 +122,8 @@ The core of the input subsystem is the input module, which must be loaded before
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;linux/input.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> quit <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">read_input</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>name)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">struct</span> input_event in_event;
@@ -132,11 +134,13 @@ The core of the input subsystem is the input module, which must be loaded before
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">read</span>(fd, <span style="color:#f92672">&amp;</span>in_event, <span style="color:#66d9ef">sizeof</span>(in_event)) <span style="color:#f92672">==</span> <span style="color:#66d9ef">sizeof</span>(in_event)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>quit <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">read</span>(fd, <span style="color:#f92672">&amp;</span>in_event, <span style="color:#66d9ef">sizeof</span>(in_event)) <span style="color:#f92672">==</span> <span style="color:#66d9ef">sizeof</span>(in_event)) {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (in_event.type <span style="color:#f92672">!=</span> EV_KEY <span style="color:#f92672">||</span> in_event.value <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">continue</span>;     
 </span></span><span style="display:flex;"><span>        
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">SDL_Log</span>(<span style="color:#e6db74">&#34;time: %ld key: %hu</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, in_event.time.tv_sec, in_event.code);
 </span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>如果需获取按键名称，可以按照定义创建映射表</p>
 
