@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© Croyoux Lite</copyright>
-    <lastBuildDate>Fri, 06 Feb 2026 13:19:14 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 08 Feb 2026 18:20:15 +0800</lastBuildDate>
     <atom:link href="https://blog.fsunix.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bilibili</title>
+      <link>https://blog.fsunix.net/tags/bilibili/</link>
+      <pubDate>Sun, 08 Feb 2026 18:20:15 +0800</pubDate>
+      <guid>https://blog.fsunix.net/tags/bilibili/</guid>
+      <description></description>
+    </item>
     <item>
       <title>C</title>
       <link>https://blog.fsunix.net/tags/c/</link>
@@ -28,13 +35,6 @@
       <link>https://blog.fsunix.net/tags/%E9%93%B6%E8%A1%8C%E5%8D%A1/</link>
       <pubDate>Sat, 13 Sep 2025 17:33:01 +0800</pubDate>
       <guid>https://blog.fsunix.net/tags/%E9%93%B6%E8%A1%8C%E5%8D%A1/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Bilibili</title>
-      <link>https://blog.fsunix.net/tags/bilibili/</link>
-      <pubDate>Tue, 05 Aug 2025 16:55:07 +0800</pubDate>
-      <guid>https://blog.fsunix.net/tags/bilibili/</guid>
       <description></description>
     </item>
     <item>

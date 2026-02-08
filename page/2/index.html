@@ -67,6 +67,64 @@
 				
 				
 				<section class="list-item">
+					<h1 class="title"><a href="/posts/winter/">将你的博客部署到雨云</a></h1>
+					<time>Nov 17, 2023</time>
+					<br><div class="description">
+	
+	<h2 id="近况">近况</h2>
+<p>期中考刚考完，我也难得有时间静下心来写博客，虽然文笔不太好就是了</p>
+<p>这个星期，广州跳过了秋天，直接来到了冬天，也可以说广州根本就没有春天和秋天</p>
+<p>看了<a href="https://arch-linux.osrc.com/">archlinux 简明指南</a>的教程，在虚拟机试了一次后为我的物理机安装上了Arch,不得不说，aur是真的好使，很多包都能在上面找到</p>
+<p>每日一滚</p>
+<pre tabindex="0"><code class="language-command" data-lang="command">sudo pacman -Syu
+</code></pre><p>最近半价买了一个月雨云的云服务器，学了下Nginx，把我的博客迁移到了上面</p>
+<h2 id="nginx">Nginx</h2>
+<p>原本想再水一篇，但想着也没什么好写的，就合并在一起</p>
+<p>在你喜欢的目录创建用于存放博客的文件夹，将博客仓库<strong>git</strong>下来</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">server {
+    listen 80;
+    server_name test.inuya.ltd;
+    root /home/blog;
+    location / {
+    }
+}
+</code></pre><p>跟之前一样，在服务器<code>/etc/nginx/conf.d</code>目录下创建<code>test.inuya.ltd.conf</code>配置文件，写入以上内容，这里我用二级域名<code>test.inuya.ltd</code>演示</p>
+<p>在域名提供商添加<code>A类型</code>解析，填入你的IP，使用<code>http://test.inuya.ltd</code>即可访问博客</p>
+<h2 id="https">https</h2>
+<p>配置完，会有一个问题，就是无法通过https访问，现在很多博客的友联已经不再添加没有https的博客了</p>
+<h3 id="ssl证书">ssl证书</h3>
+<p><del>阿里云现有免费的一年ssl证书可以申请</del></p>
+<p>阿里云证书现只有三个月有效期，遂更换cerbot自动续费</p>
+<ol>
+<li>在你的debian或基于debian的发行版上安装snap</li>
+</ol>
+<pre tabindex="0"><code class="language-command" data-lang="command">sudo apt install snapd
+</code></pre><ol start="2">
+<li>安装cerbot snap包</li>
+</ol>
+<pre tabindex="0"><code class="language-command" data-lang="command">sudo snap install --classic certbot
+</code></pre><ol start="3">
+<li>准备 Certbot 命令</li>
+</ol>
+<pre tabindex="0"><code class="language-command" data-lang="command">sudo ln -s /snap 
+</code></pre><ol start="4">
+<li>获取证书，这里选择手动配置</li>
+</ol>
+<pre tabindex="0"><code class="language-command" data-lang="command">sudo certbot certonly --nginx
+</code></pre><ol start="5">
+<li>测试下自动续费</li>
+</ol>
+<pre tabindex="0"><code class="language-command" data-lang="command">sudo certbot renew --dry-run
+</code></pre><p>证书应位于<code>/etc/letsencrypt/live</code>在Nginx中填入即可</p>
+<p>其他发行版也可参考<a href="https://certbot.eff.org/instructions?">certbot instructions</a>，选择对应的发行版即可</p>
+<h3 id="配置">配置</h3>
+<p>在原本的<code>test.inuya.ltd.conf</code>的配置中添加以下内容</p>&hellip;
+	
+</div>
+					<a class="readmore" href="/posts/winter/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
 					<h1 class="title"><a href="/posts/hugo/">博客迁移至hugo</a></h1>
 					<time>Nov 5, 2023</time>
 					<br><div class="description">
@@ -225,17 +283,6 @@
 					<a class="readmore" href="/posts/kernelsu/">Read more ⟶</a>
 				</section>
 				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/termux/">手机终端termux</a></h1>
-					<time>Aug 5, 2023</time>
-					<br><div class="description">
-	
-	N年前的Termux使用记录
-	
-</div>
-					<a class="readmore" href="/posts/termux/">Read more ⟶</a>
-				</section>
-				
 				
 
 <ul class="pagination">
@@ -245,6 +292,8 @@
 	
 	</span>
 	<span class="page-item page-next">
+	
+    <a href="/page/3/" class="page-link" aria-label="Next"><span aria-hidden="true">Next →</span></a>
 	
 	</span>
 </ul>

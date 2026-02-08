@@ -67,6 +67,75 @@
 				
 				
 				<section class="list-item">
+					<h1 class="title"><a href="/posts/bili-live/">BiliBili 直播取流 [M3U8]</a></h1>
+					<time>Feb 8, 2026</time>
+					<br><div class="description">
+	
+	<p>在 Web 平台上，BiliBili 使用 HLS 协议，提供一个动态刷新的 m3u8 文件以实现直播流的传输。主引索文件可以
+通过发送附带<code>cid</code>和<code>mid</code>参数的请求获得。</p>
+<p><code>cid</code>: 直播间长 ID</p>
+<p><code>mid</code>: 主播 ID</p>
+<pre tabindex="0"><code class="language-url" data-lang="url">[GET] https://api.live.bilibili.com/xlive/play-gateway/master/url?cid=&lt;cid&gt;&amp;mid=&lt;mid&gt;
+</code></pre><p>返回示例</p>
+<pre tabindex="0"><code class="language-m3u8" data-lang="m3u8">#EXTM3U
+#EXT-X-CONTENT-STEERING:SERVER-URI=&#34;reserved&#34;,PATHWAY-ID=&#34;https://cn-jxnc-cm-01-39.bilivideo.com&#34;,BILI-PATHWAY-PRIORITY=&#34;https://cn-jxnc-cm-01-39.bilivideo.com,https://d1--cn-gotcha204b.bilivideo.com,https://cn-jssz-cm-02-74.bilivideo.com,https://cn-jxnc-cm-01-38.bilivideo.com&#34;,BILI-CTR-MODE=1,BILI-TTL=150
+#EXT-X-STREAM-INF:BANDWIDTH=1382434,RESOLUTION=1280x720,CODECS=&#34;avc1.640028,avc1.640028&#34;,BILI-ORDER=0,BILI-DISPLAY=&#34;超清&#34;,BILI-QN=250,PATHWAY-ID=&#34;https://cn-jxnc-cm-01-39.bilivideo.com&#34;,BILI-STREAM=&#34;live_690608693_5023542&#34;
+https://cn-jxnc-cm-01-39.bilivideo.com/live-bvc/349602/live_690608693_5023542_2500/index.m3u8?expires=1770550381&amp;len=0&amp;oi=0x24098a550c210dc000000000000005af&amp;pt=android&amp;qn=250&amp;trid=100711865d771a89b85d2ea9f29c88698866&amp;bmt=2&amp;sigparams=cdn,expires,len,oi,pt,qn,trid,bmt&amp;cdn=cn-gotcha01&amp;sign=52df38eb4e41d151bc699663e85776f3&amp;site=e0c17361b5ba8b39d1436ef89dc05f47&amp;free_type=0&amp;mid=516951631&amp;sche=ban&amp;bvchls=1&amp;sid=cn-jxnc-cm-01-39&amp;chash=1&amp;sg=lr&amp;trace=8388681&amp;isp=cm&amp;rg=South&amp;pv=Guangdong&amp;expected_qn=0,0,0&amp;info_source=cache&amp;deploy_env=prod&amp;long_ab_flag=live_default_longitudinal&amp;strategy_id=122&amp;hdr_type=0&amp;codec=0&amp;origin_bitrate=1669&amp;media_type=0&amp;sk=11e6e03140d4fe707653c968459991d30709595305d5a5f68483e2a81ebc11b9&amp;ld=autoqn&amp;source=puv3_master&amp;long_ab_flag_value=test&amp;score=1&amp;pp=rtmp&amp;suffix=2500&amp;flvsk=7b9ca197a822eebb7933bf2a49b49d0ff551d1ce373042b837995692e840d6e6&amp;hot_cdn=909705&amp;long_ab_id=45&amp;strategy_type=1&amp;sl=2&amp;p2p_type=0&amp;strategy_version=latest&amp;vd=nc&amp;zoneid_l=151371779&amp;sid_l=stream_name_cold&amp;src=puv3&amp;order=1
+#EXT-X-STREAM-INF:BANDWIDTH=1382434,RESOLUTION=1280x720,CODECS=&#34;avc1.640028,avc1.640028&#34;,BILI-ORDER=0,BILI-DISPLAY=&#34;超清&#34;,BILI-QN=250,PATHWAY-ID=&#34;https://d1--cn-gotcha204b.bilivideo.com&#34;,BILI-STREAM=&#34;live_690608693_5023542&#34;
+https://d1--cn-gotcha204b.bilivideo.com/live-bvc/349602/live_690608693_5023542_2500/index.m3u8?expires=1770550381&amp;len=0&amp;oi=0x24098a550c210dc000000000000005af&amp;pt=android&amp;qn=250&amp;trid=100711865d771a89b85d2ea9f29c88698866&amp;bmt=2&amp;sigparams=cdn,expires,len,oi,pt,qn,trid,bmt&amp;cdn=cn-gotcha204&amp;sign=d0aacbc6618bcafdac6e768dce5388a3&amp;site=e0c17361b5ba8b39d1436ef89dc05f47&amp;free_type=0&amp;mid=516951631&amp;sche=ban&amp;bvchls=1&amp;trace=64&amp;isp=cm&amp;rg=South&amp;pv=Guangdong&amp;suffix=2500&amp;flvsk=7b9ca197a822eebb7933bf2a49b49d0ff551d1ce373042b837995692e840d6e6&amp;hot_cdn=909705&amp;long_ab_id=45&amp;long_ab_flag_value=test&amp;score=1&amp;pp=rtmp&amp;strategy_type=1&amp;sl=2&amp;p2p_type=0&amp;strategy_version=latest&amp;info_source=cache&amp;deploy_env=prod&amp;long_ab_flag=live_default_longitudinal&amp;strategy_id=122&amp;expected_qn=0,0,0&amp;media_type=0&amp;sk=11e6e03140d4fe707653c968459991d30709595305d5a5f68483e2a81ebc11b9&amp;ld=autoqn&amp;source=puv3_master&amp;hdr_type=0&amp;codec=0&amp;origin_bitrate=1669&amp;vd=bc&amp;src=puv3&amp;order=2
+#EXT-X-STREAM-INF:BANDWIDTH=2968287,RESOLUTION=1920x1080,CODECS=&#34;avc1.4d4028,avc1.4d4028&#34;,BILI-ORDER=1,BILI-DISPLAY=&#34;蓝光&#34;,BILI-QN=400,PATHWAY-ID=&#34;https://cn-jssz-cm-02-74.bilivideo.com&#34;,BILI-STREAM=&#34;live_690608693_5023542&#34;
+https://cn-jssz-cm-02-74.bilivideo.com/live-bvc/346968/live_690608693_5023542_4000/index.m3u8?expires=1770550381&amp;len=0&amp;oi=0x24098a550c210dc000000000000005af&amp;pt=android&amp;qn=400&amp;trid=100711865d771a89b85d2ea9f29c88698866&amp;bmt=2&amp;sigparams=cdn,expires,len,oi,pt,qn,trid,bmt&amp;cdn=cn-gotcha01&amp;sign=1f0d41867e09db304254a95f831259c6&amp;site=e0c17361b5ba8b39d1436ef89dc05f47&amp;free_type=0&amp;mid=516951631&amp;sche=ban&amp;bvchls=1&amp;sid=cn-jssz-cm-02-74&amp;chash=1&amp;sg=lr&amp;trace=8388681&amp;isp=cm&amp;rg=South&amp;pv=Guangdong&amp;suffix=4000&amp;deploy_env=prod&amp;ld=autoqn&amp;long_ab_flag_value=test&amp;sk=abd899906f241e8c24106d90b71e63c1&amp;codec=0&amp;media_type=0&amp;strategy_type=1&amp;hdr_type=0&amp;pp=rtmp&amp;source=puv3_master&amp;score=1&amp;p2p_type=0&amp;flvsk=83a3e6596fa5ad85e9bd49d83400af03&amp;sl=2&amp;strategy_id=122&amp;strategy_version=latest&amp;long_ab_id=45&amp;long_ab_flag=live_default_longitudinal&amp;origin_bitrate=2513&amp;expected_qn=0,0,0&amp;hot_cdn=909705&amp;info_source=cache&amp;vd=nc&amp;zoneid_l=151371779&amp;sid_l=stream_name_cold&amp;src=puv3&amp;order=1
+#EXT-X-STREAM-INF:BANDWIDTH=2968287,RESOLUTION=1920x1080,CODECS=&#34;avc1.4d4028,avc1.4d4028&#34;,BILI-ORDER=1,BILI-DISPLAY=&#34;蓝光&#34;,BILI-QN=400,PATHWAY-ID=&#34;https://d1--cn-gotcha204b.bilivideo.com&#34;,BILI-STREAM=&#34;live_690608693_5023542&#34;
+https://d1--cn-gotcha204b.bilivideo.com/live-bvc/346968/live_690608693_5023542_4000/index.m3u8?expires=1770550381&amp;len=0&amp;oi=0x24098a550c210dc000000000000005af&amp;pt=android&amp;qn=400&amp;trid=100711865d771a89b85d2ea9f29c88698866&amp;bmt=2&amp;sigparams=cdn,expires,len,oi,pt,qn,trid,bmt&amp;cdn=cn-gotcha204&amp;sign=b1dc7d3832440d88374fc3c85c947582&amp;site=e0c17361b5ba8b39d1436ef89dc05f47&amp;free_type=0&amp;mid=516951631&amp;sche=ban&amp;bvchls=1&amp;trace=64&amp;isp=cm&amp;rg=South&amp;pv=Guangdong&amp;p2p_type=0&amp;flvsk=83a3e6596fa5ad85e9bd49d83400af03&amp;sl=2&amp;strategy_id=122&amp;hdr_type=0&amp;pp=rtmp&amp;source=puv3_master&amp;score=1&amp;strategy_version=latest&amp;long_ab_id=45&amp;long_ab_flag=live_default_longitudinal&amp;origin_bitrate=2513&amp;expected_qn=0,0,0&amp;hot_cdn=909705&amp;info_source=cache&amp;sk=abd899906f241e8c24106d90b71e63c1&amp;codec=0&amp;media_type=0&amp;strategy_type=1&amp;suffix=4000&amp;deploy_env=prod&amp;ld=autoqn&amp;long_ab_flag_value=test&amp;vd=bc&amp;src=puv3&amp;order=2
+#EXT-X-STREAM-INF:BANDWIDTH=5167204,RESOLUTION=1920x1080,CODECS=&#34;avc1.640032,avc1.640032&#34;,BILI-ORDER=2,BILI-DISPLAY=&#34;原画&#34;,BILI-QN=10000,PATHWAY-ID=&#34;https://cn-jxnc-cm-01-38.bilivideo.com&#34;,BILI-STREAM=&#34;live_690608693_5023542&#34;
+https://cn-jxnc-cm-01-38.bilivideo.com/live-bvc/690859/live_690608693_5023542_bluray/index.m3u8?expires=1770550381&amp;len=0&amp;oi=0x24098a550c210dc000000000000005af&amp;pt=android&amp;qn=10000&amp;trid=100711865d771a89b85d2ea9f29c88698866&amp;bmt=2&amp;sigparams=cdn,expires,len,oi,pt,qn,trid,bmt&amp;cdn=cn-gotcha01&amp;sign=6746b82ed6d71fcc621e893f70ddfade&amp;site=e0c17361b5ba8b39d1436ef89dc05f47&amp;free_type=0&amp;mid=516951631&amp;sche=ban&amp;bvchls=1&amp;sid=cn-jxnc-cm-01-38&amp;chash=1&amp;sg=lr&amp;trace=8388681&amp;isp=cm&amp;rg=South&amp;pv=Guangdong&amp;p2p_type=0&amp;long_ab_flag_value=test&amp;hdr_type=0&amp;score=1&amp;flvsk=7b9ca197a822eebb7933bf2a49b49d0fda05a1d90eeb730a95fec16224245865&amp;media_type=0&amp;ld=autoqn&amp;pp=rtmp&amp;codec=0&amp;strategy_type=1&amp;sk=11e6e03140d4fe707653c968459991d393aca952e9f26d4184fc6f1531cee2a7&amp;source=puv3_master&amp;long_ab_id=45&amp;long_ab_flag=live_default_longitudinal&amp;sl=2&amp;hot_cdn=909705&amp;strategy_id=122&amp;suffix=bluray&amp;origin_bitrate=2584&amp;expected_qn=0,0,0&amp;info_source=cache&amp;strategy_version=latest&amp;deploy_env=prod&amp;vd=nc&amp;zoneid_l=151371779&amp;sid_l=stream_name_cold&amp;src=puv3&amp;order=1
+#EXT-X-STREAM-INF:BANDWIDTH=5167204,RESOLUTION=1920x1080,CODECS=&#34;avc1.640032,avc1.640032&#34;,BILI-ORDER=2,BILI-DISPLAY=&#34;原画&#34;,BILI-QN=10000,PATHWAY-ID=&#34;https://d1--cn-gotcha204b.bilivideo.com&#34;,BILI-STREAM=&#34;live_690608693_5023542&#34;
+https://d1--cn-gotcha204b.bilivideo.com/live-bvc/690859/live_690608693_5023542_bluray/index.m3u8?expires=1770550381&amp;len=0&amp;oi=0x24098a550c210dc000000000000005af&amp;pt=android&amp;qn=10000&amp;trid=100711865d771a89b85d2ea9f29c88698866&amp;bmt=2&amp;sigparams=cdn,expires,len,oi,pt,qn,trid,bmt&amp;cdn=cn-gotcha204&amp;sign=74cd72665f7486c3d1f855c3c8515b7e&amp;site=e0c17361b5ba8b39d1436ef89dc05f47&amp;free_type=0&amp;mid=516951631&amp;sche=ban&amp;bvchls=1&amp;trace=64&amp;isp=cm&amp;rg=South&amp;pv=Guangdong&amp;deploy_env=prod&amp;suffix=bluray&amp;origin_bitrate=2584&amp;expected_qn=0,0,0&amp;info_source=cache&amp;strategy_version=latest&amp;p2p_type=0&amp;long_ab_flag_value=test&amp;hdr_type=0&amp;score=1&amp;flvsk=7b9ca197a822eebb7933bf2a49b49d0fda05a1d90eeb730a95fec16224245865&amp;media_type=0&amp;ld=autoqn&amp;long_ab_flag=live_default_longitudinal&amp;sl=2&amp;pp=rtmp&amp;codec=0&amp;strategy_type=1&amp;sk=11e6e03140d4fe707653c968459991d393aca952e9f26d4184fc6f1531cee2a7&amp;source=puv3_master&amp;long_ab_id=45&amp;hot_cdn=909705&amp;strategy_id=122&amp;vd=bc&amp;src=puv3&amp;order=2
+</code></pre><p>在<code>#EXT-X-STREAM-INF</code>标签中标明分辨率(<code>RESOLUTION</code>)和画质(<code>BILI-QN</code>)，通过下方的链接可以获取对应画质下的子 m3u8 文件，且内容不断刷新。</p>
+<p>一个子 m3u8 示例如下</p>
+<pre tabindex="0"><code class="language-m3u8" data-lang="m3u8">#EXTM3U
+#EXT-X-VERSION:7
+#EXT-X-START:TIME-OFFSET=0
+#EXT-X-MEDIA-SEQUENCE:1770539728
+#EXT-X-TARGETDURATION:1
+#EXT-X-MAP:URI=&#34;h1770531613.m4s&#34;
+#EXT-BILI-AUX:698b02|K|73303|dbf63b3c
+#EXTINF:1.00,73303|dbf63b3c
+1770539728.m4s
+#EXT-BILI-AUX:698ea7|N|28dae|80f22557
+#EXTINF:1.00,28dae|80f22557
+1770539729.m4s
+#EXT-BILI-AUX:6993cc|N|2b0cf|a8f05729
+#EXTINF:1.00,2b0cf|a8f05729
+1770539730.m4s
+#EXT-BILI-AUX:699699|N|1b84e|593274a6
+#EXTINF:1.00,1b84e|593274a6
+1770539731.m4s
+#EXT-BILI-AUX:699a81|N|2089|73adb345
+#EXTINF:0.17,2089|73adb345
+1770539732.m4s
+#EXT-BILI-AUX:699b49|K|69b77|803deeb
+#EXTINF:1.00,69b77|803deeb
+1770539733.m4s
+#EXT-BILI-AUX:699eff|N|1ae9c|2b23bf02
+#EXTINF:1.00,1ae9c|2b23bf02
+1770539734.m4s
+#EXT-BILI-AUX:69a2e7|N|1b11f|1d5eea4a
+#EXTINF:1.00,1b11f|1d5eea4a
+1770539735.m4s
+#EXT-BILI-AUX:69a6df|N|603ee|3240e418
+#EXTINF:1.00,603ee|3240e418
+1770539736.m4s
+#EXT-BILI-AUX:69aae9|N|3c82|3c10d873
+#EXTINF:0.17,3c82|3c10d873
+1770539737.m4s
+</code></pre><p><code>#EXT-X-MAP:URI=&quot;h1770531613.m4s&quot;</code>作为初始化片段将不会变化，用于提供元数据。</p>&hellip;
+	
+</div>
+					<a class="readmore" href="/posts/bili-live/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
 					<h1 class="title"><a href="/posts/linux_input/">Linux Input Subsystem</a></h1>
 					<time>Feb 6, 2026</time>
 					<br><div class="description">
@@ -346,64 +415,6 @@ X-Cache-Webcdn: BYPASS from jd-sxhz-dx-w-01
 	
 </div>
 					<a class="readmore" href="/posts/arch-kde/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/winter/">将你的博客部署到雨云</a></h1>
-					<time>Nov 17, 2023</time>
-					<br><div class="description">
-	
-	<h2 id="近况">近况</h2>
-<p>期中考刚考完，我也难得有时间静下心来写博客，虽然文笔不太好就是了</p>
-<p>这个星期，广州跳过了秋天，直接来到了冬天，也可以说广州根本就没有春天和秋天</p>
-<p>看了<a href="https://arch-linux.osrc.com/">archlinux 简明指南</a>的教程，在虚拟机试了一次后为我的物理机安装上了Arch,不得不说，aur是真的好使，很多包都能在上面找到</p>
-<p>每日一滚</p>
-<pre tabindex="0"><code class="language-command" data-lang="command">sudo pacman -Syu
-</code></pre><p>最近半价买了一个月雨云的云服务器，学了下Nginx，把我的博客迁移到了上面</p>
-<h2 id="nginx">Nginx</h2>
-<p>原本想再水一篇，但想着也没什么好写的，就合并在一起</p>
-<p>在你喜欢的目录创建用于存放博客的文件夹，将博客仓库<strong>git</strong>下来</p>
-<pre tabindex="0"><code class="language-conf" data-lang="conf">server {
-    listen 80;
-    server_name test.inuya.ltd;
-    root /home/blog;
-    location / {
-    }
-}
-</code></pre><p>跟之前一样，在服务器<code>/etc/nginx/conf.d</code>目录下创建<code>test.inuya.ltd.conf</code>配置文件，写入以上内容，这里我用二级域名<code>test.inuya.ltd</code>演示</p>
-<p>在域名提供商添加<code>A类型</code>解析，填入你的IP，使用<code>http://test.inuya.ltd</code>即可访问博客</p>
-<h2 id="https">https</h2>
-<p>配置完，会有一个问题，就是无法通过https访问，现在很多博客的友联已经不再添加没有https的博客了</p>
-<h3 id="ssl证书">ssl证书</h3>
-<p><del>阿里云现有免费的一年ssl证书可以申请</del></p>
-<p>阿里云证书现只有三个月有效期，遂更换cerbot自动续费</p>
-<ol>
-<li>在你的debian或基于debian的发行版上安装snap</li>
-</ol>
-<pre tabindex="0"><code class="language-command" data-lang="command">sudo apt install snapd
-</code></pre><ol start="2">
-<li>安装cerbot snap包</li>
-</ol>
-<pre tabindex="0"><code class="language-command" data-lang="command">sudo snap install --classic certbot
-</code></pre><ol start="3">
-<li>准备 Certbot 命令</li>
-</ol>
-<pre tabindex="0"><code class="language-command" data-lang="command">sudo ln -s /snap 
-</code></pre><ol start="4">
-<li>获取证书，这里选择手动配置</li>
-</ol>
-<pre tabindex="0"><code class="language-command" data-lang="command">sudo certbot certonly --nginx
-</code></pre><ol start="5">
-<li>测试下自动续费</li>
-</ol>
-<pre tabindex="0"><code class="language-command" data-lang="command">sudo certbot renew --dry-run
-</code></pre><p>证书应位于<code>/etc/letsencrypt/live</code>在Nginx中填入即可</p>
-<p>其他发行版也可参考<a href="https://certbot.eff.org/instructions?">certbot instructions</a>，选择对应的发行版即可</p>
-<h3 id="配置">配置</h3>
-<p>在原本的<code>test.inuya.ltd.conf</code>的配置中添加以下内容</p>&hellip;
-	
-</div>
-					<a class="readmore" href="/posts/winter/">Read more ⟶</a>
 				</section>
 				
 				
