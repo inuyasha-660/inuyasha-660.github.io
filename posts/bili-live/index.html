@@ -203,11 +203,24 @@ https://d1--cn-gotcha204b.bilivideo.com/live-bvc/690859/live_690608693_5023542_b
 1770539737.m4s
 </code></pre><p><code>#EXT-X-MAP:URI=&quot;h1770531613.m4s&quot;</code>作为初始化片段将不会变化，用于提供元数据。</p>
 <p>列表内的直播流无法单独播放，需在第一次请求时将初始化片段与列表的直播流拼接，在后续的请求中向末尾追加列表中新的直播流。</p>
-<p>列表中的每一个直播流时长为1秒，只储存了文件名；在用于获此子 m3u8 文件的链接中，可以找到完整请求所需的地址。</p>
+<p>列表只储存了文件名；在用于获此子 m3u8 文件的链接中，可以找到完整请求所需的地址。</p>
 <pre tabindex="0"><code class="language-url" data-lang="url">https://d1--cn-gotcha204b.bilivideo.com/live-bvc/789996/live_690608693_5023542_bluray/index.m3u8?...
 </code></pre><p><code>live_690608693_5023542_bluray</code>中的<code>_bluray</code>表示这是一个质量为<code>原画</code>的 m3u8 文件(qn = 10000)；相应的，蓝光(qn = 400)的标识为<code>_4000</code>，超清(qn = 250)为<code>_2500</code></p>
-<p>最后，用上述地址拼接与文件名后发送请求，即可获取一个时长为1秒的直播流片段。</p>
+
+<div class='callout callout-custom' style='background-color: transparent; border: 3px solid #d340e0;'>
+  <div class="callout-inner">
+    
+    ⚡️ <u>Supplement</u>
+    <br />
+    原画不只有 _bluray 这一个后缀，今天发现 _39901278 也会出现在原画的链接中
+    
+    </div>
+</div>
+
+<p>最后，用上述地址拼接与文件名后发送请求，即可获取一个直播流片段。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>wget -O part.m4s <span style="color:#e6db74">&#39;https://d1--cn-gotcha204b.bilivideo.com/live-bvc/789996/live_690608693_5023542_bluray/1770539728.m4s&#39;</span>
+</span></span></code></pre></div><p>用<code>cat</code>在初始化片段后追加新的直播流</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat h1770531613.m4s 17705397*.m4s  &gt; output.m4s
 </span></span></code></pre></div>
         </section>
         <div class="post-tags">
