@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head lang="en">
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Wifibox的配置与使用 - croyoux&#39;s blog</title><link rel="icon" type="image/png" href=/favicon.ico /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="最近几天，我在Redmi Book Pro 14s上安装了FreeBSD 14.1-RELEASE，也算是体验了一把UNIX哲学，但因FreeBSD的驱动太过匮乏了，导致我的安装并不顺利，也就有了这篇文章
@@ -22,8 +22,8 @@ Wifibox的日志位于/var/run/wifibox/appliance/log，可以很方便地观察�
 
 dhclient ue0 # 获取ip
 连接完后安装 Wifibox" />
-	<meta property="og:image" content="https://blog.fsunix.net/"/>
-	<meta property="og:url" content="https://blog.fsunix.net/posts/wifibox/">
+	<meta property="og:image" content="http://localhost:1313/"/>
+	<meta property="og:url" content="http://localhost:1313/posts/wifibox/">
   <meta property="og:site_name" content="croyoux&#39;s blog">
   <meta property="og:title" content="Wifibox的配置与使用">
   <meta property="og:description" content="最近几天，我在Redmi Book Pro 14s上安装了FreeBSD 14.1-RELEASE，也算是体验了一把UNIX哲学，但因FreeBSD的驱动太过匮乏了，导致我的安装并不顺利，也就有了这篇文章
@@ -53,14 +53,14 @@ Wifibox的日志位于/var/run/wifibox/appliance/log，可以很方便地观察�
 配置 我的网卡是RTL8852be，用ifconfig查看只有一个设备，其ip为127.0.0.1，若网卡在FreeBSD下有驱动支持，则需要额外禁用自带驱动
 安装 Wifibox 因为安装需要网络，我们将数据线插入电脑，开启USB网络共享，用ifconfig查看是否识别到设备ue0 dhclient ue0 # 获取ip 连接完后安装 Wifibox">
 
-        <link href="https://blog.fsunix.net/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+        <link href="http://localhost:1313/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
 	
 
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://blog.fsunix.net/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
-		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://blog.fsunix.net/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"   /><link rel="stylesheet" href="https://blog.fsunix.net/katex/katex.min.css ">
-		<script defer src="https://blog.fsunix.net/katex/katex.min.js"></script>
-		<script defer src="https://blog.fsunix.net/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.92c7e6f6f5baede55d6238ba492bcbd00e10ca39a6bbdec527692bfc9564a927.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.4529c04ce20ceac5a42e37a63e092c89354fbd00e6209bd2995100d61b71e8df.css"   /><link rel="stylesheet" href="http://localhost:1313/katex/katex.min.css ">
+		<script defer src="http://localhost:1313/katex/katex.min.js"></script>
+		<script defer src="http://localhost:1313/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
 		
 		<script>
 			document.addEventListener("DOMContentLoaded", function() {
@@ -74,13 +74,13 @@ Wifibox的日志位于/var/run/wifibox/appliance/log，可以很方便地观察�
 		</script>
 		
 		
-		<link rel="stylesheet" type="text/css" href="https://blog.fsunix.net/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
 		
 </head>
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://blog.fsunix.net/">croyoux&#39;s blog</a>
+		<a href="http://localhost:1313/">croyoux&#39;s blog</a>
 	</div>
 	<nav>
 		
@@ -125,9 +125,9 @@ Wifibox的日志位于/var/run/wifibox/appliance/log，可以很方便地观察�
 <ol>
 <li>因为安装需要网络，我们将数据线插入电脑，开启USB网络共享，用<code>ifconfig</code>查看是否识别到设备<code>ue0</code></li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dhclient ue0 <span style="color:#75715e"># 获取ip</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dhclient ue0 <span style="color:#75715e"># 获取ip</span>
 </span></span></code></pre></div><p>连接完后安装 Wifibox</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pkg install wifibox-rtw89 wifibox-alpine-rtw89
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pkg install wifibox-rtw89 wifibox-alpine-rtw89
 </span></span><span style="display:flex;"><span>pkg install sysutils/bhyve+
 </span></span><span style="display:flex;"><span>pkg install gtar patchelf squashfs-tools-ng
 </span></span><span style="display:flex;"><span>pkg install grub2-bhyve socat
@@ -153,9 +153,9 @@ defaultroute_delay=&#34;0&#34;
 </code></pre><ol start="4">
 <li>使用 wpa_passphrase 生成网络配置</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wpa_passphrase &lt;网络名称&gt; &lt;密码&gt; &gt; /etc/wpa_supplicant.conf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wpa_passphrase &lt;网络名称&gt; &lt;密码&gt; &gt; /etc/wpa_supplicant.conf
 </span></span></code></pre></div><p>将配置复制到 Wifibox</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cp /etc/wpa_supplicant.conf /usr/local/etc/wifibox/wpa_supplicant/
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cp /etc/wpa_supplicant.conf /usr/local/etc/wifibox/wpa_supplicant/
 </span></span></code></pre></div><ol start="5">
 <li>
 <p>这时候就应该重启了，但在我的网卡上，必须在启动时获取<code>Wifibox0</code>的ip，否则网络将无法工作</p>
@@ -215,8 +215,6 @@ defaultroute_delay=&#34;0&#34;
       href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
   </div>
 </footer>
-
-
 
 </div>
     </body>

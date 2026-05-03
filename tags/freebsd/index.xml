@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>FreeBSD on croyoux&#39;s blog</title>
-    <link>https://blog.fsunix.net/tags/freebsd/</link>
+    <link>http://localhost:1313/tags/freebsd/</link>
     <description>Recent content in FreeBSD on croyoux&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© Croyoux Lite</copyright>
     <lastBuildDate>Thu, 08 Aug 2024 15:31:05 +0800</lastBuildDate>
-    <atom:link href="https://blog.fsunix.net/tags/freebsd/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/freebsd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Wifibox的配置与使用</title>
-      <link>https://blog.fsunix.net/posts/wifibox/</link>
+      <link>http://localhost:1313/posts/wifibox/</link>
       <pubDate>Wed, 10 Jul 2024 08:27:11 +0800</pubDate>
-      <guid>https://blog.fsunix.net/posts/wifibox/</guid>
-      <description>&lt;p&gt;最近几天，我在&lt;code&gt;Redmi Book Pro 14s&lt;/code&gt;上安装了&lt;code&gt;FreeBSD 14.1-RELEASE&lt;/code&gt;，也算是体验了一把UNIX哲学，但因FreeBSD的驱动太过匮乏了，导致我的安装并不顺利，也就有了这篇文章&lt;/p&gt;&#xA;&lt;h2 id=&#34;bhyve&#34;&gt;bhyve&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;bhyve，发音为“beehive”，是 FreeBSD 的虚拟机管理程序 / 虚拟机管理器，支持带有“POPCNT”（POPulation Count）功能的 Intel 和 AMD 处理器上的多种客户操作系统，以及在实验中支持 gic0：ARM Generic Interrupt Controller v3.0 功能的 ARM64/aarch64 处理器&lt;/p&gt;&#xA;&lt;p&gt;bhyve 支持多种存储和网络后端、UEFI、FreeBSD 加载器和 GRUB 启动、PCI 直通 (PPT)、集成 VNC 和 9pfs 服务器以及更多功能&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;wifibox&#34;&gt;Wifibox&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;bhyve supports passing of host PCI devices to a virtual machine for its exclusive use of them.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Wifibox则是借助其PCI直通技术，部署了一个 Linux 客户机，借助 PCI 直通技术驱动 FreeBSD 主机系统上的无线网卡&lt;/p&gt;&#xA;&lt;p&gt;Wifibox的日志位于&lt;code&gt;/var/run/wifibox/appliance/log&lt;/code&gt;，可以很方便地观察它的运行状态&lt;/p&gt;&#xA;&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;&#xA;&lt;p&gt;我的网卡是&lt;code&gt;RTL8852be&lt;/code&gt;，用&lt;code&gt;ifconfig&lt;/code&gt;查看只有一个设备，其ip为&lt;code&gt;127.0.0.1&lt;/code&gt;，若网卡在FreeBSD下有驱动支持，则需要额外禁用自带驱动&lt;/p&gt;&#xA;&lt;h3 id=&#34;安装-wifibox&#34;&gt;安装 Wifibox&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;因为安装需要网络，我们将数据线插入电脑，开启USB网络共享，用&lt;code&gt;ifconfig&lt;/code&gt;查看是否识别到设备&lt;code&gt;ue0&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dhclient ue0 &lt;span style=&#34;color:#75715e&#34;&gt;# 获取ip&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;连接完后安装 Wifibox&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/wifibox/</guid>
+      <description>&lt;p&gt;最近几天，我在&lt;code&gt;Redmi Book Pro 14s&lt;/code&gt;上安装了&lt;code&gt;FreeBSD 14.1-RELEASE&lt;/code&gt;，也算是体验了一把UNIX哲学，但因FreeBSD的驱动太过匮乏了，导致我的安装并不顺利，也就有了这篇文章&lt;/p&gt;&#xA;&lt;h2 id=&#34;bhyve&#34;&gt;bhyve&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;bhyve，发音为“beehive”，是 FreeBSD 的虚拟机管理程序 / 虚拟机管理器，支持带有“POPCNT”（POPulation Count）功能的 Intel 和 AMD 处理器上的多种客户操作系统，以及在实验中支持 gic0：ARM Generic Interrupt Controller v3.0 功能的 ARM64/aarch64 处理器&lt;/p&gt;&#xA;&lt;p&gt;bhyve 支持多种存储和网络后端、UEFI、FreeBSD 加载器和 GRUB 启动、PCI 直通 (PPT)、集成 VNC 和 9pfs 服务器以及更多功能&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h2 id=&#34;wifibox&#34;&gt;Wifibox&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;bhyve supports passing of host PCI devices to a virtual machine for its exclusive use of them.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Wifibox则是借助其PCI直通技术，部署了一个 Linux 客户机，借助 PCI 直通技术驱动 FreeBSD 主机系统上的无线网卡&lt;/p&gt;&#xA;&lt;p&gt;Wifibox的日志位于&lt;code&gt;/var/run/wifibox/appliance/log&lt;/code&gt;，可以很方便地观察它的运行状态&lt;/p&gt;&#xA;&lt;h2 id=&#34;配置&#34;&gt;配置&lt;/h2&gt;&#xA;&lt;p&gt;我的网卡是&lt;code&gt;RTL8852be&lt;/code&gt;，用&lt;code&gt;ifconfig&lt;/code&gt;查看只有一个设备，其ip为&lt;code&gt;127.0.0.1&lt;/code&gt;，若网卡在FreeBSD下有驱动支持，则需要额外禁用自带驱动&lt;/p&gt;&#xA;&lt;h3 id=&#34;安装-wifibox&#34;&gt;安装 Wifibox&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;因为安装需要网络，我们将数据线插入电脑，开启USB网络共享，用&lt;code&gt;ifconfig&lt;/code&gt;查看是否识别到设备&lt;code&gt;ue0&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dhclient ue0 &lt;span style=&#34;color:#75715e&#34;&gt;# 获取ip&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;连接完后安装 Wifibox&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

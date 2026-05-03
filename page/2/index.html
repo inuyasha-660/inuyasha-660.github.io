@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-	<head lang="en">
+	<head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>croyoux&#39;s blog | Home </title><link rel="icon" type="image/png" href=/favicon.ico /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="" />
-	<meta property="og:image" content="https://blog.fsunix.net/"/>
-	<link rel="alternate" type="application/rss+xml" href="https://blog.fsunix.net/index.xml" title="croyoux's blog" />
-	<meta property="og:url" content="https://blog.fsunix.net/">
+	<meta property="og:image" content="http://localhost:1313/"/>
+	<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml" title="croyoux's blog" />
+	<meta property="og:url" content="http://localhost:1313/">
   <meta property="og:site_name" content="croyoux&#39;s blog">
   <meta property="og:title" content="croyoux&#39;s blog">
   <meta property="og:locale" content="en_us">
@@ -15,14 +15,14 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="croyoux&#39;s blog">
 
-        <link href="https://blog.fsunix.net/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+        <link href="http://localhost:1313/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
 	
 
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://blog.fsunix.net/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
-		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://blog.fsunix.net/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"   /><link rel="stylesheet" href="https://blog.fsunix.net/katex/katex.min.css ">
-		<script defer src="https://blog.fsunix.net/katex/katex.min.js"></script>
-		<script defer src="https://blog.fsunix.net/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.92c7e6f6f5baede55d6238ba492bcbd00e10ca39a6bbdec527692bfc9564a927.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.4529c04ce20ceac5a42e37a63e092c89354fbd00e6209bd2995100d61b71e8df.css"   /><link rel="stylesheet" href="http://localhost:1313/katex/katex.min.css ">
+		<script defer src="http://localhost:1313/katex/katex.min.js"></script>
+		<script defer src="http://localhost:1313/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
 		
 		<script>
 			document.addEventListener("DOMContentLoaded", function() {
@@ -36,7 +36,7 @@
 		</script>
 		
 		
-		<link rel="stylesheet" type="text/css" href="https://blog.fsunix.net/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
 		
 </head>
 
@@ -44,7 +44,7 @@
 		<div class="content">
 			<header>
 	<div class="main">
-		<a href="https://blog.fsunix.net/">croyoux&#39;s blog</a>
+		<a href="http://localhost:1313/">croyoux&#39;s blog</a>
 	</div>
 	<nav>
 		
@@ -67,212 +67,6 @@
 				
 				
 				<section class="list-item">
-					<h1 class="title"><a href="/posts/winter/">将你的博客部署到雨云</a></h1>
-					<time>Nov 17, 2023</time>
-					<br><div class="description">
-	
-	<h2 id="近况">近况</h2>
-<p>期中考刚考完，我也难得有时间静下心来写博客，虽然文笔不太好就是了</p>
-<p>这个星期，广州跳过了秋天，直接来到了冬天，也可以说广州根本就没有春天和秋天</p>
-<p>看了<a href="https://arch-linux.osrc.com/">archlinux 简明指南</a>的教程，在虚拟机试了一次后为我的物理机安装上了Arch,不得不说，aur是真的好使，很多包都能在上面找到</p>
-<p>每日一滚</p>
-<pre tabindex="0"><code class="language-command" data-lang="command">sudo pacman -Syu
-</code></pre><p>最近半价买了一个月雨云的云服务器，学了下Nginx，把我的博客迁移到了上面</p>
-<h2 id="nginx">Nginx</h2>
-<p>原本想再水一篇，但想着也没什么好写的，就合并在一起</p>
-<p>在你喜欢的目录创建用于存放博客的文件夹，将博客仓库<strong>git</strong>下来</p>
-<pre tabindex="0"><code class="language-conf" data-lang="conf">server {
-    listen 80;
-    server_name test.inuya.ltd;
-    root /home/blog;
-    location / {
-    }
-}
-</code></pre><p>跟之前一样，在服务器<code>/etc/nginx/conf.d</code>目录下创建<code>test.inuya.ltd.conf</code>配置文件，写入以上内容，这里我用二级域名<code>test.inuya.ltd</code>演示</p>
-<p>在域名提供商添加<code>A类型</code>解析，填入你的IP，使用<code>http://test.inuya.ltd</code>即可访问博客</p>
-<h2 id="https">https</h2>
-<p>配置完，会有一个问题，就是无法通过https访问，现在很多博客的友联已经不再添加没有https的博客了</p>
-<h3 id="ssl证书">ssl证书</h3>
-<p><del>阿里云现有免费的一年ssl证书可以申请</del></p>
-<p>阿里云证书现只有三个月有效期，遂更换cerbot自动续费</p>
-<ol>
-<li>在你的debian或基于debian的发行版上安装snap</li>
-</ol>
-<pre tabindex="0"><code class="language-command" data-lang="command">sudo apt install snapd
-</code></pre><ol start="2">
-<li>安装cerbot snap包</li>
-</ol>
-<pre tabindex="0"><code class="language-command" data-lang="command">sudo snap install --classic certbot
-</code></pre><ol start="3">
-<li>准备 Certbot 命令</li>
-</ol>
-<pre tabindex="0"><code class="language-command" data-lang="command">sudo ln -s /snap 
-</code></pre><ol start="4">
-<li>获取证书，这里选择手动配置</li>
-</ol>
-<pre tabindex="0"><code class="language-command" data-lang="command">sudo certbot certonly --nginx
-</code></pre><ol start="5">
-<li>测试下自动续费</li>
-</ol>
-<pre tabindex="0"><code class="language-command" data-lang="command">sudo certbot renew --dry-run
-</code></pre><p>证书应位于<code>/etc/letsencrypt/live</code>在Nginx中填入即可</p>
-<p>其他发行版也可参考<a href="https://certbot.eff.org/instructions?">certbot instructions</a>，选择对应的发行版即可</p>
-<h3 id="配置">配置</h3>
-<p>在原本的<code>test.inuya.ltd.conf</code>的配置中添加以下内容</p>&hellip;
-	
-</div>
-					<a class="readmore" href="/posts/winter/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/hugo/">博客迁移至hugo</a></h1>
-					<time>Nov 5, 2023</time>
-					<br><div class="description">
-	
-	博客迁移到hugo的记录
-	
-</div>
-					<a class="readmore" href="/posts/hugo/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/upyun/">Icarus主题下的配置</a></h1>
-					<time>Oct 6, 2023</time>
-					<br><div class="description">
-	
-	又换主题了，这次是Icarus
-	
-</div>
-					<a class="readmore" href="/posts/upyun/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/next/">Next主题进阶配置</a></h1>
-					<time>Sep 17, 2023</time>
-					<br><div class="description">
-	
-	<p>最近比较忙，一方面刚开学，另一方面是因为butterfly加载速度太慢，转向next主题，很多东西需要重新配置；这篇文章与其说是教程，不如说是一篇记录</p>&hellip;
-	
-</div>
-					<a class="readmore" href="/posts/next/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/ipv_6/">家庭网络优化</a></h1>
-					<time>Aug 23, 2023</time>
-					<br><div class="description">
-	
-	为路由器启用ipv6
-	
-</div>
-					<a class="readmore" href="/posts/ipv_6/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/shell/">Linux下的各种shell</a></h1>
-					<time>Aug 19, 2023</time>
-					<br><div class="description">
-	
-	<p>安装完linux要干什么？ 当然是美化一下终端啦</p>
-<h2 id="fish">FIsh</h2>
-<blockquote>
-<p>fish is a smart and user-friendly command line shell for Linux, macOS, and the rest of the family.</p>
-</blockquote>
-<p>我接触到的第一个shell，自带语法高亮和自动补全这两项神器，如果你不嫌弃默认的主题的话，fish可以说是开箱即用</p>&hellip;
-	
-</div>
-					<a class="readmore" href="/posts/shell/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/hexo/">hexo建立个人博客并部署到GitHub</a></h1>
-					<time>Aug 12, 2023</time>
-					<br><div class="description">
-	
-	hexo是一个快速，简洁且高效的博客框架，本文为使用hexo搭建博客并部署到github的教程
-	
-</div>
-					<a class="readmore" href="/posts/hexo/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/google.bing/">google/bing收录</a></h1>
-					<time>Aug 11, 2023</time>
-					<br><div class="description">
-	
-	<p>博客目前已被bing和google收录，bing的点击率比google要多，我们的<del>网站真是蒸蒸日上</del></p>&hellip;
-	
-</div>
-					<a class="readmore" href="/posts/google.bing/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/orangepi/">香橙派zero3</a></h1>
-					<time>Aug 10, 2023</time>
-					<br><div class="description">
-	
-	<h2 id="基础配置">基础配置</h2>
-<table>
-  <thead>
-      <tr>
-          <th>CPU</th>
-          <th>全志H618高性能四核Cortex-A53处理器 1.5GHz</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>GPU</td>
-          <td>Mali G31 MP2</td>
-      </tr>
-      <tr>
-          <td>RAM</td>
-          <td>1GB/1.5GB/2GB/4GB LPDDR4</td>
-      </tr>
-      <tr>
-          <td>储存</td>
-          <td>16MB SPI Flash</td>
-      </tr>
-      <tr>
-          <td>板载WiFi+蓝牙</td>
-          <td>WiFi5和蓝牙5.0</td>
-      </tr>
-      <tr>
-          <td>网络</td>
-          <td>10M/100M/1000M以太网接口</td>
-      </tr>
-      <tr>
-          <td>音频输入、输出</td>
-          <td>13Pin扩展端口支持2路输出1路输入</td>
-      </tr>
-      <tr>
-          <td>视频输出</td>
-          <td>Micro HDMI支持4K@60fps</td>
-      </tr>
-      <tr>
-          <td>USB</td>
-          <td>USB 2.0 x 3（需搭配扩展版）</td>
-      </tr>
-      <tr>
-          <td>SD卡接口</td>
-          <td>Micro SD</td>
-      </tr>
-      <tr>
-          <td>电源输入</td>
-          <td>5V3A，Type-c接口</td>
-      </tr>
-      <tr>
-          <td>拓展接口</td>
-          <td>26Pin GPIO接口 &amp;&amp; 13Pin GPIO接口</td>
-      </tr>
-  </tbody>
-</table>
-<p>因为原本买它是用来搭建mc服务器的，所以ram选择4g版</p>&hellip;
-	
-</div>
-					<a class="readmore" href="/posts/orangepi/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
 					<h1 class="title"><a href="/posts/kernelsu/">KernelSU内核编译</a></h1>
 					<time>Aug 5, 2023</time>
 					<br><div class="description">
@@ -293,8 +87,6 @@
 	</span>
 	<span class="page-item page-next">
 	
-    <a href="/page/3/" class="page-link" aria-label="Next"><span aria-hidden="true">Next →</span></a>
-	
 	</span>
 </ul>
 
@@ -309,8 +101,6 @@
       href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
   </div>
 </footer>
-
-
 
 
 		</div>

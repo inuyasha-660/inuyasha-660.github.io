@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head lang="en">
+<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Linux Input Subsystem - croyoux&#39;s blog</title><link rel="icon" type="image/png" href=/favicon.ico /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="最近在写一个能够显示键盘输入的应用，需要实时获取键盘输入；在 SDL的 API 中有用于获取键盘输入的函数
@@ -15,8 +15,8 @@ input 子系统
 
 Input subsystem is a collection of drivers that is designed to support all input devices under Linux. Most of the drivers reside in drivers/input, although quite a few live in drivers/hid and drivers/platform.
 The core of the input subsystem is the input module, which must be loaded before any other of the input modules - it serves as a way of communication between two groups of modules:" />
-	<meta property="og:image" content="https://blog.fsunix.net/"/>
-	<meta property="og:url" content="https://blog.fsunix.net/posts/linux_input/">
+	<meta property="og:image" content="http://localhost:1313/"/>
+	<meta property="og:url" content="http://localhost:1313/posts/linux_input/">
   <meta property="og:site_name" content="croyoux&#39;s blog">
   <meta property="og:title" content="Linux Input Subsystem">
   <meta property="og:description" content="最近在写一个能够显示键盘输入的应用，需要实时获取键盘输入；在 SDL的 API 中有用于获取键盘输入的函数
@@ -38,14 +38,14 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event) { if (event-&gt;typ
 input 子系统 Input subsystem is a collection of drivers that is designed to support all input devices under Linux. Most of the drivers reside in drivers/input, although quite a few live in drivers/hid and drivers/platform.
 The core of the input subsystem is the input module, which must be loaded before any other of the input modules - it serves as a way of communication between two groups of modules:">
 
-        <link href="https://blog.fsunix.net/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+        <link href="http://localhost:1313/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
 	
 
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://blog.fsunix.net/css/main.a87126a5d38398207e58225b2d1a9faf97f546982f44b3ffb9715a264da36c90.css" />
-		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://blog.fsunix.net/css/dark.f163b79c6de51d14a766ff9f0563053de7f06a4d1bf7b85a59608bf96e566710.css"   /><link rel="stylesheet" href="https://blog.fsunix.net/katex/katex.min.css ">
-		<script defer src="https://blog.fsunix.net/katex/katex.min.js"></script>
-		<script defer src="https://blog.fsunix.net/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.92c7e6f6f5baede55d6238ba492bcbd00e10ca39a6bbdec527692bfc9564a927.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.4529c04ce20ceac5a42e37a63e092c89354fbd00e6209bd2995100d61b71e8df.css"   /><link rel="stylesheet" href="http://localhost:1313/katex/katex.min.css ">
+		<script defer src="http://localhost:1313/katex/katex.min.js"></script>
+		<script defer src="http://localhost:1313/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
 		
 		<script>
 			document.addEventListener("DOMContentLoaded", function() {
@@ -59,13 +59,13 @@ The core of the input subsystem is the input module, which must be loaded before
 		</script>
 		
 		
-		<link rel="stylesheet" type="text/css" href="https://blog.fsunix.net/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
 		
 </head>
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://blog.fsunix.net/">croyoux&#39;s blog</a>
+		<a href="http://localhost:1313/">croyoux&#39;s blog</a>
 	</div>
 	<nav>
 		
@@ -93,7 +93,7 @@ The core of the input subsystem is the input module, which must be loaded before
         
         <section class="body">
           <p>最近在写一个能够显示键盘输入的应用，需要实时获取键盘输入；在 <code>SDL</code>的 API 中有用于获取键盘输入的函数</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>SDL_AppResult <span style="color:#a6e22e">SDL_AppEvent</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>appstate, SDL_Event <span style="color:#f92672">*</span>event)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>SDL_AppResult <span style="color:#a6e22e">SDL_AppEvent</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>appstate, SDL_Event <span style="color:#f92672">*</span>event)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (event<span style="color:#f92672">-&gt;</span>type <span style="color:#f92672">==</span> SDL_EVENT_KEY_DOWN) {
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">SDL_Log</span>(<span style="color:#e6db74">&#34;key: %s&#34;</span>, <span style="color:#a6e22e">SDL_GetKeyName</span>(event<span style="color:#f92672">-&gt;</span>key.key));
@@ -109,7 +109,7 @@ The core of the input subsystem is the input module, which must be loaded before
 <p>在<code>/dev/input</code>目录下有一系列输入接口文件，读取后可获得设备输入信息。但一个文件只能获取一个设备的输入，如果有外接键盘
 需要读取多个文件。</p>
 <p>事件结构体的定义为</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> input_event {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> input_event {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">struct</span> timeval time;
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">short</span> type;
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">short</span> code;
@@ -118,10 +118,10 @@ The core of the input subsystem is the input module, which must be loaded before
 </span></span></code></pre></div><p><code>time</code>为时间戳，<code>type</code>为事件类型，<code>code</code>表示输入的按键编码，在<a href="https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h"> include/uapi/linux/input-event-codes.h</a>中定义，<code>value</code>是事件携带的值</p>
 <p>因为我们只需要获取按键按下的事件 所以用<code>if (in_event.type != EV_KEY || in_event.value != 1)</code>过滤事件。</p>
 <p>最终得到</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;fcntl.h&gt;</span><span style="color:#75715e">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;fcntl.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;linux/input.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> quit <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">read_input</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>name)
@@ -177,8 +177,6 @@ The core of the input subsystem is the input module, which must be loaded before
       href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
   </div>
 </footer>
-
-
 
 </div>
     </body>
