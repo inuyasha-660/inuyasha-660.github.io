@@ -2,102 +2,102 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on croyoux&#39;s blog</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://blog.fsunix.net/tags/</link>
     <description>Recent content in Tags on croyoux&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© Croyoux Lite</copyright>
     <lastBuildDate>Sun, 08 Feb 2026 18:20:15 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.fsunix.net/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bilibili</title>
-      <link>http://localhost:1313/tags/bilibili/</link>
+      <link>https://blog.fsunix.net/tags/bilibili/</link>
       <pubDate>Sun, 08 Feb 2026 18:20:15 +0800</pubDate>
-      <guid>http://localhost:1313/tags/bilibili/</guid>
+      <guid>https://blog.fsunix.net/tags/bilibili/</guid>
       <description></description>
     </item>
     <item>
       <title>C</title>
-      <link>http://localhost:1313/tags/c/</link>
+      <link>https://blog.fsunix.net/tags/c/</link>
       <pubDate>Fri, 06 Feb 2026 13:19:14 +0800</pubDate>
-      <guid>http://localhost:1313/tags/c/</guid>
+      <guid>https://blog.fsunix.net/tags/c/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>http://localhost:1313/tags/linux/</link>
+      <link>https://blog.fsunix.net/tags/linux/</link>
       <pubDate>Fri, 06 Feb 2026 13:19:14 +0800</pubDate>
-      <guid>http://localhost:1313/tags/linux/</guid>
+      <guid>https://blog.fsunix.net/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>银行卡</title>
-      <link>http://localhost:1313/tags/%E9%93%B6%E8%A1%8C%E5%8D%A1/</link>
+      <link>https://blog.fsunix.net/tags/%E9%93%B6%E8%A1%8C%E5%8D%A1/</link>
       <pubDate>Sat, 13 Sep 2025 17:33:01 +0800</pubDate>
-      <guid>http://localhost:1313/tags/%E9%93%B6%E8%A1%8C%E5%8D%A1/</guid>
+      <guid>https://blog.fsunix.net/tags/%E9%93%B6%E8%A1%8C%E5%8D%A1/</guid>
       <description></description>
     </item>
     <item>
       <title>Gtk</title>
-      <link>http://localhost:1313/tags/gtk/</link>
+      <link>https://blog.fsunix.net/tags/gtk/</link>
       <pubDate>Tue, 05 Aug 2025 16:55:07 +0800</pubDate>
-      <guid>http://localhost:1313/tags/gtk/</guid>
+      <guid>https://blog.fsunix.net/tags/gtk/</guid>
       <description></description>
     </item>
     <item>
       <title>Driver</title>
-      <link>http://localhost:1313/tags/driver/</link>
+      <link>https://blog.fsunix.net/tags/driver/</link>
       <pubDate>Wed, 10 Jul 2024 08:27:11 +0800</pubDate>
-      <guid>http://localhost:1313/tags/driver/</guid>
+      <guid>https://blog.fsunix.net/tags/driver/</guid>
       <description></description>
     </item>
     <item>
       <title>FreeBSD</title>
-      <link>http://localhost:1313/tags/freebsd/</link>
+      <link>https://blog.fsunix.net/tags/freebsd/</link>
       <pubDate>Wed, 10 Jul 2024 08:27:11 +0800</pubDate>
-      <guid>http://localhost:1313/tags/freebsd/</guid>
+      <guid>https://blog.fsunix.net/tags/freebsd/</guid>
       <description></description>
     </item>
     <item>
       <title>日常</title>
-      <link>http://localhost:1313/tags/%E6%97%A5%E5%B8%B8/</link>
+      <link>https://blog.fsunix.net/tags/%E6%97%A5%E5%B8%B8/</link>
       <pubDate>Sat, 17 Feb 2024 12:01:02 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%E6%97%A5%E5%B8%B8/</guid>
+      <guid>https://blog.fsunix.net/tags/%E6%97%A5%E5%B8%B8/</guid>
       <description></description>
     </item>
     <item>
       <title>键盘</title>
-      <link>http://localhost:1313/tags/%E9%94%AE%E7%9B%98/</link>
+      <link>https://blog.fsunix.net/tags/%E9%94%AE%E7%9B%98/</link>
       <pubDate>Sat, 17 Feb 2024 12:01:02 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%E9%94%AE%E7%9B%98/</guid>
+      <guid>https://blog.fsunix.net/tags/%E9%94%AE%E7%9B%98/</guid>
       <description></description>
     </item>
     <item>
       <title>图床</title>
-      <link>http://localhost:1313/tags/%E5%9B%BE%E5%BA%8A/</link>
+      <link>https://blog.fsunix.net/tags/%E5%9B%BE%E5%BA%8A/</link>
       <pubDate>Mon, 22 Jan 2024 18:20:30 +0000</pubDate>
-      <guid>http://localhost:1313/tags/%E5%9B%BE%E5%BA%8A/</guid>
+      <guid>https://blog.fsunix.net/tags/%E5%9B%BE%E5%BA%8A/</guid>
       <description></description>
     </item>
     <item>
       <title>Desktop</title>
-      <link>http://localhost:1313/tags/desktop/</link>
+      <link>https://blog.fsunix.net/tags/desktop/</link>
       <pubDate>Sun, 14 Jan 2024 09:21:23 +0000</pubDate>
-      <guid>http://localhost:1313/tags/desktop/</guid>
+      <guid>https://blog.fsunix.net/tags/desktop/</guid>
       <description></description>
     </item>
     <item>
       <title>Ipv6</title>
-      <link>http://localhost:1313/tags/ipv6/</link>
+      <link>https://blog.fsunix.net/tags/ipv6/</link>
       <pubDate>Wed, 23 Aug 2023 18:21:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ipv6/</guid>
+      <guid>https://blog.fsunix.net/tags/ipv6/</guid>
       <description></description>
     </item>
     <item>
       <title>Kernel</title>
-      <link>http://localhost:1313/tags/kernel/</link>
+      <link>https://blog.fsunix.net/tags/kernel/</link>
       <pubDate>Sat, 05 Aug 2023 20:12:02 +0000</pubDate>
-      <guid>http://localhost:1313/tags/kernel/</guid>
+      <guid>https://blog.fsunix.net/tags/kernel/</guid>
       <description></description>
     </item>
   </channel>

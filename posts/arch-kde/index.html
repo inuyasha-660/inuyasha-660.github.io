@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html><head lang="en">
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Arch下的Kde配置 - croyoux&#39;s blog</title><link rel="icon" type="image/png" href=/favicon.ico /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="这段时间重装了6次Arch，1次Debian Testing，几乎将主流桌面体验完了，血与泪的教训，wayland目前还不成熟，高分屏还得老老实实用x11
@@ -67,8 +67,8 @@ function start_hyprland
 
 }
 重启或直接source ~/.bash_profile使配置生效，输入start_hyprland启动" />
-	<meta property="og:image" content="http://localhost:1313/"/>
-	<meta property="og:url" content="http://localhost:1313/posts/arch-kde/">
+	<meta property="og:image" content="https://blog.fsunix.net/"/>
+	<meta property="og:url" content="https://blog.fsunix.net/posts/arch-kde/">
   <meta property="og:site_name" content="croyoux&#39;s blog">
   <meta property="og:title" content="Arch下的Kde配置">
   <meta property="og:description" content="这段时间重装了6次Arch，1次Debian Testing，几乎将主流桌面体验完了，血与泪的教训，wayland目前还不成熟，高分屏还得老老实实用x11
@@ -96,14 +96,14 @@ Hyprland 是一款高度可定制的动态平铺 Wayland 合成器，不会牺�
 安装 首先安装Wayland pacman -S xorg-xwayland qt5-wayland qt6-wayland glfw-wayland 安装Hyprland paru -S hyprland-bin 复制配置文件 mkdir -pv ~/.config/hypr sudo cp /usr/share/hyprland/hyprland.conf ~/.config/hypr/ Hyprland启动 通过编辑~/.bash_profile启动(不使用显示管理器)
 # 启动 wayland 桌面前设置一些环境变量 function set_wayland_env { cd ${HOME} # 设置语言环境为中文 export LANG=zh_CN.UTF-8 # 解决QT程序缩放问题 export QT_AUTO_SCREEN_SCALE_FACTOR=1 # QT使用wayland和gtk export QT_QPA_PLATFORM=&#34;wayland;xcb&#34; export QT_WAYLAND_DISABLE_WINDOWDECORATION=1 # 使用qt5ct软件配置QT程序外观 export QT_QPA_PLATFORMTHEME=qt5ct # 一些游戏使用wayland export SDL_VIDEODRIVER=wayland # 解决java程序启动黑屏错误 export _JAVA_AWT_WM_NONEREPARENTING=1 # GTK后端为 wayland和x11,优先wayland export GDK_BACKEND=&#34;wayland,x11&#34; } # 命令行输入这个命令启动hyprland,可以自定义 function start_hyprland { set_wayland_env export XDG_SESSION_TYPE=wayland export XDG_SESSION_DESKTOP=Hyprland export XDG_CURRENT_DESKTOP=Hyprland # 启动 Hyprland程序 exec Hyprland } 重启或直接source ~/.bash_profile使配置生效，输入start_hyprland启动">
 
-        <link href="http://localhost:1313/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+        <link href="https://blog.fsunix.net/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
 	
 
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.92c7e6f6f5baede55d6238ba492bcbd00e10ca39a6bbdec527692bfc9564a927.css" />
-		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.4529c04ce20ceac5a42e37a63e092c89354fbd00e6209bd2995100d61b71e8df.css"   /><link rel="stylesheet" href="http://localhost:1313/katex/katex.min.css ">
-		<script defer src="http://localhost:1313/katex/katex.min.js"></script>
-		<script defer src="http://localhost:1313/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="https://blog.fsunix.net/css/main.92c7e6f6f5baede55d6238ba492bcbd00e10ca39a6bbdec527692bfc9564a927.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://blog.fsunix.net/css/dark.4529c04ce20ceac5a42e37a63e092c89354fbd00e6209bd2995100d61b71e8df.css"   /><link rel="stylesheet" href="https://blog.fsunix.net/katex/katex.min.css ">
+		<script defer src="https://blog.fsunix.net/katex/katex.min.js"></script>
+		<script defer src="https://blog.fsunix.net/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
 		
 		<script>
 			document.addEventListener("DOMContentLoaded", function() {
@@ -117,13 +117,13 @@ Hyprland 是一款高度可定制的动态平铺 Wayland 合成器，不会牺�
 		</script>
 		
 		
-		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
+		<link rel="stylesheet" type="text/css" href="https://blog.fsunix.net/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
 		
 </head>
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="http://localhost:1313/">croyoux&#39;s blog</a>
+		<a href="https://blog.fsunix.net/">croyoux&#39;s blog</a>
 	</div>
 	<nav>
 		
@@ -577,6 +577,8 @@ Hyprland 是一款高度可定制的动态平铺 Wayland 合成器，不会牺�
       href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
   </div>
 </footer>
+
+
 
 </div>
     </body>

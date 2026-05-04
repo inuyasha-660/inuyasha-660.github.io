@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head lang="en"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html><head lang="en">
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>GTK4 开发环境 - croyoux&#39;s blog</title><link rel="icon" type="image/png" href=/favicon.ico /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="文档
@@ -20,8 +20,8 @@ libadwaita-1
 g_autoptr (AdwApplication) app = NULL;
 app = adw_application_new (&#34;org.example.Hello&#34;, G_APPLICATION_DEFAULT_FLAGS);
 创建app并用adw_application_new()初始化；官方示例中的G_APPLICATION_FLAGS_NONE已被弃用，用G_APPLICATION_DEFAULT_FLAGS代替" />
-	<meta property="og:image" content="http://localhost:1313/"/>
-	<meta property="og:url" content="http://localhost:1313/posts/gtk-dev/">
+	<meta property="og:image" content="https://blog.fsunix.net/"/>
+	<meta property="og:url" content="https://blog.fsunix.net/posts/gtk-dev/">
   <meta property="og:site_name" content="croyoux&#39;s blog">
   <meta property="og:title" content="GTK4 开发环境">
   <meta property="og:description" content="文档 gtk主要参考的就是官方的API reference，范围为gtk3-4，包含Widget Gallery，里面有所有当前版本的控件介绍和API。
@@ -55,14 +55,14 @@ Meson的文档中就包含构建gtk的示例，用dependency提供名称，Meson
 deps = [dependency(&#39;gtk4&#39;), dependency(&#39;libadwaita-1&#39;), dependency(&#39;libcjson&#39;)] libadwaita-1 在依赖中引入Adw能让gtk应用更加现代化，符合Gnome的风格；使用方式和默认的gtk初始化相似
 g_autoptr (AdwApplication) app = NULL; app = adw_application_new (&#34;org.example.Hello&#34;, G_APPLICATION_DEFAULT_FLAGS); 创建app并用adw_application_new()初始化；官方示例中的G_APPLICATION_FLAGS_NONE已被弃用，用G_APPLICATION_DEFAULT_FLAGS代替">
 
-        <link href="http://localhost:1313/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+        <link href="https://blog.fsunix.net/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
 	
 
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.92c7e6f6f5baede55d6238ba492bcbd00e10ca39a6bbdec527692bfc9564a927.css" />
-		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.4529c04ce20ceac5a42e37a63e092c89354fbd00e6209bd2995100d61b71e8df.css"   /><link rel="stylesheet" href="http://localhost:1313/katex/katex.min.css ">
-		<script defer src="http://localhost:1313/katex/katex.min.js"></script>
-		<script defer src="http://localhost:1313/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="https://blog.fsunix.net/css/main.92c7e6f6f5baede55d6238ba492bcbd00e10ca39a6bbdec527692bfc9564a927.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://blog.fsunix.net/css/dark.4529c04ce20ceac5a42e37a63e092c89354fbd00e6209bd2995100d61b71e8df.css"   /><link rel="stylesheet" href="https://blog.fsunix.net/katex/katex.min.css ">
+		<script defer src="https://blog.fsunix.net/katex/katex.min.js"></script>
+		<script defer src="https://blog.fsunix.net/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
 		
 		<script>
 			document.addEventListener("DOMContentLoaded", function() {
@@ -76,13 +76,13 @@ g_autoptr (AdwApplication) app = NULL; app = adw_application_new (&#34;org.examp
 		</script>
 		
 		
-		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
+		<link rel="stylesheet" type="text/css" href="https://blog.fsunix.net/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
 		
 </head>
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="http://localhost:1313/">croyoux&#39;s blog</a>
+		<a href="https://blog.fsunix.net/">croyoux&#39;s blog</a>
 	</div>
 	<nav>
 		
@@ -176,6 +176,8 @@ g_autoptr (AdwApplication) app = NULL; app = adw_application_new (&#34;org.examp
       href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
   </div>
 </footer>
+
+
 
 </div>
     </body>
