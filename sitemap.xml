@@ -2,19 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.fsunix.net/</loc>
+    <lastmod>2026-05-23T10:07:17+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.fsunix.net/posts/</loc>
+    <lastmod>2026-05-23T10:07:17+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.fsunix.net/tags/sdl3/</loc>
+    <lastmod>2026-05-23T10:07:17+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.fsunix.net/posts/sdl3_libdecor/</loc>
+    <lastmod>2026-05-23T10:07:17+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.fsunix.net/tags/</loc>
+    <lastmod>2026-05-23T10:07:17+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.fsunix.net/tags/wayland/</loc>
+    <lastmod>2026-05-23T10:07:17+08:00</lastmod>
+  </url><url>
     <loc>https://blog.fsunix.net/tags/bilibili/</loc>
     <lastmod>2026-02-08T18:20:15+08:00</lastmod>
   </url><url>
     <loc>https://blog.fsunix.net/posts/bili-live/</loc>
-    <lastmod>2026-02-08T18:20:15+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.fsunix.net/</loc>
-    <lastmod>2026-02-08T18:20:15+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.fsunix.net/posts/</loc>
-    <lastmod>2026-02-08T18:20:15+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.fsunix.net/tags/</loc>
     <lastmod>2026-02-08T18:20:15+08:00</lastmod>
   </url><url>
     <loc>https://blog.fsunix.net/tags/c/</loc>

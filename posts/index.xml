@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© Croyoux Lite</copyright>
-    <lastBuildDate>Sun, 08 Feb 2026 18:20:15 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 23 May 2026 10:07:17 +0800</lastBuildDate>
     <atom:link href="https://blog.fsunix.net/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SDL3 在 Wayland 下改变窗口大小极其卡顿</title>
+      <link>https://blog.fsunix.net/posts/sdl3_libdecor/</link>
+      <pubDate>Sat, 23 May 2026 10:07:17 +0800</pubDate>
+      <guid>https://blog.fsunix.net/posts/sdl3_libdecor/</guid>
+      <description>&lt;p&gt;SDL3 创建的窗口在改变大小时极其卡顿，测量 &lt;code&gt;while (SDL_PollEvent(&amp;amp;event)) {}&lt;/code&gt; 耗时大多&#xA;在几百至上千毫秒，严重拖慢了窗口重绘&lt;/p&gt;&#xA;&lt;p&gt;Gnome 50.1&lt;br&gt;&#xA;SDL_GPU Driver: Vulkan&lt;br&gt;&#xA;在基于 Gnome 的桌面上都存在此问题&lt;/p&gt;&#xA;&lt;p&gt;问题早在 2025 年就已经出现&lt;br&gt;&#xA;相关 Issue: &lt;a href=&#34;https://github.com/libsdl-org/SDL/issues/13763&#34;&gt;Wayland: extreme lag when resizing window&lt;/a&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;What desktop are you using? This is a known issue with GNOME based desktops, which use the libdecor backend.&#xA;The root issue is libdecor not passing the resize flag through, which needs a new version of libdecor to be released to be remedied.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;原因应为 SDL 使用 libdecor 在 Wayland 下绘制窗口装饰，但是 libdecor 没能向下传递 &lt;code&gt;resize&lt;/code&gt; 标志&lt;/p&gt;</description>
+    </item>
     <item>
       <title>BiliBili 直播取流 [M3U8]</title>
       <link>https://blog.fsunix.net/posts/bili-live/</link>

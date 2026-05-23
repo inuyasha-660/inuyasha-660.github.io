@@ -67,6 +67,28 @@
 				
 				
 				<section class="list-item">
+					<h1 class="title"><a href="/posts/sdl3_libdecor/">SDL3 在 Wayland 下改变窗口大小极其卡顿</a></h1>
+					<time>May 23, 2026</time>
+					<br><div class="description">
+	
+	<p>SDL3 创建的窗口在改变大小时极其卡顿，测量 <code>while (SDL_PollEvent(&amp;event)) {}</code> 耗时大多
+在几百至上千毫秒，严重拖慢了窗口重绘</p>
+<p>Gnome 50.1<br>
+SDL_GPU Driver: Vulkan<br>
+在基于 Gnome 的桌面上都存在此问题</p>
+<p>问题早在 2025 年就已经出现<br>
+相关 Issue: <a href="https://github.com/libsdl-org/SDL/issues/13763">Wayland: extreme lag when resizing window</a></p>
+<blockquote>
+<p>What desktop are you using? This is a known issue with GNOME based desktops, which use the libdecor backend.
+The root issue is libdecor not passing the resize flag through, which needs a new version of libdecor to be released to be remedied.</p>
+</blockquote>
+<p>原因应为 SDL 使用 libdecor 在 Wayland 下绘制窗口装饰，但是 libdecor 没能向下传递 <code>resize</code> 标志</p>&hellip;
+	
+</div>
+					<a class="readmore" href="/posts/sdl3_libdecor/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
 					<h1 class="title"><a href="/posts/bili-live/">BiliBili 直播取流 [M3U8]</a></h1>
 					<time>Feb 8, 2026</time>
 					<br><div class="description">
@@ -420,74 +442,6 @@ X-Cache-Webcdn: BYPASS from jd-sxhz-dx-w-01
 	
 </div>
 					<a class="readmore" href="/posts/arch-kde/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/ipv6/">路由器开启 IPV6</a></h1>
-					<time>Aug 23, 2023</time>
-					<br><div class="description">
-	
-	<h3 id="光猫配置">光猫配置</h3>
-<p>进入光猫的后台，我的光猫用普通的账号<code>root</code>密码<code>admin</code>进是能进去，但是很多设置只能看，最后找到了超级用户密码</p>
-<pre tabindex="0"><code>账号:telecomadmin
-密码:admintelecom
-</code></pre><p>输入密码进入后台，找到<code>wan</code>设置，把路由器的wan改为<code>桥接</code>，并把<strong>ipv4</strong>改为<code>ipv4/ipv6</code>。</p>
-<p>如果是灰色的不能更改，在不能点击的ipv4设置上右键，点击<strong>检查</strong>，查看时候有<code>disable</code>属性，如果有的话，对准属性右键，点击<code>edit attribute</code>删除disable，不需要关闭，直接点击ipv4就应该能设置了<strong>需要注意的是，如果用普通账号登陆，比如上面的root，你是无法设置开启ipv6的，即使删去disable，点击应用后仍然是ipv4</strong></p>
-<h3 id="路由器开启ipv6">路由器开启ipv6</h3>
-<p>光猫设置完成了，现在登陆路由器后台，以小米路由器为例，点击<strong>常用设置-上网设置</strong>，开启ipv6,上网方式选择<strong>native</strong>，然后在上网设置里选择<strong>PPoE</strong>拨号上网，输入你的宽带帐号密码</p>
-<p>输入正确的帐号密码，这下应该能成功连上网了，等一会，你会发现后台出现了ipv6的地址，访问ipv6测试如果成绩是10/10那么说明你就成功了(如果不行的话重启路由器和光猫试试)</p>
-<h2 id="关闭防火墙">关闭防火墙</h2>
-<p>得到公网ipv6之后，关闭防火墙让外部流量能够访问</p>
-<p>因为低端的小米路由器默认是没有关闭防火墙的开关的，所以我们需要ssh连接路由器进行手动配置</p>
-<p>温馨提示：此教程可能不适用于较新的路由器，作者用的是红米AC2100</p>
-<ol>
-<li>首先登陆你路由器的后台，然后查看地址栏，找到<code>stok=xxxxxxxx</code>把<code>=</code>到<code>/</code>中间的复制下来</li>
-<li>浏览器输入以下内容 &lt; stok &gt;换成你上面复制的内容，如果输出{&ldquo;code&rdquo;:0}那就是成功</li>
-</ol>
-<pre tabindex="0"><code class="language-url" data-lang="url">http://192.168.31.1/cgi-bin/luci/;stok=&lt;STOK&gt;/api/misystem/set_config_iotdev?bssid=Xiaomi&amp;user_id=longdike&amp;ssid=-h%3B%20nvram%20set%20ssh_en%3D1%3B%20nvram%20commit%3B%20sed%20-i%20&#39;s%2Fchannel%3D.*%2Fchannel%3D%5C%22debug%5C%22%2Fg&#39;%20%2Fetc%2Finit.d%2Fdropbear%3B%20%2Fetc%2Finit.d%2Fdropbear%20start%3B
-</code></pre><ol>
-<li>浏览器进入，同样，&lt; STOK &gt;换成自己stok</li>
-</ol>
-<pre tabindex="0"><code class="language-url" data-lang="url">http://192.168.31.1/cgi-bin/luci/;stok=&lt;STOK&gt;/api/misystem/set_config_iotdev?bssid=Xiaomi&amp;user_id=longdike&amp;ssid=-h%3B%20echo%20-e%20&#39;admin%5Cnadmin&#39;%20%7C%20passwd%20root%3B
-</code></pre><ol>
-<li>
-<p>完成后，使用<code>ssh root@192.168.31.1</code>连接路由器，密码为<code>admin</code></p>
-</li>
-<li>
-<p>因为openssh7.0以后的版本不再支持ssh-dss(DSA)算法，所以可能会报错，尝试使用以下命令连接</p>
-</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh -oHostKeyAlgorithms<span style="color:#f92672">=</span>+ssh-rsa root@192.168.31.1
-</span></span></code></pre></div><ol>
-<li>连上以后就好办了，使用<code>vi /etc/config/firewall</code>修改配置文件,修改config defaults改为</li>
-</ol>
-<pre tabindex="0"><code>config defaults
-        option syn_flood &#39;0&#39;
-        option input &#39;ACCEPT&#39;
-        option output &#39;ACCEPT&#39;
-        option forward &#39;ACCEPT&#39;
-        option drop_invalid &#39;0&#39;
-        option disable_ipv6 &#39;0&#39;
-</code></pre><ol>
-<li>最后重启防火墙</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>/etc/init.d/firewall restart
-</span></span></code></pre></div><h3 id="ddns-go">DDNS-GO</h3>
-<blockquote>
-<p>简单好用的DDNS。自动更新域名解析到公网IP(支持阿里云、腾讯云、Dnspod、Cloudflare、Callback、华为云、百度云、Porkbun、GoDaddy、Google Domain)</p>
-</blockquote>
-<ol>
-<li>在浏览器输入<code>http://127.0.0.1:9876/</code>登陆后台</li>
-<li>DNS服务商选择自己注册域名的服务商</li>
-<li>创建并填入<code>AccessKeyID</code>和<code>secret</code></li>
-<li>获取ip的方式接口或网卡都行</li>
-<li>Domains填入自己的域名和二级域名</li>
-<li>点击save保存即可完成配置</li>
-</ol>
-<p>之后尝试用域名+网站端口访问网站</p>&hellip;
-	
-</div>
-					<a class="readmore" href="/posts/ipv6/">Read more ⟶</a>
 				</section>
 				
 				
