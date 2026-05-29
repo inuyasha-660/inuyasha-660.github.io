@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>FreeBSD on croyoux&#39;s blog</title>
+    <title>FreeBSD on Croyoux</title>
     <link>https://blog.fsunix.net/tags/freebsd/</link>
-    <description>Recent content in FreeBSD on croyoux&#39;s blog</description>
+    <description>Recent content in FreeBSD on Croyoux</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© Croyoux Lite</copyright>

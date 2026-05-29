@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html><head lang="en">
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Linux Input Subsystem - croyoux&#39;s blog</title><link rel="icon" type="image/png" href=/favicon.ico /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Linux Input Subsystem - Croyoux</title><link rel="icon" type="image/png" href=/favicon.ico /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="最近在写一个能够显示键盘输入的应用，需要实时获取键盘输入；在 SDL的 API 中有用于获取键盘输入的函数
 SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
 {
@@ -17,7 +17,7 @@ Input subsystem is a collection of drivers that is designed to support all input
 The core of the input subsystem is the input module, which must be loaded before any other of the input modules - it serves as a way of communication between two groups of modules:" />
 	<meta property="og:image" content="https://blog.fsunix.net/"/>
 	<meta property="og:url" content="https://blog.fsunix.net/posts/linux_input/">
-  <meta property="og:site_name" content="croyoux&#39;s blog">
+  <meta property="og:site_name" content="Croyoux">
   <meta property="og:title" content="Linux Input Subsystem">
   <meta property="og:description" content="最近在写一个能够显示键盘输入的应用，需要实时获取键盘输入；在 SDL的 API 中有用于获取键盘输入的函数
 SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event) { if (event-&gt;type == SDL_EVENT_KEY_DOWN) { SDL_Log(&#34;key: %s&#34;, SDL_GetKeyName(event-&gt;key.key)); } } 通过 SDL_KeyboardEvent结构体能获取所有的按键输入，但当窗口焦点丢失时，无论是否置顶窗口，都无法 继续获取输入。
@@ -65,7 +65,7 @@ The core of the input subsystem is the input module, which must be loaded before
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://blog.fsunix.net/">croyoux&#39;s blog</a>
+		<a href="https://blog.fsunix.net/">Croyoux</a>
 	</div>
 	<nav>
 		
