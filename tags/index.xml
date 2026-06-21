@@ -1,118 +1,124 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tags on Croyoux</title>
-    <link>https://blog.fsunix.net/tags/</link>
-    <description>Recent content in Tags on Croyoux</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>© Croyoux Lite</copyright>
-    <lastBuildDate>Sat, 23 May 2026 10:07:17 +0800</lastBuildDate>
-    <atom:link href="https://blog.fsunix.net/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>SDL3</title>
-      <link>https://blog.fsunix.net/tags/sdl3/</link>
-      <pubDate>Sat, 23 May 2026 10:07:17 +0800</pubDate>
-      <guid>https://blog.fsunix.net/tags/sdl3/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Wayland</title>
-      <link>https://blog.fsunix.net/tags/wayland/</link>
-      <pubDate>Sat, 23 May 2026 10:07:17 +0800</pubDate>
-      <guid>https://blog.fsunix.net/tags/wayland/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Bilibili</title>
-      <link>https://blog.fsunix.net/tags/bilibili/</link>
-      <pubDate>Sun, 08 Feb 2026 18:20:15 +0800</pubDate>
-      <guid>https://blog.fsunix.net/tags/bilibili/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>C</title>
-      <link>https://blog.fsunix.net/tags/c/</link>
-      <pubDate>Fri, 06 Feb 2026 13:19:14 +0800</pubDate>
-      <guid>https://blog.fsunix.net/tags/c/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Linux</title>
-      <link>https://blog.fsunix.net/tags/linux/</link>
-      <pubDate>Fri, 06 Feb 2026 13:19:14 +0800</pubDate>
-      <guid>https://blog.fsunix.net/tags/linux/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>银行卡</title>
-      <link>https://blog.fsunix.net/tags/%E9%93%B6%E8%A1%8C%E5%8D%A1/</link>
-      <pubDate>Sat, 13 Sep 2025 17:33:01 +0800</pubDate>
-      <guid>https://blog.fsunix.net/tags/%E9%93%B6%E8%A1%8C%E5%8D%A1/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Gtk</title>
-      <link>https://blog.fsunix.net/tags/gtk/</link>
-      <pubDate>Tue, 05 Aug 2025 16:55:07 +0800</pubDate>
-      <guid>https://blog.fsunix.net/tags/gtk/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Driver</title>
-      <link>https://blog.fsunix.net/tags/driver/</link>
-      <pubDate>Wed, 10 Jul 2024 08:27:11 +0800</pubDate>
-      <guid>https://blog.fsunix.net/tags/driver/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>FreeBSD</title>
-      <link>https://blog.fsunix.net/tags/freebsd/</link>
-      <pubDate>Wed, 10 Jul 2024 08:27:11 +0800</pubDate>
-      <guid>https://blog.fsunix.net/tags/freebsd/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>日常</title>
-      <link>https://blog.fsunix.net/tags/%E6%97%A5%E5%B8%B8/</link>
-      <pubDate>Sat, 17 Feb 2024 12:01:02 +0000</pubDate>
-      <guid>https://blog.fsunix.net/tags/%E6%97%A5%E5%B8%B8/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>键盘</title>
-      <link>https://blog.fsunix.net/tags/%E9%94%AE%E7%9B%98/</link>
-      <pubDate>Sat, 17 Feb 2024 12:01:02 +0000</pubDate>
-      <guid>https://blog.fsunix.net/tags/%E9%94%AE%E7%9B%98/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>图床</title>
-      <link>https://blog.fsunix.net/tags/%E5%9B%BE%E5%BA%8A/</link>
-      <pubDate>Mon, 22 Jan 2024 18:20:30 +0000</pubDate>
-      <guid>https://blog.fsunix.net/tags/%E5%9B%BE%E5%BA%8A/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Desktop</title>
-      <link>https://blog.fsunix.net/tags/desktop/</link>
-      <pubDate>Sun, 14 Jan 2024 09:21:23 +0000</pubDate>
-      <guid>https://blog.fsunix.net/tags/desktop/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Ipv6</title>
-      <link>https://blog.fsunix.net/tags/ipv6/</link>
-      <pubDate>Wed, 23 Aug 2023 18:21:00 +0000</pubDate>
-      <guid>https://blog.fsunix.net/tags/ipv6/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Kernel</title>
-      <link>https://blog.fsunix.net/tags/kernel/</link>
-      <pubDate>Sat, 05 Aug 2023 20:12:02 +0000</pubDate>
-      <guid>https://blog.fsunix.net/tags/kernel/</guid>
-      <description></description>
-    </item>
-  </channel>
+	<channel>
+		<title>Tags on Croyoux</title>
+		<link>https://blog.fsunix.net/tags/</link>
+		<description>Recent content in Tags on Croyoux</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+			<copyright>© Croyoux Lite</copyright>
+		
+		
+			<lastBuildDate>Sat, 23 May 2026 10:07:17 +0800</lastBuildDate>
+		
+			<atom:link href="https://blog.fsunix.net/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>SDL3</title>
+				<link>https://blog.fsunix.net/tags/sdl3/</link>
+				<pubDate>Sat, 23 May 2026 10:07:17 +0800</pubDate>
+				<guid>https://blog.fsunix.net/tags/sdl3/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Wayland</title>
+				<link>https://blog.fsunix.net/tags/wayland/</link>
+				<pubDate>Sat, 23 May 2026 10:07:17 +0800</pubDate>
+				<guid>https://blog.fsunix.net/tags/wayland/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Bilibili</title>
+				<link>https://blog.fsunix.net/tags/bilibili/</link>
+				<pubDate>Sun, 08 Feb 2026 18:20:15 +0800</pubDate>
+				<guid>https://blog.fsunix.net/tags/bilibili/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>C</title>
+				<link>https://blog.fsunix.net/tags/c/</link>
+				<pubDate>Fri, 06 Feb 2026 13:19:14 +0800</pubDate>
+				<guid>https://blog.fsunix.net/tags/c/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Linux</title>
+				<link>https://blog.fsunix.net/tags/linux/</link>
+				<pubDate>Fri, 06 Feb 2026 13:19:14 +0800</pubDate>
+				<guid>https://blog.fsunix.net/tags/linux/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>银行卡</title>
+				<link>https://blog.fsunix.net/tags/%E9%93%B6%E8%A1%8C%E5%8D%A1/</link>
+				<pubDate>Sat, 13 Sep 2025 17:33:01 +0800</pubDate>
+				<guid>https://blog.fsunix.net/tags/%E9%93%B6%E8%A1%8C%E5%8D%A1/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Gtk</title>
+				<link>https://blog.fsunix.net/tags/gtk/</link>
+				<pubDate>Tue, 05 Aug 2025 16:55:07 +0800</pubDate>
+				<guid>https://blog.fsunix.net/tags/gtk/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Driver</title>
+				<link>https://blog.fsunix.net/tags/driver/</link>
+				<pubDate>Wed, 10 Jul 2024 08:27:11 +0800</pubDate>
+				<guid>https://blog.fsunix.net/tags/driver/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>FreeBSD</title>
+				<link>https://blog.fsunix.net/tags/freebsd/</link>
+				<pubDate>Wed, 10 Jul 2024 08:27:11 +0800</pubDate>
+				<guid>https://blog.fsunix.net/tags/freebsd/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>日常</title>
+				<link>https://blog.fsunix.net/tags/%E6%97%A5%E5%B8%B8/</link>
+				<pubDate>Sat, 17 Feb 2024 12:01:02 +0000</pubDate>
+				<guid>https://blog.fsunix.net/tags/%E6%97%A5%E5%B8%B8/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>键盘</title>
+				<link>https://blog.fsunix.net/tags/%E9%94%AE%E7%9B%98/</link>
+				<pubDate>Sat, 17 Feb 2024 12:01:02 +0000</pubDate>
+				<guid>https://blog.fsunix.net/tags/%E9%94%AE%E7%9B%98/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>图床</title>
+				<link>https://blog.fsunix.net/tags/%E5%9B%BE%E5%BA%8A/</link>
+				<pubDate>Mon, 22 Jan 2024 18:20:30 +0000</pubDate>
+				<guid>https://blog.fsunix.net/tags/%E5%9B%BE%E5%BA%8A/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Desktop</title>
+				<link>https://blog.fsunix.net/tags/desktop/</link>
+				<pubDate>Sun, 14 Jan 2024 09:21:23 +0000</pubDate>
+				<guid>https://blog.fsunix.net/tags/desktop/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Ipv6</title>
+				<link>https://blog.fsunix.net/tags/ipv6/</link>
+				<pubDate>Wed, 23 Aug 2023 18:21:00 +0000</pubDate>
+				<guid>https://blog.fsunix.net/tags/ipv6/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Kernel</title>
+				<link>https://blog.fsunix.net/tags/kernel/</link>
+				<pubDate>Sat, 05 Aug 2023 20:12:02 +0000</pubDate>
+				<guid>https://blog.fsunix.net/tags/kernel/</guid>
+				<description></description>
+			</item>
+	</channel>
 </rss>

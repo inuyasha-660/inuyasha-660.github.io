@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html><head lang="en">
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Arch下的Kde配置 - Croyoux</title><link rel="icon" type="image/png" href=/favicon.ico /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Arch下的Kde配置 - Croyoux</title><link rel="icon" type="image/x-icon" href=/favicon.ico /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="这段时间重装了6次Arch，1次Debian Testing，几乎将主流桌面体验完了，血与泪的教训，wayland目前还不成熟，高分屏还得老老实实用x11
 起因
 逛B站时偶然看到了有人发Hyprland的配置，再看我的Kde瞬间就不香了
@@ -69,26 +69,26 @@ function start_hyprland
 重启或直接source ~/.bash_profile使配置生效，输入start_hyprland启动" />
 	<meta property="og:image" content="https://blog.fsunix.net/"/>
 	<meta property="og:url" content="https://blog.fsunix.net/posts/arch-kde/">
-  <meta property="og:site_name" content="Croyoux">
-  <meta property="og:title" content="Arch下的Kde配置">
-  <meta property="og:description" content="这段时间重装了6次Arch，1次Debian Testing，几乎将主流桌面体验完了，血与泪的教训，wayland目前还不成熟，高分屏还得老老实实用x11
+	<meta property="og:site_name" content="Croyoux">
+	<meta property="og:title" content="Arch下的Kde配置">
+	<meta property="og:description" content="这段时间重装了6次Arch，1次Debian Testing，几乎将主流桌面体验完了，血与泪的教训，wayland目前还不成熟，高分屏还得老老实实用x11
 起因 逛B站时偶然看到了有人发Hyprland的配置，再看我的Kde瞬间就不香了
 拿出我珍藏多年的Arch Live CD ，F12选择U盘启动，在经过一系列分区，生成fstab，引导后，成功来到了熟悉的tty界面，接下来照着B站的教程，开始安装Hyprland
 Hyprland Hyprland is a highly customizable dynamic tiling Wayland compositor that doesn’t sacrifice on its looks.
 Hyprland 是一款高度可定制的动态平铺 Wayland 合成器，不会牺牲其外观。
 安装 首先安装Wayland pacman -S xorg-xwayland qt5-wayland qt6-wayland glfw-wayland 安装Hyprland paru -S hyprland-bin 复制配置文件 mkdir -pv ~/.config/hypr sudo cp /usr/share/hyprland/hyprland.conf ~/.config/hypr/ Hyprland启动 通过编辑~/.bash_profile启动(不使用显示管理器)
 # 启动 wayland 桌面前设置一些环境变量 function set_wayland_env { cd ${HOME} # 设置语言环境为中文 export LANG=zh_CN.UTF-8 # 解决QT程序缩放问题 export QT_AUTO_SCREEN_SCALE_FACTOR=1 # QT使用wayland和gtk export QT_QPA_PLATFORM=&#34;wayland;xcb&#34; export QT_WAYLAND_DISABLE_WINDOWDECORATION=1 # 使用qt5ct软件配置QT程序外观 export QT_QPA_PLATFORMTHEME=qt5ct # 一些游戏使用wayland export SDL_VIDEODRIVER=wayland # 解决java程序启动黑屏错误 export _JAVA_AWT_WM_NONEREPARENTING=1 # GTK后端为 wayland和x11,优先wayland export GDK_BACKEND=&#34;wayland,x11&#34; } # 命令行输入这个命令启动hyprland,可以自定义 function start_hyprland { set_wayland_env export XDG_SESSION_TYPE=wayland export XDG_SESSION_DESKTOP=Hyprland export XDG_CURRENT_DESKTOP=Hyprland # 启动 Hyprland程序 exec Hyprland } 重启或直接source ~/.bash_profile使配置生效，输入start_hyprland启动">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-01-14T09:21:23+00:00">
-    <meta property="article:modified_time" content="2024-01-14T09:21:23+00:00">
-    <meta property="article:tag" content="Linux">
-    <meta property="article:tag" content="Desktop">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2024-01-14T09:21:23+00:00">
+		<meta property="article:modified_time" content="2024-01-14T09:21:23+00:00">
+		<meta property="article:tag" content="Linux">
+		<meta property="article:tag" content="Desktop">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Arch下的Kde配置">
-  <meta name="twitter:description" content="这段时间重装了6次Arch，1次Debian Testing，几乎将主流桌面体验完了，血与泪的教训，wayland目前还不成熟，高分屏还得老老实实用x11
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Arch下的Kde配置">
+	<meta name="twitter:description" content="这段时间重装了6次Arch，1次Debian Testing，几乎将主流桌面体验完了，血与泪的教训，wayland目前还不成熟，高分屏还得老老实实用x11
 起因 逛B站时偶然看到了有人发Hyprland的配置，再看我的Kde瞬间就不香了
 拿出我珍藏多年的Arch Live CD ，F12选择U盘启动，在经过一系列分区，生成fstab，引导后，成功来到了熟悉的tty界面，接下来照着B站的教程，开始安装Hyprland
 Hyprland Hyprland is a highly customizable dynamic tiling Wayland compositor that doesn’t sacrifice on its looks.
@@ -96,11 +96,11 @@ Hyprland 是一款高度可定制的动态平铺 Wayland 合成器，不会牺�
 安装 首先安装Wayland pacman -S xorg-xwayland qt5-wayland qt6-wayland glfw-wayland 安装Hyprland paru -S hyprland-bin 复制配置文件 mkdir -pv ~/.config/hypr sudo cp /usr/share/hyprland/hyprland.conf ~/.config/hypr/ Hyprland启动 通过编辑~/.bash_profile启动(不使用显示管理器)
 # 启动 wayland 桌面前设置一些环境变量 function set_wayland_env { cd ${HOME} # 设置语言环境为中文 export LANG=zh_CN.UTF-8 # 解决QT程序缩放问题 export QT_AUTO_SCREEN_SCALE_FACTOR=1 # QT使用wayland和gtk export QT_QPA_PLATFORM=&#34;wayland;xcb&#34; export QT_WAYLAND_DISABLE_WINDOWDECORATION=1 # 使用qt5ct软件配置QT程序外观 export QT_QPA_PLATFORMTHEME=qt5ct # 一些游戏使用wayland export SDL_VIDEODRIVER=wayland # 解决java程序启动黑屏错误 export _JAVA_AWT_WM_NONEREPARENTING=1 # GTK后端为 wayland和x11,优先wayland export GDK_BACKEND=&#34;wayland,x11&#34; } # 命令行输入这个命令启动hyprland,可以自定义 function start_hyprland { set_wayland_env export XDG_SESSION_TYPE=wayland export XDG_SESSION_DESKTOP=Hyprland export XDG_CURRENT_DESKTOP=Hyprland # 启动 Hyprland程序 exec Hyprland } 重启或直接source ~/.bash_profile使配置生效，输入start_hyprland启动">
 
-        <link href="https://blog.fsunix.net/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+        <link href="https://blog.fsunix.net/css/fonts.59d1a99427e69bbc5d662054d52d778d1670175ee5a27a72c16ad3f4b3c6392b.css" rel="stylesheet">
 	
 
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://blog.fsunix.net/css/main.92c7e6f6f5baede55d6238ba492bcbd00e10ca39a6bbdec527692bfc9564a927.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://blog.fsunix.net/css/main.54f5036ae270c8d114f23f98f601caa1f43903288b1c34079b7e8125282fea91.css" />
 		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://blog.fsunix.net/css/dark.4529c04ce20ceac5a42e37a63e092c89354fbd00e6209bd2995100d61b71e8df.css"   /><link rel="stylesheet" href="https://blog.fsunix.net/katex/katex.min.css ">
 		<script defer src="https://blog.fsunix.net/katex/katex.min.js"></script>
 		<script defer src="https://blog.fsunix.net/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
@@ -115,10 +115,6 @@ Hyprland 是一款高度可定制的动态平铺 Wayland 合成器，不会牺�
 					});
 			});
 		</script>
-		
-		
-		<link rel="stylesheet" type="text/css" href="https://blog.fsunix.net/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
-		
 </head>
 <body>
         <div class="content"><header>
@@ -313,46 +309,46 @@ Hyprland 是一款高度可定制的动态平铺 Wayland 合成器，不会牺�
 </span></span></code></pre></div><p>安装缺少的两个包就可以播放了</p>
 <h5 id="32-快捷键">3.2 快捷键</h5>
 <table>
-  <thead>
-      <tr>
-          <th>按键</th>
-          <th>作用</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>←</code>  <code>h</code></td>
-          <td>左方向</td>
-      </tr>
-      <tr>
-          <td><code>→</code> <code>l</code></td>
-          <td>右方向</td>
-      </tr>
-      <tr>
-          <td><code>↑</code> <code>k</code></td>
-          <td>上方向</td>
-      </tr>
-      <tr>
-          <td><code>↓</code> <code>j</code></td>
-          <td>下方向</td>
-      </tr>
-      <tr>
-          <td><code>-</code> <code>滚轮下</code></td>
-          <td>减小音量</td>
-      </tr>
-      <tr>
-          <td><code>=</code> <code>滚轮上</code></td>
-          <td>增大音量</td>
-      </tr>
-      <tr>
-          <td><code>q</code></td>
-          <td>退出</td>
-      </tr>
-      <tr>
-          <td><code>Space</code> (空格)</td>
-          <td>暂停/播放</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>按键</th>
+					<th>作用</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>←</code>  <code>h</code></td>
+					<td>左方向</td>
+			</tr>
+			<tr>
+					<td><code>→</code> <code>l</code></td>
+					<td>右方向</td>
+			</tr>
+			<tr>
+					<td><code>↑</code> <code>k</code></td>
+					<td>上方向</td>
+			</tr>
+			<tr>
+					<td><code>↓</code> <code>j</code></td>
+					<td>下方向</td>
+			</tr>
+			<tr>
+					<td><code>-</code> <code>滚轮下</code></td>
+					<td>减小音量</td>
+			</tr>
+			<tr>
+					<td><code>=</code> <code>滚轮上</code></td>
+					<td>增大音量</td>
+			</tr>
+			<tr>
+					<td><code>q</code></td>
+					<td>退出</td>
+			</tr>
+			<tr>
+					<td><code>Space</code> (空格)</td>
+					<td>暂停/播放</td>
+			</tr>
+	</tbody>
 </table>
 <p>更多快捷键请看<a href="https://github.com/go-musicfox/go-musicfox">README</a></p>
 <h3 id="bash">Bash</h3>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html><head lang="en">
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>GTK4 开发环境 - Croyoux</title><link rel="icon" type="image/png" href=/favicon.ico /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>GTK4 开发环境 - Croyoux</title><link rel="icon" type="image/x-icon" href=/favicon.ico /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="文档
 gtk主要参考的就是官方的API reference，范围为gtk3-4，包含Widget Gallery，里面有所有当前版本的控件介绍和API。
 缺点是不包含示例，只有 API 文档
@@ -22,9 +22,9 @@ app = adw_application_new (&#34;org.example.Hello&#34;, G_APPLICATION_DEFAULT_FL
 创建app并用adw_application_new()初始化；官方示例中的G_APPLICATION_FLAGS_NONE已被弃用，用G_APPLICATION_DEFAULT_FLAGS代替" />
 	<meta property="og:image" content="https://blog.fsunix.net/"/>
 	<meta property="og:url" content="https://blog.fsunix.net/posts/gtk-dev/">
-  <meta property="og:site_name" content="Croyoux">
-  <meta property="og:title" content="GTK4 开发环境">
-  <meta property="og:description" content="文档 gtk主要参考的就是官方的API reference，范围为gtk3-4，包含Widget Gallery，里面有所有当前版本的控件介绍和API。
+	<meta property="og:site_name" content="Croyoux">
+	<meta property="og:title" content="GTK4 开发环境">
+	<meta property="og:description" content="文档 gtk主要参考的就是官方的API reference，范围为gtk3-4，包含Widget Gallery，里面有所有当前版本的控件介绍和API。
 缺点是不包含示例，只有 API 文档
 IDE 和gtk有关的ide我目前找到的是Gnome Builder，介绍说是Gnome环境下的开发工具；我曾经用它编写过一些小项目，但的补全和插件都不够完善，所以转而使用Vscode。
 真要说起来，gtk的编写应该只需要一个文本编辑器，gtk4的大部分函数名都比较好记，这方面IDE也只是方便补全一些变量和函数名，提供高亮支持
@@ -34,17 +34,17 @@ Meson Meson是gnome项目主要的编译工具，Gnome Builder也会默认安装
 Meson的文档中就包含构建gtk的示例，用dependency提供名称，Meson就能自动查找并引入依赖
 deps = [dependency(&#39;gtk4&#39;), dependency(&#39;libadwaita-1&#39;), dependency(&#39;libcjson&#39;)] libadwaita-1 在依赖中引入Adw能让gtk应用更加现代化，符合Gnome的风格；使用方式和默认的gtk初始化相似
 g_autoptr (AdwApplication) app = NULL; app = adw_application_new (&#34;org.example.Hello&#34;, G_APPLICATION_DEFAULT_FLAGS); 创建app并用adw_application_new()初始化；官方示例中的G_APPLICATION_FLAGS_NONE已被弃用，用G_APPLICATION_DEFAULT_FLAGS代替">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-07-05T14:25:31+08:00">
-    <meta property="article:modified_time" content="2025-07-05T14:25:31+08:00">
-    <meta property="article:tag" content="C">
-    <meta property="article:tag" content="Gtk">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2025-07-05T14:25:31+08:00">
+		<meta property="article:modified_time" content="2025-07-05T14:25:31+08:00">
+		<meta property="article:tag" content="C">
+		<meta property="article:tag" content="Gtk">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="GTK4 开发环境">
-  <meta name="twitter:description" content="文档 gtk主要参考的就是官方的API reference，范围为gtk3-4，包含Widget Gallery，里面有所有当前版本的控件介绍和API。
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="GTK4 开发环境">
+	<meta name="twitter:description" content="文档 gtk主要参考的就是官方的API reference，范围为gtk3-4，包含Widget Gallery，里面有所有当前版本的控件介绍和API。
 缺点是不包含示例，只有 API 文档
 IDE 和gtk有关的ide我目前找到的是Gnome Builder，介绍说是Gnome环境下的开发工具；我曾经用它编写过一些小项目，但的补全和插件都不够完善，所以转而使用Vscode。
 真要说起来，gtk的编写应该只需要一个文本编辑器，gtk4的大部分函数名都比较好记，这方面IDE也只是方便补全一些变量和函数名，提供高亮支持
@@ -55,11 +55,11 @@ Meson的文档中就包含构建gtk的示例，用dependency提供名称，Meson
 deps = [dependency(&#39;gtk4&#39;), dependency(&#39;libadwaita-1&#39;), dependency(&#39;libcjson&#39;)] libadwaita-1 在依赖中引入Adw能让gtk应用更加现代化，符合Gnome的风格；使用方式和默认的gtk初始化相似
 g_autoptr (AdwApplication) app = NULL; app = adw_application_new (&#34;org.example.Hello&#34;, G_APPLICATION_DEFAULT_FLAGS); 创建app并用adw_application_new()初始化；官方示例中的G_APPLICATION_FLAGS_NONE已被弃用，用G_APPLICATION_DEFAULT_FLAGS代替">
 
-        <link href="https://blog.fsunix.net/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css" rel="stylesheet">
+        <link href="https://blog.fsunix.net/css/fonts.59d1a99427e69bbc5d662054d52d778d1670175ee5a27a72c16ad3f4b3c6392b.css" rel="stylesheet">
 	
 
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://blog.fsunix.net/css/main.92c7e6f6f5baede55d6238ba492bcbd00e10ca39a6bbdec527692bfc9564a927.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://blog.fsunix.net/css/main.54f5036ae270c8d114f23f98f601caa1f43903288b1c34079b7e8125282fea91.css" />
 		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://blog.fsunix.net/css/dark.4529c04ce20ceac5a42e37a63e092c89354fbd00e6209bd2995100d61b71e8df.css"   /><link rel="stylesheet" href="https://blog.fsunix.net/katex/katex.min.css ">
 		<script defer src="https://blog.fsunix.net/katex/katex.min.js"></script>
 		<script defer src="https://blog.fsunix.net/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
@@ -74,10 +74,6 @@ g_autoptr (AdwApplication) app = NULL; app = adw_application_new (&#34;org.examp
 					});
 			});
 		</script>
-		
-		
-		<link rel="stylesheet" type="text/css" href="https://blog.fsunix.net/css/font.991ede2a1a63175c026c2c53648c13c89df666a9abb999eb1b4ec2220ba37fd1.css">
-		
 </head>
 <body>
         <div class="content"><header>

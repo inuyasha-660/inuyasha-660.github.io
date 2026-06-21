@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>日常 on Croyoux</title>
-    <link>https://blog.fsunix.net/tags/%E6%97%A5%E5%B8%B8/</link>
-    <description>Recent content in 日常 on Croyoux</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>© Croyoux Lite</copyright>
-    <lastBuildDate>Sat, 17 Feb 2024 12:01:02 +0000</lastBuildDate>
-    <atom:link href="https://blog.fsunix.net/tags/%E6%97%A5%E5%B8%B8/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>RK-R98键盘开箱</title>
-      <link>https://blog.fsunix.net/posts/r98-keyboard/</link>
-      <pubDate>Sat, 17 Feb 2024 12:01:02 +0000</pubDate>
-      <guid>https://blog.fsunix.net/posts/r98-keyboard/</guid>
-      <description>&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;连接方式&lt;/th&gt;&#xA;          &lt;th&gt;有线/2.4G/蓝牙&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;键帽&lt;/td&gt;&#xA;          &lt;td&gt;PBT原厂拼色&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;轴体&lt;/td&gt;&#xA;          &lt;td&gt;烟雨轴/TTC钢铁轴&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;声音包&lt;/td&gt;&#xA;          &lt;td&gt;PORON棉/ixpe轴下垫/底棉/硅胶&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;PCBA&lt;/td&gt;&#xA;          &lt;td&gt;单键开槽&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;电池&lt;/td&gt;&#xA;          &lt;td&gt;7200MA锂电池&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;结构&lt;/td&gt;&#xA;          &lt;td&gt;Gasket结构(软弹型)&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;插拔&lt;/td&gt;&#xA;          &lt;td&gt;全键轴座插拔&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;卫星轴&lt;/td&gt;&#xA;          &lt;td&gt;R87卫星轴(升级款)&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;京东原价259,减了20&lt;/p&gt;&#xA;&lt;h3 id=&#34;轴体&#34;&gt;轴体&lt;/h3&gt;&#xA;&lt;p&gt;一共有四种轴可选，这次我选择了烟雨轴，声音听起来很不错，大键也没有弹簧音，一种麻将的感觉;比之前买的强多了&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;轴体&lt;/th&gt;&#xA;          &lt;th&gt;压力克数&lt;/th&gt;&#xA;          &lt;th&gt;触发行程&lt;/th&gt;&#xA;          &lt;th&gt;触底行程&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;纯净轴&lt;/td&gt;&#xA;          &lt;td&gt;42±5g&lt;/td&gt;&#xA;          &lt;td&gt;2.0±0.4mm&lt;/td&gt;&#xA;          &lt;td&gt;3,7±0.4mm&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;雪皇轴&lt;/td&gt;&#xA;          &lt;td&gt;45±10gf&lt;/td&gt;&#xA;          &lt;td&gt;2.0±0.4mm&lt;/td&gt;&#xA;          &lt;td&gt;3.4±0.4mm&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;烟雨轴PRO&lt;/td&gt;&#xA;          &lt;td&gt;40±10gf&lt;/td&gt;&#xA;          &lt;td&gt;2.0±0.4mm&lt;/td&gt;&#xA;          &lt;td&gt;3.4±0.4mm&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;钢铁轴PRO&lt;/td&gt;&#xA;          &lt;td&gt;41±10gf&lt;/td&gt;&#xA;          &lt;td&gt;1.4±0.4mm&lt;/td&gt;&#xA;          &lt;td&gt;3.8±0.3mm&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;兼容性&#34;&gt;兼容性&lt;/h2&gt;&#xA;&lt;p&gt;实测在Arch下有线和2.4G能完美使用，蓝牙还没试，但应该也能用;我的内核版本是&lt;code&gt;6.7.4-arch1-1&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;superwin-键无反应&#34;&gt;Super(WIN) 键无反应&lt;/h2&gt;&#xA;&lt;p&gt;使用 &lt;code&gt;FN+WIN&lt;/code&gt; 取消 WIN 键锁定&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>日常 on Croyoux</title>
+		<link>https://blog.fsunix.net/tags/%E6%97%A5%E5%B8%B8/</link>
+		<description>Recent content in 日常 on Croyoux</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+			<copyright>© Croyoux Lite</copyright>
+		
+		
+			<lastBuildDate>Sat, 17 Feb 2024 12:01:02 +0000</lastBuildDate>
+		
+			<atom:link href="https://blog.fsunix.net/tags/%E6%97%A5%E5%B8%B8/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>RK-R98键盘开箱</title>
+				<link>https://blog.fsunix.net/posts/r98-keyboard/</link>
+				<pubDate>Sat, 17 Feb 2024 12:01:02 +0000</pubDate>
+				<guid>https://blog.fsunix.net/posts/r98-keyboard/</guid>
+				<description>&lt;table&gt;&#xA;&#x9;&lt;thead&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;连接方式&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;有线/2.4G/蓝牙&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/thead&gt;&#xA;&#x9;&lt;tbody&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;键帽&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;PBT原厂拼色&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;轴体&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;烟雨轴/TTC钢铁轴&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;声音包&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;PORON棉/ixpe轴下垫/底棉/硅胶&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;PCBA&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;单键开槽&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;电池&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;7200MA锂电池&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;结构&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;Gasket结构(软弹型)&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;插拔&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;全键轴座插拔&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;卫星轴&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;R87卫星轴(升级款)&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;京东原价259,减了20&lt;/p&gt;&#xA;&lt;h3 id=&#34;轴体&#34;&gt;轴体&lt;/h3&gt;&#xA;&lt;p&gt;一共有四种轴可选，这次我选择了烟雨轴，声音听起来很不错，大键也没有弹簧音，一种麻将的感觉;比之前买的强多了&lt;/p&gt;&#xA;&lt;table&gt;&#xA;&#x9;&lt;thead&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;轴体&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;压力克数&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;触发行程&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;触底行程&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/thead&gt;&#xA;&#x9;&lt;tbody&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;纯净轴&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;42±5g&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;2.0±0.4mm&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;3,7±0.4mm&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;雪皇轴&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;45±10gf&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;2.0±0.4mm&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;3.4±0.4mm&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;烟雨轴PRO&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;40±10gf&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;2.0±0.4mm&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;3.4±0.4mm&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;钢铁轴PRO&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;41±10gf&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;1.4±0.4mm&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;3.8±0.3mm&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;兼容性&#34;&gt;兼容性&lt;/h2&gt;&#xA;&lt;p&gt;实测在Arch下有线和2.4G能完美使用，蓝牙还没试，但应该也能用;我的内核版本是&lt;code&gt;6.7.4-arch1-1&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;superwin-键无反应&#34;&gt;Super(WIN) 键无反应&lt;/h2&gt;&#xA;&lt;p&gt;使用 &lt;code&gt;FN+WIN&lt;/code&gt; 取消 WIN 键锁定&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>
