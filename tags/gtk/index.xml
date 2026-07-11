@@ -16,7 +16,7 @@
 		
 			<atom:link href="https://blog.fsunix.net/tags/gtk/index.xml" rel="self" type="application/rss+xml" />
 			<item>
-				<title>WebKitGtk 实现 BiliBili 登录</title>
+				<title>用 WebKitGtk 登陆 BiliBili</title>
 				<link>https://blog.fsunix.net/posts/bili_login_gtk/</link>
 				<pubDate>Tue, 05 Aug 2025 16:55:07 +0800</pubDate>
 				<guid>https://blog.fsunix.net/posts/bili_login_gtk/</guid>

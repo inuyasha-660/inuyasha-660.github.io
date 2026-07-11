@@ -16,7 +16,7 @@
 		
 			<atom:link href="https://blog.fsunix.net/tags/kernel/index.xml" rel="self" type="application/rss+xml" />
 			<item>
-				<title>KernelSU内核编译</title>
+				<title>KernelSU 内核编译</title>
 				<link>https://blog.fsunix.net/posts/kernelsu/</link>
 				<pubDate>Sat, 05 Aug 2023 20:12:02 +0000</pubDate>
 				<guid>https://blog.fsunix.net/posts/kernelsu/</guid>

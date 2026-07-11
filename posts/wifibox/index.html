@@ -23,37 +23,8 @@ Wifibox的日志位于/var/run/wifibox/appliance/log，可以很方便地观察�
 dhclient ue0 # 获取ip
 连接完后安装 Wifibox" />
 	<meta property="og:image" content="https://blog.fsunix.net/"/>
-	<meta property="og:url" content="https://blog.fsunix.net/posts/wifibox/">
-	<meta property="og:site_name" content="Croyoux">
-	<meta property="og:title" content="Wifibox的配置与使用">
-	<meta property="og:description" content="最近几天，我在Redmi Book Pro 14s上安装了FreeBSD 14.1-RELEASE，也算是体验了一把UNIX哲学，但因FreeBSD的驱动太过匮乏了，导致我的安装并不顺利，也就有了这篇文章
-bhyve bhyve，发音为“beehive”，是 FreeBSD 的虚拟机管理程序 / 虚拟机管理器，支持带有“POPCNT”（POPulation Count）功能的 Intel 和 AMD 处理器上的多种客户操作系统，以及在实验中支持 gic0：ARM Generic Interrupt Controller v3.0 功能的 ARM64/aarch64 处理器
-bhyve 支持多种存储和网络后端、UEFI、FreeBSD 加载器和 GRUB 启动、PCI 直通 (PPT)、集成 VNC 和 9pfs 服务器以及更多功能
-Wifibox bhyve supports passing of host PCI devices to a virtual machine for its exclusive use of them.
-Wifibox则是借助其PCI直通技术，部署了一个 Linux 客户机，借助 PCI 直通技术驱动 FreeBSD 主机系统上的无线网卡
-Wifibox的日志位于/var/run/wifibox/appliance/log，可以很方便地观察它的运行状态
-配置 我的网卡是RTL8852be，用ifconfig查看只有一个设备，其ip为127.0.0.1，若网卡在FreeBSD下有驱动支持，则需要额外禁用自带驱动
-安装 Wifibox 因为安装需要网络，我们将数据线插入电脑，开启USB网络共享，用ifconfig查看是否识别到设备ue0 dhclient ue0 # 获取ip 连接完后安装 Wifibox">
-	<meta property="og:locale" content="en_us">
-	<meta property="og:type" content="article">
-		<meta property="article:section" content="posts">
-		<meta property="article:published_time" content="2024-07-10T08:27:11+08:00">
-		<meta property="article:modified_time" content="2024-08-08T15:31:05+08:00">
-		<meta property="article:tag" content="FreeBSD">
-		<meta property="article:tag" content="Driver">
-
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Wifibox的配置与使用">
-	<meta name="twitter:description" content="最近几天，我在Redmi Book Pro 14s上安装了FreeBSD 14.1-RELEASE，也算是体验了一把UNIX哲学，但因FreeBSD的驱动太过匮乏了，导致我的安装并不顺利，也就有了这篇文章
-bhyve bhyve，发音为“beehive”，是 FreeBSD 的虚拟机管理程序 / 虚拟机管理器，支持带有“POPCNT”（POPulation Count）功能的 Intel 和 AMD 处理器上的多种客户操作系统，以及在实验中支持 gic0：ARM Generic Interrupt Controller v3.0 功能的 ARM64/aarch64 处理器
-bhyve 支持多种存储和网络后端、UEFI、FreeBSD 加载器和 GRUB 启动、PCI 直通 (PPT)、集成 VNC 和 9pfs 服务器以及更多功能
-Wifibox bhyve supports passing of host PCI devices to a virtual machine for its exclusive use of them.
-Wifibox则是借助其PCI直通技术，部署了一个 Linux 客户机，借助 PCI 直通技术驱动 FreeBSD 主机系统上的无线网卡
-Wifibox的日志位于/var/run/wifibox/appliance/log，可以很方便地观察它的运行状态
-配置 我的网卡是RTL8852be，用ifconfig查看只有一个设备，其ip为127.0.0.1，若网卡在FreeBSD下有驱动支持，则需要额外禁用自带驱动
-安装 Wifibox 因为安装需要网络，我们将数据线插入电脑，开启USB网络共享，用ifconfig查看是否识别到设备ue0 dhclient ue0 # 获取ip 连接完后安装 Wifibox">
-
-        <link href="https://blog.fsunix.net/css/fonts.59d1a99427e69bbc5d662054d52d778d1670175ee5a27a72c16ad3f4b3c6392b.css" rel="stylesheet">
+	
+        <link href="https://blog.fsunix.net/css/fonts.45e96685102f4c8364c7a631e61a43843d4df49d4b934b6f8fc2ab700fe478cb.css" rel="stylesheet">
 	
 
 	
@@ -203,15 +174,11 @@ defaultroute_delay=&#34;0&#34;
     </article>
 </main>
 <footer>
-  <div style="display:flex"><a class="soc" href="https://github.com/inuyasha-660" rel="me" title="GitHub"><svg class="feather">
-       <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
-    </svg></a><a class="border"></a></div>
-  <div class="footer-info">
-    2026  © Croyoux Lite |  <a
-      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
-  </div>
+    <div class="footer-info">
+        2026  © Croyoux Lite |  <a
+            href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+    </div>
 </footer>
-
 
 
 </div>

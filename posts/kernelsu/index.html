@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html><head lang="en">
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>KernelSU内核编译 - Croyoux</title><link rel="icon" type="image/x-icon" href=/favicon.ico /><meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="KernelSU编译教程" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>KernelSU 内核编译 - Croyoux</title><link rel="icon" type="image/x-icon" href=/favicon.ico /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="环境搭建
+搭建编译所需的环境
+系统安装
+教程基于debian，你可以选择实机安装或者使用wsl2,如何安装请看使用 WSL 在 Windows 上安装 Linux
+
+
+  
+    
+    🔎 Tip
+    
+    wsl将系统各盘挂载至``/mnt``目录，通过此挂载点可以实现文件传输
+    
+    
+" />
 	<meta property="og:image" content="https://blog.fsunix.net/"/>
-	<meta property="og:url" content="https://blog.fsunix.net/posts/kernelsu/">
-	<meta property="og:site_name" content="Croyoux">
-	<meta property="og:title" content="KernelSU内核编译">
-	<meta property="og:description" content="KernelSU编译教程">
-	<meta property="og:locale" content="en_us">
-	<meta property="og:type" content="article">
-		<meta property="article:section" content="posts">
-		<meta property="article:published_time" content="2023-08-05T20:12:02+00:00">
-		<meta property="article:modified_time" content="2024-11-23T00:59:06+08:00">
-		<meta property="article:tag" content="Linux">
-		<meta property="article:tag" content="Kernel">
-
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="KernelSU内核编译">
-	<meta name="twitter:description" content="KernelSU编译教程">
-
-        <link href="https://blog.fsunix.net/css/fonts.59d1a99427e69bbc5d662054d52d778d1670175ee5a27a72c16ad3f4b3c6392b.css" rel="stylesheet">
+	
+        <link href="https://blog.fsunix.net/css/fonts.45e96685102f4c8364c7a631e61a43843d4df49d4b934b6f8fc2ab700fe478cb.css" rel="stylesheet">
 	
 
 	
@@ -65,7 +63,7 @@
       
       <div class="post-content">
         <div class="title">
-          <h1 class="title">KernelSU内核编译</h1>
+          <h1 class="title">KernelSU 内核编译</h1>
           <div class="meta">Posted on Aug 5, 2023</div>
         </div>
         
@@ -278,59 +276,16 @@ CONFIG_KPROBE_EVENTS=y
 
       
       
-      <div class="toc">
-        <strong>Table of contents:</strong>
-        <nav id="TableOfContents">
-  <ul>
-    <li><a href="#环境搭建">环境搭建</a>
-      <ul>
-        <li><a href="#系统安装">系统安装</a></li>
-        <li><a href="#编译环境">编译环境</a></li>
-        <li><a href="#系统代理">系统代理</a></li>
-      </ul>
-    </li>
-    <li><a href="#工作目录">工作目录</a></li>
-    <li><a href="#源码下载">源码下载</a>
-      <ul>
-        <li><a href="#内核源码">内核源码</a></li>
-        <li><a href="#添加kernelsu">添加KernelSU</a></li>
-        <li><a href="#工具链下载">工具链下载</a></li>
-      </ul>
-    </li>
-    <li><a href="#编译脚本">编译脚本</a></li>
-    <li><a href="#开始编译">开始编译</a></li>
-    <li><a href="#打包内核">打包内核</a>
-      <ul>
-        <li><a href="#anykernel3">AnyKernel3</a></li>
-        <li><a href="#magiskboot">MagiskBoot</a></li>
-      </ul>
-    </li>
-    <li><a href="#拓展">拓展</a>
-      <ul>
-        <li><a href="#修改内核源码">修改内核源码</a></li>
-        <li><a href="#bugreport">BugReport</a></li>
-        <li><a href="#docker支持">Docker支持</a></li>
-      </ul>
-    </li>
-    <li><a href="#参考部分引用">参考|部分引用</a></li>
-  </ul>
-</nav>
-      </div>
-      
     </div>
 
     </article>
 </main>
 <footer>
-  <div style="display:flex"><a class="soc" href="https://github.com/inuyasha-660" rel="me" title="GitHub"><svg class="feather">
-       <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
-    </svg></a><a class="border"></a></div>
-  <div class="footer-info">
-    2026  © Croyoux Lite |  <a
-      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
-  </div>
+    <div class="footer-info">
+        2026  © Croyoux Lite |  <a
+            href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+    </div>
 </footer>
-
 
 
 </div>

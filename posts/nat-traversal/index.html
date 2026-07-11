@@ -52,43 +52,8 @@ sudo systemctl status frps
 sudo systemctl enable frps
 之后的frpc也是大同小异，只需要更改名字和位置即可" />
 	<meta property="og:image" content="https://blog.fsunix.net/"/>
-	<meta property="og:url" content="https://blog.fsunix.net/posts/nat-traversal/">
-	<meta property="og:site_name" content="Croyoux">
-	<meta property="og:title" content="Frp自建内网穿透">
-	<meta property="og:description" content="这几天一直在折腾内网穿透的事，原因很简单，服务器的ROM不够大，又没钱升级配置，又拍云的免费OSS不备案无法绑定域名，免费的内网穿透速率太小了，更别提还有流量限制
-想了想貌似只能自己建一个了，刚好手里有吃灰的Orangepi Zeor3，买的时候配了张128G的TF卡，虽然速度一般，但对于我来说是绰绰有余了
-frp 提到内网穿透，想到的肯定是大名顶顶的frp，目前在Github上已有76.3K starred
-网上的很多文章大多是教你用基于frp的一键配置脚本，但试了几个发现都没用后决定自己尝试
-安装&amp;使用 frp的安装很简单，参照文档的教程
-到Releases处下载适合的架构/系统的压缩包，解压到任意目录
-使用./frps -c ./frps.toml启动服务端
-使用./frpc -c ./frpc.toml启动客户端
-使用 systemd 开机自启动 如果断开ssh连接，frp服务也会断开;可以将它设置为开机自启
-(如果尚未安装)使用apt install systemd 安装，其他发行版使用其包管理器即可 编辑/etc/systemd/system/frps.service创建frp服务配置，写入以下内容 [Unit] # 服务名称，可自定义 Description = frp server After = network.target syslog.target Wants = network.target [Service] Type = simple # 启动frps的命令，需修改为您的frps的安装路径 ExecStart = /path/to/frps -c /path/to/frps.toml [Install] WantedBy = multi-user.target 3.管理命令
-# 启动frp sudo systemctl start frps # 停止frp sudo systemctl stop frps # 重启frp sudo systemctl restart frps # 查看frp状态 sudo systemctl status frps # 开机自启动 sudo systemctl enable frps 之后的frpc也是大同小异，只需要更改名字和位置即可">
-	<meta property="og:locale" content="en_us">
-	<meta property="og:type" content="article">
-		<meta property="article:section" content="posts">
-		<meta property="article:published_time" content="2024-01-22T18:20:30+00:00">
-		<meta property="article:modified_time" content="2024-01-22T18:20:30+00:00">
-		<meta property="article:tag" content="图床">
-		<meta property="article:tag" content="Linux">
-
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Frp自建内网穿透">
-	<meta name="twitter:description" content="这几天一直在折腾内网穿透的事，原因很简单，服务器的ROM不够大，又没钱升级配置，又拍云的免费OSS不备案无法绑定域名，免费的内网穿透速率太小了，更别提还有流量限制
-想了想貌似只能自己建一个了，刚好手里有吃灰的Orangepi Zeor3，买的时候配了张128G的TF卡，虽然速度一般，但对于我来说是绰绰有余了
-frp 提到内网穿透，想到的肯定是大名顶顶的frp，目前在Github上已有76.3K starred
-网上的很多文章大多是教你用基于frp的一键配置脚本，但试了几个发现都没用后决定自己尝试
-安装&amp;使用 frp的安装很简单，参照文档的教程
-到Releases处下载适合的架构/系统的压缩包，解压到任意目录
-使用./frps -c ./frps.toml启动服务端
-使用./frpc -c ./frpc.toml启动客户端
-使用 systemd 开机自启动 如果断开ssh连接，frp服务也会断开;可以将它设置为开机自启
-(如果尚未安装)使用apt install systemd 安装，其他发行版使用其包管理器即可 编辑/etc/systemd/system/frps.service创建frp服务配置，写入以下内容 [Unit] # 服务名称，可自定义 Description = frp server After = network.target syslog.target Wants = network.target [Service] Type = simple # 启动frps的命令，需修改为您的frps的安装路径 ExecStart = /path/to/frps -c /path/to/frps.toml [Install] WantedBy = multi-user.target 3.管理命令
-# 启动frp sudo systemctl start frps # 停止frp sudo systemctl stop frps # 重启frp sudo systemctl restart frps # 查看frp状态 sudo systemctl status frps # 开机自启动 sudo systemctl enable frps 之后的frpc也是大同小异，只需要更改名字和位置即可">
-
-        <link href="https://blog.fsunix.net/css/fonts.59d1a99427e69bbc5d662054d52d778d1670175ee5a27a72c16ad3f4b3c6392b.css" rel="stylesheet">
+	
+        <link href="https://blog.fsunix.net/css/fonts.45e96685102f4c8364c7a631e61a43843d4df49d4b934b6f8fc2ab700fe478cb.css" rel="stylesheet">
 	
 
 	
@@ -368,15 +333,11 @@ server {
     </article>
 </main>
 <footer>
-  <div style="display:flex"><a class="soc" href="https://github.com/inuyasha-660" rel="me" title="GitHub"><svg class="feather">
-       <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
-    </svg></a><a class="border"></a></div>
-  <div class="footer-info">
-    2026  © Croyoux Lite |  <a
-      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
-  </div>
+    <div class="footer-info">
+        2026  © Croyoux Lite |  <a
+            href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+    </div>
 </footer>
-
 
 
 </div>
