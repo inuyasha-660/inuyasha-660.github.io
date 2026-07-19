@@ -727,8 +727,8 @@ table {
     /* Modern logical properties */
     inline-size: 100%;
     margin-block: 1rem;
-    border-radius: var(--border-radius, 5px);
-    overflow: hidden;
+    overflow: auto;
+    display: block;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
