@@ -57,7 +57,46 @@
 				
 				
 				<section class="list-item">
-					<h1 class="title"><a href="/posts/sdl3_libdecor/">SDL3 在 Wayland 下改变窗口大小极其卡顿</a></h1>
+					<h1 class="title"><a href="/posts/highlight/">代码高亮</a></h1>
+					<time>Jul 17, 2026</time>
+					<br><div class="description">
+	
+	<p>前段时间对 Hugo 不太满意，恰好了解到 <a href="https://geminiprotocol.net/">Project Gemini</a> 和 <a href="https://geminiprotocol.net/docs/gemtext.gmi">gemtext</a>，想从头写一个静态网页生成器，将 gemtext 转为 HTML。<br>
+大概是离期末还有一个月的时候，在学校想了几天如何实现 <code>&lt;highlight&gt; &lt;/highlight&gt;</code> 内的高亮。虽然最后生成器因为太复杂而放弃了，但还是想记录下那几天的想法。</p>
+<h2 id="hugo-syntax-highlighting">Hugo syntax highlighting</h2>
+<p>在 Markdown 中，用以下语法创建一个代码块，Hugo 将对 <code>CODE</code> 里的内容进行语法高亮。</p>
+<pre tabindex="0"><code>```LANG [OPTIONS]
+CODE
+```
+</code></pre><p>以 C 语言为例，生成类似下方的 HTML</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;highlight&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">pre</span> <span style="color:#a6e22e">tabindex</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;</span>&gt;&lt;<span style="color:#f92672">code</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-c&#34;</span> <span style="color:#a6e22e">data-lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;c&#34;</span>&gt;&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;display:flex;&#34;</span>&gt;&lt;<span style="color:#f92672">span</span>&gt;&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#a6e22e&#34;</span>&gt;SDL_SetHint&lt;/<span style="color:#f92672">span</span>&gt;(SDL_HINT_VIDEO_WAYLAND_ALLOW_LIBDECOR, &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#e6db74&#34;</span>&gt;&#34;0&#34;&lt;/<span style="color:#f92672">span</span>&gt;);
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">code</span>&gt;&lt;/<span style="color:#f92672">pre</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><p><code>&lt;pre&gt;</code> 标签内设置了代码块的背景颜色(#272822)，Tab 宽度(4)，未被高亮的文字的颜色(#f8f8f2) 等属性</p>
+<p><code>&lt;code&gt;</code> 标签指定语言(language-c) 和布局样式(style=&ldquo;display:flex;&quot;)。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">code</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;language-c&#34;</span> <span style="color:#a6e22e">data-lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;c&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;display:flex;&#34;</span>&gt;...&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;display:flex;&#34;</span>&gt;...&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;display:flex;&#34;</span>&gt;...&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;display:flex;&#34;</span>&gt;...&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">code</span>&gt;
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>从 <code>&lt;span style=&quot;display:flex;&quot;&gt;</code> 开始到 <code>&lt;/span&gt;</code> 结束代表一行代码；每新增一行，会添加一个 <code>&lt;span style=&quot;display:flex;&quot;&gt; &lt;/span&gt;</code> 元素。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;display:flex;&#34;</span>&gt;&lt;<span style="color:#f92672">span</span>&gt;&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#a6e22e&#34;</span>&gt;SDL_SetHint&lt;/<span style="color:#f92672">span</span>&gt;(SDL_HINT_VIDEO_WAYLAND_ALLOW_LIBDECOR, &lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color:#e6db74&#34;</span>&gt;&#34;0&#34;&lt;/<span style="color:#f92672">span</span>&gt;);
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">span</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">SDL_SetHint</span>(SDL_HINT_VIDEO_WAYLAND_ALLOW_LIBDECOR, <span style="color:#e6db74">&#34;0&#34;</span>);
+</span></span></code></pre></div><p>在一行内，用 <code>&lt;span style=&quot;...&quot;&gt;TEXT&lt;/span&gt;</code> 显示带有高亮/斜体等样式的文本，无需高亮的文本将遵循 <code>&lt;pre&gt;</code> 标签内设置的的样式。</p>&hellip;
+	
+</div>
+					<a class="readmore" href="/posts/highlight/">Read more ⟶</a>
+				</section>
+				
+				<section class="list-item">
+					<h1 class="title"><a href="/posts/sdl3_libdecor/">Wayland: SDL3 改变窗口大小时极其卡顿</a></h1>
 					<time>May 23, 2026</time>
 					<br><div class="description">
 	
@@ -171,30 +210,6 @@ https://d1--cn-gotcha204b.bilivideo.com/live-bvc/690859/live_690608693_5023542_b
 				</section>
 				
 				<section class="list-item">
-					<h1 class="title"><a href="/posts/card_cmb/">招行新万事达普卡办理</a></h1>
-					<time>Sep 13, 2025</time>
-					<br><div class="description">
-	
-	<p>招商银行在今年08月21日推出了零门槛的新<strong>万事达人民币借记卡普卡</strong>，在等待了约三个星期后最近的网点终于
-有卡了，花了几十分钟成功开成二类卡</p>
-<h2 id="一类银联">一类银联</h2>
-<p>在开学的第二个星期，我去了一趟最近的网点，但被告知卡版还没到，可以先办一张银联然后换卡；因为是第一次
-办，在激活上花了点时间。对比四大行虽然体量大但态度还是招行强，全程指引且没问我要一堆乱七八糟的证明，
-满16周岁只需要带身份证、学生卡(或工作证明)和个人实名的手机号即可办理，不过缺点就是网点太少了，
-我这边最近的网点都要3、4公里，一些偏远地区可能只能去市分行。</p>
-<p>我这张是招财普卡，VTM的第一个卡面，网点告知未成年日限只有1000，而且没开网银；
-因为想着后续换卡就没选其他卡面，回到家就后悔，打算保留这张卡后把万事达办成二类卡，毕竟国内还是银联适用范围更广。</p>
-<h2 id="万事达开卡">万事达开卡</h2>
-<p>第二个星期在电话确认网点有卡后前往开卡，虽然换了柜员，但依旧顺利;用途只说了海外购物就给我开了，没要其他证明（开卡时还遇到个小孩带着他妈也来开这张卡）。<br>
-最后给开成了二类，限额还是1000，不过用来买游戏也足够了。</p>
-<p>万事达卡的要比普卡厚，做工对比也更好，不知道是不是卡厂的区别🤔</p>
-<p><img src="https://br2.fsunix.net/img/card_cmb_1.webp" alt="合影"></p>&hellip;
-	
-</div>
-					<a class="readmore" href="/posts/card_cmb/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
 					<h1 class="title"><a href="/posts/bili_login_gtk/">用 WebKitGtk 登陆 BiliBili</a></h1>
 					<time>Aug 5, 2025</time>
 					<br><div class="description">
@@ -294,7 +309,91 @@ X-Cache-Webcdn: BYPASS from jd-sxhz-dx-w-01
 					<time>Feb 17, 2024</time>
 					<br><div class="description">
 	
-	迟到两天的伪开箱
+	<table>
+	<thead>
+			<tr>
+					<th>连接方式</th>
+					<th>有线/2.4G/蓝牙</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>键帽</td>
+					<td>PBT原厂拼色</td>
+			</tr>
+			<tr>
+					<td>轴体</td>
+					<td>烟雨轴/TTC钢铁轴</td>
+			</tr>
+			<tr>
+					<td>声音包</td>
+					<td>PORON棉/ixpe轴下垫/底棉/硅胶</td>
+			</tr>
+			<tr>
+					<td>PCBA</td>
+					<td>单键开槽</td>
+			</tr>
+			<tr>
+					<td>电池</td>
+					<td>7200MA锂电池</td>
+			</tr>
+			<tr>
+					<td>结构</td>
+					<td>Gasket结构(软弹型)</td>
+			</tr>
+			<tr>
+					<td>插拔</td>
+					<td>全键轴座插拔</td>
+			</tr>
+			<tr>
+					<td>卫星轴</td>
+					<td>R87卫星轴(升级款)</td>
+			</tr>
+	</tbody>
+</table>
+<p>京东原价259,减了20</p>
+<h3 id="轴体">轴体</h3>
+<p>一共有四种轴可选，这次我选择了烟雨轴，声音听起来很不错，大键也没有弹簧音，一种麻将的感觉;比之前买的强多了</p>
+<table>
+	<thead>
+			<tr>
+					<th>轴体</th>
+					<th>压力克数</th>
+					<th>触发行程</th>
+					<th>触底行程</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>纯净轴</td>
+					<td>42±5g</td>
+					<td>2.0±0.4mm</td>
+					<td>3,7±0.4mm</td>
+			</tr>
+			<tr>
+					<td>雪皇轴</td>
+					<td>45±10gf</td>
+					<td>2.0±0.4mm</td>
+					<td>3.4±0.4mm</td>
+			</tr>
+			<tr>
+					<td>烟雨轴PRO</td>
+					<td>40±10gf</td>
+					<td>2.0±0.4mm</td>
+					<td>3.4±0.4mm</td>
+			</tr>
+			<tr>
+					<td>钢铁轴PRO</td>
+					<td>41±10gf</td>
+					<td>1.4±0.4mm</td>
+					<td>3.8±0.3mm</td>
+			</tr>
+	</tbody>
+</table>
+<h2 id="兼容性">兼容性</h2>
+<p>实测在Arch下有线和2.4G能完美使用，蓝牙还没试，但应该也能用;我的内核版本是<code>6.7.4-arch1-1</code></p>
+<h2 id="superwin-键无反应">Super(WIN) 键无反应</h2>
+<p>使用 <code>FN+WIN</code> 取消 WIN 键锁定</p>&hellip;
 	
 </div>
 					<a class="readmore" href="/posts/r98-keyboard/">Read more ⟶</a>

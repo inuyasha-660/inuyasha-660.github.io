@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>日常 on Croyoux</title>
-		<link>https://blog.fsunix.net/tags/%E6%97%A5%E5%B8%B8/</link>
-		<description>Recent content in 日常 on Croyoux</description>
+		<title>Keyboard on Croyoux</title>
+		<link>https://blog.fsunix.net/tags/keyboard/</link>
+		<description>Recent content in Keyboard on Croyoux</description>
 		<generator>Hugo</generator>
 		<language>en-us</language>
 		
@@ -14,7 +14,7 @@
 		
 			<lastBuildDate>Sat, 17 Feb 2024 12:01:02 +0000</lastBuildDate>
 		
-			<atom:link href="https://blog.fsunix.net/tags/%E6%97%A5%E5%B8%B8/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://blog.fsunix.net/tags/keyboard/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>RK-R98键盘开箱</title>
 				<link>https://blog.fsunix.net/posts/r98-keyboard/</link>

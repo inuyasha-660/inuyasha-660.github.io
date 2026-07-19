@@ -3,22 +3,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.fsunix.net/tags/c/</loc>
+    <lastmod>2026-07-17T19:44:52+08:00</lastmod>
+  </url><url>
     <loc>https://blog.fsunix.net/</loc>
-    <lastmod>2026-05-23T10:07:17+08:00</lastmod>
+    <lastmod>2026-07-17T19:44:52+08:00</lastmod>
   </url><url>
     <loc>https://blog.fsunix.net/posts/</loc>
-    <lastmod>2026-05-23T10:07:17+08:00</lastmod>
+    <lastmod>2026-07-17T19:44:52+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.fsunix.net/tags/</loc>
+    <lastmod>2026-07-17T19:44:52+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.fsunix.net/posts/highlight/</loc>
+    <lastmod>2026-07-17T19:44:52+08:00</lastmod>
   </url><url>
     <loc>https://blog.fsunix.net/tags/sdl3/</loc>
     <lastmod>2026-05-23T10:07:17+08:00</lastmod>
   </url><url>
-    <loc>https://blog.fsunix.net/posts/sdl3_libdecor/</loc>
-    <lastmod>2026-05-23T10:07:17+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.fsunix.net/tags/</loc>
-    <lastmod>2026-05-23T10:07:17+08:00</lastmod>
-  </url><url>
     <loc>https://blog.fsunix.net/tags/wayland/</loc>
+    <lastmod>2026-05-23T10:07:17+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.fsunix.net/posts/sdl3_libdecor/</loc>
     <lastmod>2026-05-23T10:07:17+08:00</lastmod>
   </url><url>
     <loc>https://blog.fsunix.net/tags/bilibili/</loc>
@@ -27,20 +33,11 @@
     <loc>https://blog.fsunix.net/posts/bili-live/</loc>
     <lastmod>2026-02-08T18:20:15+08:00</lastmod>
   </url><url>
-    <loc>https://blog.fsunix.net/tags/c/</loc>
-    <lastmod>2026-02-06T13:19:14+08:00</lastmod>
-  </url><url>
     <loc>https://blog.fsunix.net/tags/linux/</loc>
     <lastmod>2026-02-06T13:19:14+08:00</lastmod>
   </url><url>
     <loc>https://blog.fsunix.net/posts/linux_input/</loc>
     <lastmod>2026-02-06T13:19:14+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.fsunix.net/posts/card_cmb/</loc>
-    <lastmod>2025-09-13T17:33:01+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.fsunix.net/tags/%E9%93%B6%E8%A1%8C%E5%8D%A1/</loc>
-    <lastmod>2025-09-13T17:33:01+08:00</lastmod>
   </url><url>
     <loc>https://blog.fsunix.net/tags/gtk/</loc>
     <lastmod>2025-08-05T16:55:07+08:00</lastmod>
@@ -60,19 +57,16 @@
     <loc>https://blog.fsunix.net/posts/wifibox/</loc>
     <lastmod>2024-08-08T15:31:05+08:00</lastmod>
   </url><url>
+    <loc>https://blog.fsunix.net/tags/keyboard/</loc>
+    <lastmod>2024-02-17T12:01:02+00:00</lastmod>
+  </url><url>
     <loc>https://blog.fsunix.net/posts/r98-keyboard/</loc>
-    <lastmod>2024-02-17T12:01:02+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.fsunix.net/tags/%E6%97%A5%E5%B8%B8/</loc>
-    <lastmod>2024-02-17T12:01:02+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.fsunix.net/tags/%E9%94%AE%E7%9B%98/</loc>
     <lastmod>2024-02-17T12:01:02+00:00</lastmod>
   </url><url>
     <loc>https://blog.fsunix.net/posts/nat-traversal/</loc>
     <lastmod>2024-01-22T18:20:30+00:00</lastmod>
   </url><url>
-    <loc>https://blog.fsunix.net/tags/%E5%9B%BE%E5%BA%8A/</loc>
+    <loc>https://blog.fsunix.net/tags/network/</loc>
     <lastmod>2024-01-22T18:20:30+00:00</lastmod>
   </url><url>
     <loc>https://blog.fsunix.net/posts/arch-kde/</loc>
@@ -87,13 +81,7 @@
     <loc>https://blog.fsunix.net/about/</loc>
     <lastmod>2024-08-08T15:31:05+08:00</lastmod>
   </url><url>
-    <loc>https://blog.fsunix.net/categories/</loc>
-    <lastmod>2023-08-23T18:21:00+00:00</lastmod>
-  </url><url>
     <loc>https://blog.fsunix.net/tags/ipv6/</loc>
-    <lastmod>2023-08-23T18:21:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.fsunix.net/categories/%E5%BC%80%E5%8F%91%E6%9D%BF/</loc>
     <lastmod>2023-08-23T18:21:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.fsunix.net/posts/ipv6/</loc>
@@ -104,5 +92,7 @@
   </url><url>
     <loc>https://blog.fsunix.net/posts/kernelsu/</loc>
     <lastmod>2024-11-23T00:59:06+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.fsunix.net/categories/</loc>
   </url>
 </urlset>

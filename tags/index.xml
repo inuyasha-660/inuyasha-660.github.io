@@ -12,9 +12,16 @@
 			<copyright>© Croyoux Lite</copyright>
 		
 		
-			<lastBuildDate>Sat, 23 May 2026 10:07:17 +0800</lastBuildDate>
+			<lastBuildDate>Fri, 17 Jul 2026 19:44:52 +0800</lastBuildDate>
 		
 			<atom:link href="https://blog.fsunix.net/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>C</title>
+				<link>https://blog.fsunix.net/tags/c/</link>
+				<pubDate>Fri, 17 Jul 2026 19:44:52 +0800</pubDate>
+				<guid>https://blog.fsunix.net/tags/c/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>SDL3</title>
 				<link>https://blog.fsunix.net/tags/sdl3/</link>
@@ -37,24 +44,10 @@
 				<description></description>
 			</item>
 			<item>
-				<title>C</title>
-				<link>https://blog.fsunix.net/tags/c/</link>
-				<pubDate>Fri, 06 Feb 2026 13:19:14 +0800</pubDate>
-				<guid>https://blog.fsunix.net/tags/c/</guid>
-				<description></description>
-			</item>
-			<item>
 				<title>Linux</title>
 				<link>https://blog.fsunix.net/tags/linux/</link>
 				<pubDate>Fri, 06 Feb 2026 13:19:14 +0800</pubDate>
 				<guid>https://blog.fsunix.net/tags/linux/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>银行卡</title>
-				<link>https://blog.fsunix.net/tags/%E9%93%B6%E8%A1%8C%E5%8D%A1/</link>
-				<pubDate>Sat, 13 Sep 2025 17:33:01 +0800</pubDate>
-				<guid>https://blog.fsunix.net/tags/%E9%93%B6%E8%A1%8C%E5%8D%A1/</guid>
 				<description></description>
 			</item>
 			<item>
@@ -79,24 +72,17 @@
 				<description></description>
 			</item>
 			<item>
-				<title>日常</title>
-				<link>https://blog.fsunix.net/tags/%E6%97%A5%E5%B8%B8/</link>
+				<title>Keyboard</title>
+				<link>https://blog.fsunix.net/tags/keyboard/</link>
 				<pubDate>Sat, 17 Feb 2024 12:01:02 +0000</pubDate>
-				<guid>https://blog.fsunix.net/tags/%E6%97%A5%E5%B8%B8/</guid>
+				<guid>https://blog.fsunix.net/tags/keyboard/</guid>
 				<description></description>
 			</item>
 			<item>
-				<title>键盘</title>
-				<link>https://blog.fsunix.net/tags/%E9%94%AE%E7%9B%98/</link>
-				<pubDate>Sat, 17 Feb 2024 12:01:02 +0000</pubDate>
-				<guid>https://blog.fsunix.net/tags/%E9%94%AE%E7%9B%98/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>图床</title>
-				<link>https://blog.fsunix.net/tags/%E5%9B%BE%E5%BA%8A/</link>
+				<title>Network</title>
+				<link>https://blog.fsunix.net/tags/network/</link>
 				<pubDate>Mon, 22 Jan 2024 18:20:30 +0000</pubDate>
-				<guid>https://blog.fsunix.net/tags/%E5%9B%BE%E5%BA%8A/</guid>
+				<guid>https://blog.fsunix.net/tags/network/</guid>
 				<description></description>
 			</item>
 			<item>
