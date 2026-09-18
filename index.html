@@ -9,11 +9,7 @@
 	<meta property="og:image" content="https://blog.fsunix.net/"/>
 	<link rel="alternate" type="application/rss+xml" href="https://blog.fsunix.net/index.xml" title="Croyoux" />
 	
-        <link href="https://blog.fsunix.net/css/fonts.45e96685102f4c8364c7a631e61a43843d4df49d4b934b6f8fc2ab700fe478cb.css" rel="stylesheet">
-	
-
-	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://blog.fsunix.net/css/main.f192bea50bb9400569ecbc31a75a1faa196c50568890ed9a549198a8a5238b5d.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://blog.fsunix.net/css/main.0fb374cc15782ae80486b86eeaa8d863b83c18418c0640c688ee105086ea2051.css" />
 		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://blog.fsunix.net/css/dark.4529c04ce20ceac5a42e37a63e092c89354fbd00e6209bd2995100d61b71e8df.css"   /><link rel="stylesheet" href="https://blog.fsunix.net/katex/katex.min.css ">
 		<script defer src="https://blog.fsunix.net/katex/katex.min.js"></script>
 		<script defer src="https://blog.fsunix.net/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
@@ -42,7 +38,7 @@
 		
 		<a href="/tags">Tags</a>
 		
-		<a href="/friends">Friends</a>
+		<a href="/links">Links</a>
 		
 		<a href="/about">About</a>
 		
@@ -210,71 +206,6 @@ https://d1--cn-gotcha204b.bilivideo.com/live-bvc/690859/live_690608693_5023542_b
 				</section>
 				
 				<section class="list-item">
-					<h1 class="title"><a href="/posts/bili_login_gtk/">用 WebKitGtk 登陆 BiliBili</a></h1>
-					<time>Aug 5, 2025</time>
-					<br><div class="description">
-	
-	<p>最近在研究 BiliBili 的 api， 想做一个以视频为音源的播放器；其中的一个功能允许导入收藏夹的视频</p>
-<p>主要有两个 api</p>
-<pre tabindex="0"><code class="language-api" data-lang="api">通过 mid 获取所有收藏夹信息
-https://api.bilibili.com/x/v3/fav/folder/created/list-all?up_mid=&lt;mid&gt;
-
-通过 media_id 获取指定收藏夹信息
-https://api.bilibili.com/x/v3/fav/resource/list?media_id=&lt;media_id&gt;&amp;pn=&lt;页数&gt;&amp;ps=&lt;每页显示的视频个数&gt;
-</code></pre><p>但是光有 mid 还不够；这两个 api 都需要设置特定的 Cookie 进行认证，所以只能在请求前先实现登录</p>
-<h1 id="登录">登录</h1>
-<p>BiliBili 主要支持<code>短信登录</code>，<code>密码登录</code>和<code>二维码登录</code>；除了<code>二维码登录</code>外，其余两种都需要在登录前进行<code>人机验证(由 geetest 提供)</code></p>
-<h2 id="cookie">Cookie</h2>
-<p>在完成登录后，BiliBili 将设置几个 Cookie</p>
-<pre tabindex="0"><code class="language-respon" data-lang="respon">HTTP/1.1 200 OK
-Date: Mon, 13 Jul 2020 09:57:33 GMT
-Content-Type: application/json;charset=UTF-8
-Content-Length: 78
-Connection: keep-alive
-Server: Apache-Coyote/1.1
-Set-Cookie: DedeUserID=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/
-Set-Cookie: DedeUserID__ckMd5=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/
-Set-Cookie: SESSDATA=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/; HttpOnly
-Set-Cookie: bili_jct=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/
-Set-Cookie: sid=***; Domain=.bilibili.com; Expires=Sat, 18-Jul-2020 09:57:57 GMT; Path=/
-Expires: Mon, 13 Jul 2020 09:57:32 GMT
-Cache-Control: no-cache
-X-Cache-Webcdn: BYPASS from jd-sxhz-dx-w-01
-</code></pre><p>示例来自 <a href="https://socialsisteryi.github.io/bilibili-API-collect/docs/login/login_action/SMS.html#%E4%BD%BF%E7%94%A8%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95-web%E7%AB%AF">BAC Document</a></p>&hellip;
-	
-</div>
-					<a class="readmore" href="/posts/bili_login_gtk/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/gtk-dev/">GTK4 开发环境</a></h1>
-					<time>Jul 5, 2025</time>
-					<br><div class="description">
-	
-	<h2 id="文档">文档</h2>
-<p>gtk主要参考的就是官方的<a href="https://docs.gtk.org/gtk4/">API reference</a>，范围为gtk3-4，包含<a href="https://docs.gtk.org/gtk4/visual_index.html">Widget Gallery</a>，里面有所有当前版本的控件介绍和API。</p>
-<p>缺点是不包含示例，只有 API 文档</p>
-<h3 id="ide">IDE</h3>
-<p>和gtk有关的ide我目前找到的是<a href="https://apps.gnome.org/Builder/">Gnome Builder</a>，介绍说是Gnome环境下的开发工具；我曾经用它编写过一些小项目，但的补全和插件都不够完善，所以转而使用Vscode。</p>
-<p>真要说起来，gtk的编写应该只需要一个文本编辑器，gtk4的大部分函数名都比较好记，这方面IDE也只是方便补全一些变量和函数名，提供高亮支持</p>
-<h3 id="构建工具">构建工具</h3>
-<p>和上文说的一样，你可以选择不使用任何构建工具，使用<code>pkg-config</code>查找依赖和<code>cflags</code>后手动编译；但这样太过原始了，也不方便调试</p>
-<h4 id="meson">Meson</h4>
-<p>Meson是gnome项目主要的编译工具，Gnome Builder也会默认安装此工具，它基于一个简单的构建配置生成<code>build.ninja</code>，有点像Cmake和Makefile。</p>
-<p>此外，在build目录下会生成<code>compile_commands.json</code>，clangd可以根据此文件提供高亮和补全支持；Meson还支持增量编译，比直接重新编译更快。</p>
-<p>Meson的文档中就包含构建gtk的示例，用<code>dependency</code>提供名称，Meson就能自动查找并引入依赖</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-meson" data-lang="meson"><span style="display:flex;"><span>deps <span style="color:#f92672">=</span> [dependency(<span style="color:#e6db74">&#39;gtk4&#39;</span>), dependency(<span style="color:#e6db74">&#39;libadwaita-1&#39;</span>), dependency(<span style="color:#e6db74">&#39;libcjson&#39;</span>)]
-</span></span></code></pre></div><h2 id="libadwaita-1">libadwaita-1</h2>
-<p>在依赖中引入<code>Adw</code>能让gtk应用更加现代化，符合Gnome的风格；使用方式和默认的gtk初始化相似</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">g_autoptr</span> (AdwApplication) app <span style="color:#f92672">=</span> NULL;
-</span></span><span style="display:flex;"><span>app <span style="color:#f92672">=</span> <span style="color:#a6e22e">adw_application_new</span> (<span style="color:#e6db74">&#34;org.example.Hello&#34;</span>, G_APPLICATION_DEFAULT_FLAGS);
-</span></span></code></pre></div><p>创建<code>app</code>并用<code>adw_application_new()</code>初始化；官方示例中的<code>G_APPLICATION_FLAGS_NONE</code>已被弃用，用<code>G_APPLICATION_DEFAULT_FLAGS</code>代替</p>&hellip;
-	
-</div>
-					<a class="readmore" href="/posts/gtk-dev/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
 					<h1 class="title"><a href="/posts/wifibox/">Wifibox的配置与使用</a></h1>
 					<time>Jul 10, 2024</time>
 					<br><div class="description">
@@ -305,246 +236,98 @@ X-Cache-Webcdn: BYPASS from jd-sxhz-dx-w-01
 				</section>
 				
 				<section class="list-item">
-					<h1 class="title"><a href="/posts/r98-keyboard/">RK-R98键盘开箱</a></h1>
-					<time>Feb 17, 2024</time>
+					<h1 class="title"><a href="/posts/ipv6/">路由器开启 IPV6</a></h1>
+					<time>Aug 23, 2023</time>
 					<br><div class="description">
 	
-	<table>
-	<thead>
-			<tr>
-					<th>连接方式</th>
-					<th>有线/2.4G/蓝牙</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>键帽</td>
-					<td>PBT原厂拼色</td>
-			</tr>
-			<tr>
-					<td>轴体</td>
-					<td>烟雨轴/TTC钢铁轴</td>
-			</tr>
-			<tr>
-					<td>声音包</td>
-					<td>PORON棉/ixpe轴下垫/底棉/硅胶</td>
-			</tr>
-			<tr>
-					<td>PCBA</td>
-					<td>单键开槽</td>
-			</tr>
-			<tr>
-					<td>电池</td>
-					<td>7200MA锂电池</td>
-			</tr>
-			<tr>
-					<td>结构</td>
-					<td>Gasket结构(软弹型)</td>
-			</tr>
-			<tr>
-					<td>插拔</td>
-					<td>全键轴座插拔</td>
-			</tr>
-			<tr>
-					<td>卫星轴</td>
-					<td>R87卫星轴(升级款)</td>
-			</tr>
-	</tbody>
-</table>
-<p>京东原价259,减了20</p>
-<h3 id="轴体">轴体</h3>
-<p>一共有四种轴可选，这次我选择了烟雨轴，声音听起来很不错，大键也没有弹簧音，一种麻将的感觉;比之前买的强多了</p>
-<table>
-	<thead>
-			<tr>
-					<th>轴体</th>
-					<th>压力克数</th>
-					<th>触发行程</th>
-					<th>触底行程</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>纯净轴</td>
-					<td>42±5g</td>
-					<td>2.0±0.4mm</td>
-					<td>3,7±0.4mm</td>
-			</tr>
-			<tr>
-					<td>雪皇轴</td>
-					<td>45±10gf</td>
-					<td>2.0±0.4mm</td>
-					<td>3.4±0.4mm</td>
-			</tr>
-			<tr>
-					<td>烟雨轴PRO</td>
-					<td>40±10gf</td>
-					<td>2.0±0.4mm</td>
-					<td>3.4±0.4mm</td>
-			</tr>
-			<tr>
-					<td>钢铁轴PRO</td>
-					<td>41±10gf</td>
-					<td>1.4±0.4mm</td>
-					<td>3.8±0.3mm</td>
-			</tr>
-	</tbody>
-</table>
-<h2 id="兼容性">兼容性</h2>
-<p>实测在Arch下有线和2.4G能完美使用，蓝牙还没试，但应该也能用;我的内核版本是<code>6.7.4-arch1-1</code></p>
-<h2 id="superwin-键无反应">Super(WIN) 键无反应</h2>
-<p>使用 <code>FN+WIN</code> 取消 WIN 键锁定</p>&hellip;
+	<h3 id="光猫配置">光猫配置</h3>
+<p>进入光猫的后台，我的光猫用普通的账号<code>root</code>密码<code>admin</code>进是能进去，但是很多设置只能看，最后找到了超级用户密码</p>
+<pre tabindex="0"><code>账号:telecomadmin
+密码:admintelecom
+</code></pre><p>输入密码进入后台，找到<code>wan</code>设置，把路由器的wan改为<code>桥接</code>，并把<strong>ipv4</strong>改为<code>ipv4/ipv6</code>。</p>
+<p>如果是灰色的不能更改，在不能点击的ipv4设置上右键，点击<strong>检查</strong>，查看时候有<code>disable</code>属性，如果有的话，对准属性右键，点击<code>edit attribute</code>删除disable，不需要关闭，直接点击ipv4就应该能设置了<strong>需要注意的是，如果用普通账号登陆，比如上面的root，你是无法设置开启ipv6的，即使删去disable，点击应用后仍然是ipv4</strong></p>
+<h3 id="路由器开启ipv6">路由器开启ipv6</h3>
+<p>光猫设置完成了，现在登陆路由器后台，以小米路由器为例，点击<strong>常用设置-上网设置</strong>，开启ipv6,上网方式选择<strong>native</strong>，然后在上网设置里选择<strong>PPoE</strong>拨号上网，输入你的宽带帐号密码</p>
+<p>输入正确的帐号密码，这下应该能成功连上网了，等一会，你会发现后台出现了ipv6的地址，访问ipv6测试如果成绩是10/10那么说明你就成功了(如果不行的话重启路由器和光猫试试)</p>
+<h2 id="关闭防火墙">关闭防火墙</h2>
+<p>得到公网ipv6之后，关闭防火墙让外部流量能够访问</p>
+<p>因为低端的小米路由器默认是没有关闭防火墙的开关的，所以我们需要ssh连接路由器进行手动配置</p>
+<p>温馨提示：此教程可能不适用于较新的路由器，作者用的是红米AC2100</p>
+<ol>
+<li>首先登陆你路由器的后台，然后查看地址栏，找到<code>stok=xxxxxxxx</code>把<code>=</code>到<code>/</code>中间的复制下来</li>
+<li>浏览器输入以下内容 &lt; stok &gt;换成你上面复制的内容，如果输出{&ldquo;code&rdquo;:0}那就是成功</li>
+</ol>
+<pre tabindex="0"><code class="language-url" data-lang="url">http://192.168.31.1/cgi-bin/luci/;stok=&lt;STOK&gt;/api/misystem/set_config_iotdev?bssid=Xiaomi&amp;user_id=longdike&amp;ssid=-h%3B%20nvram%20set%20ssh_en%3D1%3B%20nvram%20commit%3B%20sed%20-i%20&#39;s%2Fchannel%3D.*%2Fchannel%3D%5C%22debug%5C%22%2Fg&#39;%20%2Fetc%2Finit.d%2Fdropbear%3B%20%2Fetc%2Finit.d%2Fdropbear%20start%3B
+</code></pre><ol>
+<li>浏览器进入，同样，&lt; STOK &gt;换成自己stok</li>
+</ol>
+<pre tabindex="0"><code class="language-url" data-lang="url">http://192.168.31.1/cgi-bin/luci/;stok=&lt;STOK&gt;/api/misystem/set_config_iotdev?bssid=Xiaomi&amp;user_id=longdike&amp;ssid=-h%3B%20echo%20-e%20&#39;admin%5Cnadmin&#39;%20%7C%20passwd%20root%3B
+</code></pre><ol>
+<li>
+<p>完成后，使用<code>ssh root@192.168.31.1</code>连接路由器，密码为<code>admin</code></p>
+</li>
+<li>
+<p>因为openssh7.0以后的版本不再支持ssh-dss(DSA)算法，所以可能会报错，尝试使用以下命令连接</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ssh -oHostKeyAlgorithms<span style="color:#f92672">=</span>+ssh-rsa root@192.168.31.1
+</span></span></code></pre></div><ol>
+<li>连上以后就好办了，使用<code>vi /etc/config/firewall</code>修改配置文件,修改config defaults改为</li>
+</ol>
+<pre tabindex="0"><code>config defaults
+        option syn_flood &#39;0&#39;
+        option input &#39;ACCEPT&#39;
+        option output &#39;ACCEPT&#39;
+        option forward &#39;ACCEPT&#39;
+        option drop_invalid &#39;0&#39;
+        option disable_ipv6 &#39;0&#39;
+</code></pre><ol>
+<li>最后重启防火墙</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>/etc/init.d/firewall restart
+</span></span></code></pre></div><h3 id="ddns-go">DDNS-GO</h3>
+<blockquote>
+<p>简单好用的DDNS。自动更新域名解析到公网IP(支持阿里云、腾讯云、Dnspod、Cloudflare、Callback、华为云、百度云、Porkbun、GoDaddy、Google Domain)</p>
+</blockquote>
+<ol>
+<li>在浏览器输入<code>http://127.0.0.1:9876/</code>登陆后台</li>
+<li>DNS服务商选择自己注册域名的服务商</li>
+<li>创建并填入<code>AccessKeyID</code>和<code>secret</code></li>
+<li>获取ip的方式接口或网卡都行</li>
+<li>Domains填入自己的域名和二级域名</li>
+<li>点击save保存即可完成配置</li>
+</ol>
+<p>之后尝试用域名+网站端口访问网站</p>&hellip;
 	
 </div>
-					<a class="readmore" href="/posts/r98-keyboard/">Read more ⟶</a>
+					<a class="readmore" href="/posts/ipv6/">Read more ⟶</a>
 				</section>
 				
 				<section class="list-item">
-					<h1 class="title"><a href="/posts/nat-traversal/">Frp自建内网穿透</a></h1>
-					<time>Jan 22, 2024</time>
+					<h1 class="title"><a href="/posts/kernelsu/">KernelSU 内核编译</a></h1>
+					<time>Aug 5, 2023</time>
 					<br><div class="description">
 	
-	<p>这几天一直在折腾内网穿透的事，原因很简单，服务器的ROM不够大，又没钱升级配置，又拍云的免费OSS不备案无法绑定域名，免费的内网穿透速率太小了，更别提还有流量限制</p>
-<p>想了想貌似只能自己建一个了，刚好手里有吃灰的Orangepi Zeor3，买的时候配了张128G的TF卡，虽然速度一般，但对于我来说是绰绰有余了</p>
-<h2 id="frp">frp</h2>
-<p>提到内网穿透，想到的肯定是大名顶顶的<strong>frp</strong>，目前在Github上已有76.3K starred</p>
-<p>网上的很多文章大多是教你用基于frp的一键配置脚本，但试了几个发现都没用后决定自己尝试</p>
-<h3 id="安装使用">安装&amp;使用</h3>
-<p>frp的安装很简单，参照<a href="https://gofrp.org/zh-cn/">文档</a>的教程</p>
-<ol>
-<li>
-<p>到<a href="https://github.com/fatedier/frp/releases/tag/v0.53.2">Releases</a>处下载适合的架构/系统的压缩包，解压到任意目录</p>
-</li>
-<li>
-<p>使用<code>./frps -c ./frps.toml</code>启动服务端</p>
-</li>
-<li>
-<p>使用<code>./frpc -c ./frpc.toml</code>启动客户端</p>
-</li>
-</ol>
-<h3 id="使用-systemd-开机自启动">使用 systemd 开机自启动</h3>
-<p>如果断开ssh连接，frp服务也会断开;可以将它设置为开机自启</p>
-<ol>
-<li>(如果尚未安装)使用<code>apt install systemd </code>安装，其他发行版使用其包管理器即可</li>
-<li>编辑<code>/etc/systemd/system/frps.service</code>创建frp服务配置，写入以下内容</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-service" data-lang="service"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 服务名称，可自定义</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description </span><span style="color:#f92672">=</span><span style="color:#e6db74"> frp server</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">After </span><span style="color:#f92672">=</span><span style="color:#e6db74"> network.target syslog.target</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Wants </span><span style="color:#f92672">=</span><span style="color:#e6db74"> network.target</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Service]</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Type </span><span style="color:#f92672">=</span><span style="color:#e6db74"> simple</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 启动frps的命令，需修改为您的frps的安装路径</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart </span><span style="color:#f92672">=</span><span style="color:#e6db74"> /path/to/frps -c /path/to/frps.toml</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy </span><span style="color:#f92672">=</span><span style="color:#e6db74"> multi-user.target</span>
-</span></span></code></pre></div><p>3.管理命令</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 启动frp</span>
-</span></span><span style="display:flex;"><span>sudo systemctl start frps
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 停止frp</span>
-</span></span><span style="display:flex;"><span>sudo systemctl stop frps
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 重启frp</span>
-</span></span><span style="display:flex;"><span>sudo systemctl restart frps
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看frp状态</span>
-</span></span><span style="display:flex;"><span>sudo systemctl status frps
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 开机自启动</span>
-</span></span><span style="display:flex;"><span>sudo systemctl enable frps
-</span></span></code></pre></div><p>之后的frpc也是大同小异，只需要更改名字和位置即可</p>&hellip;
-	
-</div>
-					<a class="readmore" href="/posts/nat-traversal/">Read more ⟶</a>
-				</section>
-				
-				<section class="list-item">
-					<h1 class="title"><a href="/posts/arch-kde/">Arch下的Kde配置</a></h1>
-					<time>Jan 14, 2024</time>
-					<br><div class="description">
-	
-	<p>这段时间重装了6次Arch，1次Debian Testing，几乎将主流桌面体验完了，血与泪的教训，wayland目前还不成熟，高分屏还得老老实实用x11</p>
-<h2 id="起因">起因</h2>
-<p>逛B站时偶然看到了有人发<a href="https://www.bilibili.com/read/cv22707313/">Hyprland的配置</a>，再看我的Kde瞬间就不香了</p>
-<p>拿出我珍藏多年的Arch Live CD ，F12选择U盘启动，在经过一系列分区，生成fstab，引导后，成功来到了熟悉的tty界面，接下来照着B站的教程，开始安装Hyprland</p>
-<h2 id="hyprland">Hyprland</h2>
-<blockquote>
-<p>Hyprland is a highly customizable dynamic tiling Wayland compositor that doesn&rsquo;t sacrifice on its looks.</p>
-</blockquote>
-<blockquote>
-<p>Hyprland 是一款高度可定制的动态平铺 Wayland 合成器，不会牺牲其外观。</p>
-</blockquote>
-<h3 id="安装">安装</h3>
-<ol>
-<li>首先安装Wayland</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacman -S xorg-xwayland qt5-wayland qt6-wayland glfw-wayland
-</span></span></code></pre></div><ol start="2">
-<li>安装Hyprland</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>paru -S hyprland-bin
-</span></span></code></pre></div><ol start="3">
-<li>复制配置文件</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -pv ~/.config/hypr
-</span></span><span style="display:flex;"><span>sudo cp /usr/share/hyprland/hyprland.conf ~/.config/hypr/
-</span></span></code></pre></div><ol start="4">
-<li>Hyprland启动</li>
-</ol>
-<p>通过编辑<code>~/.bash_profile</code>启动(不使用显示管理器)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 启动 wayland 桌面前设置一些环境变量</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> set_wayland_env
-</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>	cd <span style="color:#e6db74">${</span>HOME<span style="color:#e6db74">}</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 设置语言环境为中文</span>
-</span></span><span style="display:flex;"><span>	export LANG<span style="color:#f92672">=</span>zh_CN.UTF-8
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 解决QT程序缩放问题</span>
-</span></span><span style="display:flex;"><span>	export QT_AUTO_SCREEN_SCALE_FACTOR<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># QT使用wayland和gtk</span>
-</span></span><span style="display:flex;"><span>	export QT_QPA_PLATFORM<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wayland;xcb&#34;</span>
-</span></span><span style="display:flex;"><span>	export QT_WAYLAND_DISABLE_WINDOWDECORATION<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 使用qt5ct软件配置QT程序外观</span>
-</span></span><span style="display:flex;"><span>	export QT_QPA_PLATFORMTHEME<span style="color:#f92672">=</span>qt5ct
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 一些游戏使用wayland</span>
-</span></span><span style="display:flex;"><span>	export SDL_VIDEODRIVER<span style="color:#f92672">=</span>wayland
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 解决java程序启动黑屏错误</span>
-</span></span><span style="display:flex;"><span>	export _JAVA_AWT_WM_NONEREPARENTING<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># GTK后端为 wayland和x11,优先wayland</span>
-</span></span><span style="display:flex;"><span>	export GDK_BACKEND<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wayland,x11&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 命令行输入这个命令启动hyprland,可以自定义</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> start_hyprland
-</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>	set_wayland_env
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	export XDG_SESSION_TYPE<span style="color:#f92672">=</span>wayland
-</span></span><span style="display:flex;"><span>	export XDG_SESSION_DESKTOP<span style="color:#f92672">=</span>Hyprland
-</span></span><span style="display:flex;"><span>	export XDG_CURRENT_DESKTOP<span style="color:#f92672">=</span>Hyprland
-</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 启动 Hyprland程序</span>
-</span></span><span style="display:flex;"><span>	exec Hyprland
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span></code></pre></div><p>重启或直接<code>source ~/.bash_profile</code>使配置生效，输入<code>start_hyprland</code>启动</p>&hellip;
-	
-</div>
-					<a class="readmore" href="/posts/arch-kde/">Read more ⟶</a>
-				</section>
-				
-				
+	<h2 id="环境搭建">环境搭建</h2>
+<p>搭建编译所需的环境</p>
+<h3 id="系统安装">系统安装</h3>
+<p>教程基于debian，你可以选择实机安装或者使用wsl2,如何安装请看<a href="https://learn.microsoft.com/zh-cn/windows/wsl/install">使用 WSL 在 Windows 上安装 Linux</a></p>
 
-<ul class="pagination">
-	<span class="page-item page-prev">
+<div class='callout callout-tip' style=''>
+  <div class="callout-inner">
+    
+    🔎 <u>Tip</u>
+    <br />
+    wsl将系统各盘挂载至``/mnt``目录，通过此挂载点可以实现文件传输
+    
+    </div>
+</div>&hellip;
 	
-	</span>
-	<span class="page-item page-next">
-	
-    <a href="/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">Next →</span></a>
-	
-	</span>
-</ul>
+</div>
+					<a class="readmore" href="/posts/kernelsu/">Read more ⟶</a>
+				</section>
+				
+				
 
 
 			</main>

@@ -44,7 +44,7 @@
 
 html {
     color: var(--color-text, #232333);
-    font-family: 'IBM Plex Mono', system-ui, -apple-system, sans-serif;
+    font-family: system-ui, -apple-system, ui-monospace, monospace;
     font-size: var(--font-size-base, 1.1rem);
     line-height: var(--line-height-base, 1.6);
     scroll-behavior: smooth;
@@ -79,7 +79,7 @@ body {
 
 /* Typography */
 p {
-    font-family: 'IBM Plex Mono', system-ui, -apple-system, sans-serif;
+    font-family: system-ui, -apple-system, ui-monospace, monospace;
     line-height: var(--line-height-content, 1.5);
     /* Fallback for older browsers */
     margin-top: 0.5em;
@@ -229,7 +229,7 @@ figure h4::before {
 /* Code blocks */
 code {
     background-color: var(--color-background-code, #f1f1f1);
-    font-family: 'IBM Plex Mono', system-ui, -apple-system, sans-serif;
+    font-family: system-ui, -apple-system, ui-monospace, monospace;
     padding: 0.1em 0.2em;
     border-radius: 3px;
     font-size: 0.9em;
@@ -495,7 +495,7 @@ article .title {
 }
 
 .callout p {
-    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-family: system-ui, -apple-system, ui-monospace, monospace;
     margin: 0;
 }
 
