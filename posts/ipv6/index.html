@@ -9,8 +9,8 @@
 账号:telecomadmin
 密码:admintelecom
 输入密码进入后台，找到wan设置，把路由器的wan改为桥接，并把ipv4改为ipv4/ipv6。
-如果是灰色的不能更改，在不能点击的ipv4设置上右键，点击检查，查看时候有disable属性，如果有的话，对准属性右键，点击edit attribute删除disable，不需要关闭，直接点击ipv4就应该能设置了需要注意的是，如果用普通账号登陆，比如上面的root，你是无法设置开启ipv6的，即使删去disable，点击应用后仍然是ipv4
-路由器开启ipv6
+如果是灰色的不能更改，在不能点击的ipv4设置上右键，点击检查，查看时候有disable属性，如果有的话，对准属性右键，点击edit attribute删除disable，不需要关闭，直接点击ipv4就应该能设置了需要注意的是，如果用普通账号登陆，比如上面的root，是无法设置开启ipv6的，即使删去disable，点击应用后仍然是ipv4
+开启ipv6
 光猫设置完成了，现在登陆路由器后台，以小米路由器为例，点击常用设置-上网设置，开启ipv6,上网方式选择native，然后在上网设置里选择PPoE拨号上网，输入你的宽带帐号密码
 输入正确的帐号密码，这下应该能成功连上网了，等一会，你会发现后台出现了ipv6的地址，访问ipv6测试如果成绩是10/10那么说明你就成功了(如果不行的话重启路由器和光猫试试)
 关闭防火墙
@@ -110,13 +110,13 @@ Domains填入自己的域名和二级域名
         </div>
         
         <section class="body">
-          <h3 id="光猫配置">光猫配置</h3>
+          <h2 id="光猫配置">光猫配置</h2>
 <p>进入光猫的后台，我的光猫用普通的账号<code>root</code>密码<code>admin</code>进是能进去，但是很多设置只能看，最后找到了超级用户密码</p>
 <pre tabindex="0"><code>账号:telecomadmin
 密码:admintelecom
 </code></pre><p>输入密码进入后台，找到<code>wan</code>设置，把路由器的wan改为<code>桥接</code>，并把<strong>ipv4</strong>改为<code>ipv4/ipv6</code>。</p>
-<p>如果是灰色的不能更改，在不能点击的ipv4设置上右键，点击<strong>检查</strong>，查看时候有<code>disable</code>属性，如果有的话，对准属性右键，点击<code>edit attribute</code>删除disable，不需要关闭，直接点击ipv4就应该能设置了<strong>需要注意的是，如果用普通账号登陆，比如上面的root，你是无法设置开启ipv6的，即使删去disable，点击应用后仍然是ipv4</strong></p>
-<h3 id="路由器开启ipv6">路由器开启ipv6</h3>
+<p>如果是灰色的不能更改，在不能点击的ipv4设置上右键，点击<strong>检查</strong>，查看时候有<code>disable</code>属性，如果有的话，对准属性右键，点击<code>edit attribute</code>删除disable，不需要关闭，直接点击ipv4就应该能设置了<strong>需要注意的是，如果用普通账号登陆，比如上面的root，是无法设置开启ipv6的，即使删去disable，点击应用后仍然是ipv4</strong></p>
+<h3 id="开启ipv6">开启ipv6</h3>
 <p>光猫设置完成了，现在登陆路由器后台，以小米路由器为例，点击<strong>常用设置-上网设置</strong>，开启ipv6,上网方式选择<strong>native</strong>，然后在上网设置里选择<strong>PPoE</strong>拨号上网，输入你的宽带帐号密码</p>
 <p>输入正确的帐号密码，这下应该能成功连上网了，等一会，你会发现后台出现了ipv6的地址，访问ipv6测试如果成绩是10/10那么说明你就成功了(如果不行的话重启路由器和光猫试试)</p>
 <h2 id="关闭防火墙">关闭防火墙</h2>

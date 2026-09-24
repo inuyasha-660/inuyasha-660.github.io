@@ -4,10 +4,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>KernelSU 内核编译 - Croyoux</title><link rel="icon" href="/favicon.png" type="image/png">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="环境搭建
-搭建编译所需的环境
-系统安装
-教程基于debian，你可以选择实机安装或者使用wsl2,如何安装请看使用 WSL 在 Windows 上安装 Linux
+	<meta name="description" content="编译环境
+教程基于 Linux，可以选择实机安装或者使用 wsl2, 如何安装请看使用 WSL 在 Windows 上安装 Linux
 
 
   
@@ -66,10 +64,8 @@
         </div>
         
         <section class="body">
-          <h2 id="环境搭建">环境搭建</h2>
-<p>搭建编译所需的环境</p>
-<h3 id="系统安装">系统安装</h3>
-<p>教程基于debian，你可以选择实机安装或者使用wsl2,如何安装请看<a href="https://learn.microsoft.com/zh-cn/windows/wsl/install">使用 WSL 在 Windows 上安装 Linux</a></p>
+          <h2 id="编译环境">编译环境</h2>
+<p>教程基于 Linux，可以选择实机安装或者使用 wsl2, 如何安装请看<a href="https://learn.microsoft.com/zh-cn/windows/wsl/install">使用 WSL 在 Windows 上安装 Linux</a></p>
 
 <div class='callout callout-tip' style=''>
   <div class="callout-inner">
@@ -81,50 +77,33 @@
     </div>
 </div>
 
-<h3 id="编译环境">编译环境</h3>
+<h3 id="软件包">软件包</h3>
 <p>使用以下命令安装所需软件包</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt install -y bc bison build-essential curl flex g++-multilib gcc-multilib <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span>                    git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span>                    lib32z1-dev liblz4-tool libncurses5 libncurses5-dev libsdl1.2-dev <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span>                    libssl-dev libxml2 libxml2-utils lzop pngcrush schedtool <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span>                    squashfs-tools xsltproc zip zlib1g-dev unzip  
-</span></span></code></pre></div><p>注: 若使用其他发行版或有部分软件包找不到，可以暂时忽略，等编译出现如<code>xxx not found</code>的错误时再安装</p>
-<h3 id="系统代理">系统代理</h3>
-<p>如果你的设备能够直连Github，并且速度还不错，那你可以忽视这一步</p>
-<p>我们使用clash作为代理工具</p>
-<ol>
-<li>
-<p>可以使用<a href="https://github.com/clash-verge-rev/clash-verge-rev">clash-verge-rev</a>或<a href="https://github.com/LibNyanpasu/clash-nyanpasu">clash-nyanpasu</a></p>
-</li>
-<li>
-<p>具体配置不再赘述，其他代理客户端也行，具体看代理提供商支持哪些协议</p>
-</li>
-<li>
-<p>使用以下命令设置终端代理</p>
-</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>export https_proxy<span style="color:#f92672">=</span>http://127.0.0.1:7890 http_proxy<span style="color:#f92672">=</span>http://127.0.0.1:7890 all_proxy<span style="color:#f92672">=</span>socks5://127.0.0.1:7891
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt install -y bc bison build-essential git libssl-dev
+</span></span></code></pre></div><p>这一步可跳过，等编译出现如<code>xxx not found</code>的错误时再安装</p>
+<h3 id="代理">代理</h3>
+<p>如能直连 Github 可跳过</p>
+<p>配置好代理后使用以下命令为终端设置代理</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>export https_proxy<span style="color:#f92672">=</span>http://127.0.0.1:&lt;PORT&gt; http_proxy<span style="color:#f92672">=</span>http://127.0.0.1:&lt;PORT&gt; all_proxy<span style="color:#f92672">=</span>socks5://127.0.0.1:&lt;PORT&gt;
 </span></span></code></pre></div><h2 id="工作目录">工作目录</h2>
 <p>若使用作者提供的编译脚本，则需创建以下目录</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p ~/kernel  <span style="color:#f92672">&amp;&amp;</span> cd ~/kernel <span style="color:#75715e"># 创建并进入工作目录</span>
 </span></span><span style="display:flex;"><span>mkdir -p toolchains  <span style="color:#75715e"># 工具链目录</span>
-</span></span><span style="display:flex;"><span>mkdir -p source  <span style="color:#75715e"># 内核源码目录</span>
+</span></span><span style="display:flex;"><span>mkdir -p build  <span style="color:#75715e"># 内核源码目录</span>
 </span></span></code></pre></div><pre tabindex="0"><code>~/kernel
-├── source
+├── build
 └── toolchains
 </code></pre><h2 id="源码下载">源码下载</h2>
-<p>现在进入<code>~/kernel/source/</code>目录</p>
+<p>现在进入<code>~/kernel/build/</code>目录</p>
 <h3 id="内核源码">内核源码</h3>
-<p>如果你是小米用户，你可以试着下官方的源码，不过官方的源码可能不能成功编译，而且年久失修，大部分新机都没有公布源码，所以还是建议使用类原生的源码</p>
+<p>如果你是小米用户，你可以试着下官方的源码，不过官方的源码可能不能成功编译，而且年久失修，大部分新机都没有公布源码，所以还是建议使用第三方的源码</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>官方源码仓库
 </span></span><span style="display:flex;"><span>https://github.com/MiCode/Xiaomi_Kernel_OpenSource
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>如果要下载的话请使用 git 命令
 </span></span><span style="display:flex;"><span>git clone --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> https://github.com/MiCode/Xiaomi_Kernel_OpenSource -b cannon-r-oss  
 </span></span></code></pre></div><p><code>cannon</code>是作者的手机代号，需将<code>cannon-r-oss</code>换成自己源码的分支</p>
-<p>类原生的话就简单多了，点击仓库右上角的<strong>code</strong>,把HTTPS的链接复制下来</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> clone xxx.git  <span style="color:#75715e"># xxxxxxxx.git换成自己的链接</span>
-</span></span></code></pre></div><p>因为我们只需要仓库最新的提交而忽略其他分支和历史信息，所以使用<code>--depth=1</code>进行浅克隆</p>
+<p>因为我们只需要仓库最新的提交而忽略其他分支和历史信息，所以使用<code>--depth=1</code>进行浅克隆</p>
 <h3 id="添加kernelsu">添加KernelSU</h3>
 <blockquote>
 <p>KernelSU 1.0 及更高版本已经不再支持非 GKI 内核，最后的支持版本为 v0.9.5，请注意使用正确的版本</p>
@@ -140,7 +119,7 @@ CONFIG_HAVE_KPROBES=y
 CONFIG_KPROBE_EVENTS=y
 </code></pre><h3 id="工具链下载">工具链下载</h3>
 <p>现在进入<code>~/kernel/toolchains</code>目录</p>
-<p>作者使用zys-clang14和gcc4.9进行编译，读者可尝试更新的clang版本</p>
+<p>作者使用 zys-clang14 和 gcc4.9 进行编译，新内核可尝试更新的 clang 版本</p>
 <p>我们先使用<strong>git</strong>下载gcc到<code>./gcc-arm-4.9</code>目录</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git clone https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9.git gcc-arm-4.9
 </span></span></code></pre></div><p>创建并进入<code>~/kernel/toolchains/clang-14</code>目录</p>
@@ -149,46 +128,47 @@ CONFIG_KPROBE_EVENTS=y
 <pre tabindex="0"><code>https://github.com/ZyCromerZ/Clang/releases/download/14.0.6-20240212-release/Clang-14.0.6-20240212.tar.gz
 </code></pre><p>下载完成后用<code>tar -zxvf Clang-*.tar.gz</code>解压</p>
 <h2 id="编译脚本">编译脚本</h2>
-<p>现在回到<code>~/kernel/source/</code>目录并进入内核源码目录</p>
-<p>一般我们会用一个编译脚本设置环境变量、配置文件等</p>
-<p>我的脚本是<del>抄</del>参考别人教程</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>touch build.sh <span style="color:#75715e"># 在内核根目录下创建编译脚本 </span>
-</span></span></code></pre></div><p>写入以下内容</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span>starttime<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>date +<span style="color:#e6db74">&#39;%Y-%m-%d %H:%M:%S&#39;</span><span style="color:#e6db74">`</span>
+<p>现在回到<code>~/kernel/build/</code>目录并进入内核源码目录，创建一个编译脚本</p>
+<p>写入以下内容</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span>set -e
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>export ARCH<span style="color:#f92672">=</span>arm64
 </span></span><span style="display:flex;"><span>export SUBARCH<span style="color:#f92672">=</span>arm64
-</span></span><span style="display:flex;"><span>make O<span style="color:#f92672">=</span>out cannon_defconfig
-</span></span><span style="display:flex;"><span>              make -j8 O<span style="color:#f92672">=</span>out <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span>    NM<span style="color:#f92672">=</span>~/kernel/toolchains/clang-14/bin/llvm-nm <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span>    OBJCOPY<span style="color:#f92672">=</span>~/kernel/toolchains/clang-14/bin/llvm-objcopy <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span>    LD<span style="color:#f92672">=</span>~/kernel/toolchains/clang-14/bin/ld.lld <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span>        CROSS_COMPILE<span style="color:#f92672">=</span>~/kernel/toolchains/clang-14/bin/aarch64-linux-gnu- <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span>        CROSS_COMPILE_ARM32<span style="color:#f92672">=</span>~/kernel/toolchains/gcc-arm-4.9/bin/arm-linux-androideabi- <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span>        CC<span style="color:#f92672">=</span>~/kernel/toolchains/clang-14/bin/clang <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span>        AR<span style="color:#f92672">=</span>~/kernel/toolchains/clang-14/bin/llvm-ar <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span>        OBJDUMP<span style="color:#f92672">=</span>~/kernel/toolchains/clang-14/bin/llvm-objdump <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span>        STRIP<span style="color:#f92672">=</span>~/kernel/toolchains/clang-14/bin/llvm-strip
-</span></span><span style="display:flex;"><span>        2&gt;&amp;<span style="color:#ae81ff">1</span> | tee error.log
-</span></span><span style="display:flex;"><span>endtime<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>date +<span style="color:#e6db74">&#39;%Y-%m-%d %H:%M:%S&#39;</span><span style="color:#e6db74">`</span>
-</span></span><span style="display:flex;"><span>start_seconds<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date --date<span style="color:#f92672">=</span><span style="color:#e6db74">&#34; </span>$starttime<span style="color:#e6db74">&#34;</span> +%s<span style="color:#66d9ef">)</span>;
-</span></span><span style="display:flex;"><span>end_seconds<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date --date<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$endtime<span style="color:#e6db74">&#34;</span> +%s<span style="color:#66d9ef">)</span>;
-</span></span><span style="display:flex;"><span>echo Start: $starttime.
-</span></span><span style="display:flex;"><span>echo End: $endtime.
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Build Time: &#34;</span><span style="color:#66d9ef">$((</span>end_seconds-start_seconds<span style="color:#66d9ef">))</span><span style="color:#e6db74">&#34;s.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>CLANG_PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/kernel/toolchains/clang-14/bin&#34;</span>
+</span></span><span style="display:flex;"><span>GCC_PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/kernel/toolchains/gcc-arm-4.9/bin&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>MAKE_ARGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    O=</span>$OUT_DIR<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    ARCH=</span>$ARCH<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    SUBARCH=</span>$SUBARCH<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    CC=</span>$CLANG_PATH<span style="color:#e6db74">/clang
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    LD=</span>$CLANG_PATH<span style="color:#e6db74">/ld.lld
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    AR=</span>$CLANG_PATH<span style="color:#e6db74">/llvm-ar
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    NM=</span>$CLANG_PATH<span style="color:#e6db74">/llvm-nm
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    OBJCOPY=</span>$CLANG_PATH<span style="color:#e6db74">/llvm-objcopy
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    OBJDUMP=</span>$CLANG_PATH<span style="color:#e6db74">/llvm-objdump
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    STRIP=</span>$CLANG_PATH<span style="color:#e6db74">/llvm-strip
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    CROSS_COMPILE=</span>$CLANG_PATH<span style="color:#e6db74">/aarch64-linux-gnu-
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    CROSS_COMPILE_ARM32=</span>$GCC_PATH<span style="color:#e6db74">/arm-linux-androideabi-
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>make $MAKE_ARGS cannon_defconfig
+</span></span><span style="display:flex;"><span>make -j<span style="color:#66d9ef">$(</span>nproc<span style="color:#66d9ef">)</span> $MAKE_ARGS
 </span></span></code></pre></div><p>需要注意的是，<code>cannon_defconfig</code>配置文件的路径位于<code>arch/arm64/configs/</code></p>
 <p>假设你的配置文件是<code>arch/arm64/configs/example_defconfig</code>那你只需要填写<code>example_defconfig</code>即可</p>
 <p>但如果你的配置文件位于<code>arch/arm64/configs/vendor/example_defconfig</code>则需要填写<code>vendor/example_defconfig</code></p>
 <h2 id="开始编译">开始编译</h2>
-<p>用<code>chmod +x build.sh</code>添加执行权限，<code>./build.sh</code>执行编译脚本，产出在<code>out/arch/arm64/boot</code>目录</p>
+<p>用<code>chmod +x &lt;SCRIPT&gt;</code>设置可执行权限后运行，编译产物在<code>out/arch/arm64/boot</code>目录</p>
 <h2 id="打包内核">打包内核</h2>
-<p>能来到这一步，你应该能成功编译出内核，恭喜你，接下来我们需要将它打包成boot或内核刷入</p>
+<p>能来到这一步，你应该能成功编译出内核，接下来我们需要将它打包成boot或内核刷入</p>
 <h3 id="anykernel3">AnyKernel3</h3>
 <p>在完成编译后，我们回到<code>~/kernel</code>目录，并克隆<code>AnyKernel3</code></p>
 <p>项目地址：https://github.com/osm0sis/AnyKernel3</p>
-<p>用<strong>git</strong>下载AnyKernel3</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git clone https://github.com/osm0sis/AnyKernel3.git
-</span></span></code></pre></div><p>你需要把产出的Image放到AnyKernel3的根目录，然后编辑<code>anykernel.sh</code><br>
+<p>用 <strong>git</strong> 下载AnyKernel3</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git clone https://github.com/osm0sis/AnyKernel3.git --depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><p>你需要把编译出的 Image 放到 AnyKernel3 的根目录，然后编辑<code>anykernel.sh</code><br>
 需要改的是以下几点</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kernel.string<span style="color:#f92672">=</span>KernelSU-cannon-inuyasha <span style="color:#75715e">#内核名称</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>.devicecheck<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#75715e">#设备检测，为0时关闭</span>
@@ -213,23 +193,23 @@ CONFIG_KPROBE_EVENTS=y
 <pre tabindex="0"><code>setopt no_nomatch
 </code></pre><p>然后再<code>source ~/.zshrc</code>即可解决</p>
 <h3 id="magiskboot">MagiskBoot</h3>
-<p>如果你不喜欢用anykernel3，你也可以提取原版的boot.img使用编译出来的image替换原厂kernel</p>
+<p>如果你不喜欢用 anykernel3，你也可以提取原版的 boot.img 使用编译出来的 image 替换原厂 kernel</p>
 <ol>
-<li>首先到<a href="https://github.com/topjohnwu/Magisk/releases">Magisk</a>下载magisk.apk,重命名为.zip并解压</li>
-<li>把解压后的<code>Magisk-v26.1/lib/arm64-v8a/libmagiskboot.so</code>文件，用 adb push 到手机</li>
+<li>首先到<a href="https://github.com/topjohnwu/Magisk/releases">Magisk</a>下载 <code>magisk.apk</code>，重命名为 <code>magisk.zip</code> 并解压</li>
+<li>把解压后的<code>Magisk-v26.1/lib/arm64-v8a/libmagiskboot.so</code>文件，用<code>adb push</code>到手机</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>adb push Magisk-v26.1/lib/arm64-v8a/libmagiskboot.so /data/local/tmp/magiskboot 
 </span></span></code></pre></div><p><code>Magisk-v26.1</code>需要改成下载的版本号</p>
 <ol start="3">
-<li>按照上面的方法把提取的boot.img和编译出的Image都push到手机</li>
-<li>用<code>adb shell</code>进入adb，然后进入手机<code>/data/local/tmp</code>/目录，赋予magiskboot可执行权限<code>chmod +x magiskboot</code></li>
-<li>执行<code>./magiskboot unpack boot.img</code>解包boot.img得到kernel文件</li>
-<li>用<strong>Image</strong>替换<strong>kernel</strong><code>mv -f Image kernel</code></li>
-<li>最后执行<code>./magiskboot repack boot.img</code>命令重新打包boot.img，得到<strong>new-boot.img</strong>，备份原厂boot后在fastboot中刷入即可</li>
+<li>按照上面的方法把提取的 boot.img 和编译出的 Image 都推送到手机</li>
+<li>用<code>adb shell</code>进入adb，然后进入手机<code>/data/local/tmp</code>/目录，赋予 magiskboot 可执行权限<code>chmod +x magiskboot</code></li>
+<li>执行<code>./magiskboot unpack boot.img</code>解包 boot.img 得到 kernel 文件</li>
+<li>用 <strong>Image</strong> 替换 <strong>kernel</strong> <code>mv -f Image kernel</code></li>
+<li>最后执行<code>./magiskboot repack boot.img</code>命令重新打包boot.img，得到 <strong>new-boot.img</strong> ，备份原厂 boot 后在 fastboot 中刷入即可</li>
 </ol>
 <h2 id="拓展">拓展</h2>
-<p>如果kprobe不正常工作，就会出现无限重启，不开机，替换boot后仍显示不支持等错误，接下来我们将手动修改源码集成ksu</p>
-<p>首先让我们验证是否为kprobe的问题，</p>
+<p>如果 kprobe 不正常工作，就会出现无限重启，不开机，替换boot后仍显示不支持等错误，接下来我们将手动修改源码集成ksu</p>
+<p>首先让我们验证是否 为kprobe 的问题，</p>
 <ol>
 <li>打开<code>KernelSU/kernel/ksu.c</code></li>
 <li>找到<code>ksu_enable_sucompat() 和 ksu_enable_ksud()</code>这两行，使用<code>//</code>注释掉</li>
@@ -250,10 +230,8 @@ CONFIG_KPROBE_EVENTS=y
 <p>如果手动集成还是失败，你可以去Github提供一个<a href="https://github.com/tiann/KernelSU/issues/new/choose">BugReport</a>给作者，在管理其设置，发送日志即可发送错误日志</p>
 <h3 id="docker支持">Docker支持</h3>
 <p>在手机终端中执行<a href="https://github.com/moby/moby/blob/master/contrib/check-config.sh">check-config.sh</a>脚本，将所有<code>missing</code>的配置添加到内核配置文件，并重新编译内核</p>
-<h2 id="参考部分引用">参考|部分引用</h2>
+<h2 id="参考">参考</h2>
 <p><a href="https://kernelsu.org/zh_CN/guide/how-to-integrate-for-non-gki.html">如何为非 GKI 内核集成 KernelSU </a></p>
-<p><a href="https://blog.ticks.cc/posts/id/ef0vy/">红米K40内核KernelSU编译</a></p>
-<p><a href="https://zixijian.github.io/2021/01/15/008.html"> 手机端编译安卓内核</a></p>
         </section>
         <div class="post-tags">
           

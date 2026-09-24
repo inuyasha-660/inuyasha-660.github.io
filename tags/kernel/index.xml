@@ -20,7 +20,7 @@
 				<link>https://blog.fsunix.net/posts/kernelsu/</link>
 				<pubDate>Sat, 05 Aug 2023 20:12:02 +0000</pubDate>
 				<guid>https://blog.fsunix.net/posts/kernelsu/</guid>
-				<description>&lt;h2 id=&#34;环境搭建&#34;&gt;环境搭建&lt;/h2&gt;&#xA;&lt;p&gt;搭建编译所需的环境&lt;/p&gt;&#xA;&lt;h3 id=&#34;系统安装&#34;&gt;系统安装&lt;/h3&gt;&#xA;&lt;p&gt;教程基于debian，你可以选择实机安装或者使用wsl2,如何安装请看&lt;a href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/install&#34;&gt;使用 WSL 在 Windows 上安装 Linux&lt;/a&gt;&lt;/p&gt;&#xA;&#xA;&lt;div class=&#39;callout callout-tip&#39; style=&#39;&#39;&gt;&#xA;  &lt;div class=&#34;callout-inner&#34;&gt;&#xA;    &#xA;    🔎 &lt;u&gt;Tip&lt;/u&gt;&#xA;    &lt;br /&gt;&#xA;    wsl将系统各盘挂载至``/mnt``目录，通过此挂载点可以实现文件传输&#xA;    &#xA;    &lt;/div&gt;&#xA;&lt;/div&gt;</description>
+				<description>&lt;h2 id=&#34;编译环境&#34;&gt;编译环境&lt;/h2&gt;&#xA;&lt;p&gt;教程基于 Linux，可以选择实机安装或者使用 wsl2, 如何安装请看&lt;a href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/install&#34;&gt;使用 WSL 在 Windows 上安装 Linux&lt;/a&gt;&lt;/p&gt;&#xA;&#xA;&lt;div class=&#39;callout callout-tip&#39; style=&#39;&#39;&gt;&#xA;  &lt;div class=&#34;callout-inner&#34;&gt;&#xA;    &#xA;    🔎 &lt;u&gt;Tip&lt;/u&gt;&#xA;    &lt;br /&gt;&#xA;    wsl将系统各盘挂载至``/mnt``目录，通过此挂载点可以实现文件传输&#xA;    &#xA;    &lt;/div&gt;&#xA;&lt;/div&gt;</description>
 			</item>
 	</channel>
 </rss>
